@@ -75,36 +75,84 @@
         <p class="hero__proof">30 references, 11 scripts, <code>npm run verify</code> clean</p>
       </div>
 
-      <figure class="router-surface" data-reveal>
-        <div class="router-surface__bar">
-          <span class="router-surface__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span>SKILL.md router</span>
-          <span class="router-surface__mode">minimum reference set</span>
-        </div>
-        <div class="router-surface__body">
-          <p class="router-surface__label">Prompt</p>
-          <p class="router-surface__prompt">Build a settings screen for Android</p>
-          <div class="router-surface__flow" aria-hidden="true">
-            <span class="router-surface__track"></span>
-            <span class="router-surface__pulse"></span>
+      <figure class="device-stage" data-reveal>
+        <div class="device-frame" data-device-frame data-appearance="light">
+          <div class="device-frame__screen">
+            <div class="device-status" aria-hidden="true">
+              <span>9:41</span>
+              <span class="device-status__island"></span>
+              <span class="device-status__signal">▮▮▮</span>
+            </div>
+            <div class="device-nav">
+              <span class="device-nav__glyph" aria-hidden="true">‹</span>
+              <span class="device-nav__title">Design System</span>
+              <span class="device-nav__glyph" aria-hidden="true">⋯</span>
+            </div>
+            <div class="device-content">
+              <h2 class="device-title">Appearance</h2>
+              <p class="device-subtitle">One token sheet. Every control follows.</p>
+
+              <div class="device-group">
+                <div class="device-row">
+                  <span class="device-row__label">
+                    <strong>Appearance</strong>
+                    <span>Light and dark tokens</span>
+                  </span>
+                  <div class="device-segmented" role="group" aria-label="Device appearance">
+                    <button type="button" data-device-appearance="light" aria-pressed="true">Light</button>
+                    <button type="button" data-device-appearance="dark" aria-pressed="false">Dark</button>
+                  </div>
+                </div>
+                <div class="device-row">
+                  <span class="device-row__label">
+                    <strong>Corner radius</strong>
+                    <span>Semantic shape token</span>
+                  </span>
+                  <div class="device-stepper" role="group" aria-label="Corner radius">
+                    <button type="button" data-device-step="-1" aria-label="Decrease corner radius">−</button>
+                    <output data-device-radius-value>14</output>
+                    <button type="button" data-device-step="1" aria-label="Increase corner radius">+</button>
+                  </div>
+                </div>
+                <div class="device-row">
+                  <span class="device-row__label">
+                    <strong>Focus</strong>
+                    <span data-device-focus-label>Off</span>
+                  </span>
+                  <button class="device-switch" type="button" role="switch" aria-checked="false" aria-label="Focus" data-device-switch>
+                    <span></span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="device-group">
+                <div class="device-row device-row--detail">
+                  <span class="device-row__label">
+                    <strong>Motion</strong>
+                    <span>System settings</span>
+                  </span>
+                  <span class="device-detail" aria-hidden="true">›</span>
+                </div>
+                <div class="device-row device-row--detail">
+                  <span class="device-row__label">
+                    <strong>Accessibility</strong>
+                    <span>Contrast and targets</span>
+                  </span>
+                  <span class="device-detail" aria-hidden="true">›</span>
+                </div>
+              </div>
+
+              <p class="device-note">Routed with tokens, components, and platform adapters.</p>
+            </div>
+            <div class="device-home" aria-hidden="true"></div>
           </div>
-          <p class="router-surface__label">Loaded references</p>
-          <ul class="router-surface__refs">
-            <li><span>design-apple-style.md</span><span>visual foundation</span></li>
-            <li><span>tokens-apple-style.md</span><span>semantic values</span></li>
-            <li><span>components-apple-style.md</span><span>states</span></li>
-            <li><span>platform-adapters-apple-style.md</span><span>Android vocabulary</span></li>
-          </ul>
-          <p class="router-surface__label">Native output</p>
-          <ul class="router-surface__outputs" aria-label="Supported output frameworks">
-            <li>SwiftUI</li>
-            <li>Compose</li>
-            <li>React</li>
-            <li>Flutter</li>
-            <li>Web</li>
-          </ul>
         </div>
-        <figcaption>The router selects the smallest useful reference set before any UI is drawn.</figcaption>
+        <figcaption class="device-caption">
+          <span>Live tokens</span>
+          <span data-token-bg>--apple-color-bg</span>
+          <span data-token-radius>--apple-radius-medium</span>
+          <span data-token-tint>--apple-color-tint</span>
+        </figcaption>
       </figure>
 
       <details class="prompt-preview">

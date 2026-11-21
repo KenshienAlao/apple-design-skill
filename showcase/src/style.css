@@ -361,206 +361,343 @@ input {
   font-family: var(--apple-font-text);
 }
 
-.router-surface {
+@media (min-width: 901px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 400px);
+    align-items: center;
+    gap: var(--apple-space-11);
+    max-width: calc(var(--apple-content-max) + var(--apple-space-11) * 2);
+  }
+
+  .hero__copy {
+    max-width: 620px;
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  .hero__title {
+    font-size: clamp(44px, 4.6vw, 60px);
+  }
+
+  .hero__actions {
+    justify-content: flex-start;
+  }
+}
+
+.device-stage {
+  display: grid;
+  gap: var(--apple-space-5);
   width: 100%;
-  max-width: var(--apple-content-max);
+  max-width: 400px;
   margin-inline: auto;
-  background: var(--apple-color-surface-2);
-  border: var(--apple-space-1) solid var(--apple-color-separator);
-  border-radius: var(--apple-radius-sheet);
-  box-shadow: var(--apple-shadow-medium);
+  justify-items: center;
+}
+
+.device-frame {
+  --segment-index: 0;
+
+  width: 100%;
+  padding: var(--apple-space-3);
+  /* The bezel is hardware; the screen uses scoped appearance tokens. */
+  background: rgb(11 11 13);
+  border-radius: calc(var(--apple-radius-sheet) + var(--apple-space-7));
+  box-shadow: var(--apple-shadow-large), inset 0 0 0 var(--apple-space-1) rgba(255, 255, 255, 0.12);
+}
+
+.device-frame__screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+  background: var(--apple-color-bg);
+  color: var(--apple-color-label);
+  border-radius: calc(var(--apple-radius-sheet) + var(--apple-space-5));
   overflow: hidden;
 }
 
-.router-surface__bar {
-  display: flex;
+.device-status {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: var(--apple-space-4);
   min-height: var(--apple-target-min);
-  padding: var(--apple-space-3) var(--apple-space-5);
-  background: var(--apple-color-surface);
-  border-bottom: var(--apple-space-1) solid var(--apple-color-separator);
-  color: var(--apple-color-label-2);
-  font-size: var(--apple-type-footnote-size);
-  line-height: var(--apple-type-footnote-line);
-}
-
-.router-surface__dots {
-  display: inline-flex;
-  gap: var(--apple-space-2);
-}
-
-.router-surface__dots i {
-  display: block;
-  width: var(--apple-icon-16);
-  height: var(--apple-icon-16);
-  border-radius: var(--apple-radius-pill);
-  background: var(--apple-color-fill-2);
-}
-
-.router-surface__dots i:first-child {
-  background: var(--apple-color-red);
-}
-
-.router-surface__dots i:nth-child(2) {
-  background: var(--apple-color-orange);
-}
-
-.router-surface__dots i:last-child {
-  background: var(--apple-color-green);
-}
-
-.router-surface__mode {
-  margin-inline-start: auto;
-  padding: var(--apple-space-1) var(--apple-space-3);
-  background: var(--apple-color-fill);
-  border-radius: var(--apple-radius-pill);
-  white-space: nowrap;
-}
-
-.router-surface__body {
-  display: grid;
-  grid-template-areas:
-    'prompt-label refs-label'
-    'prompt refs'
-    'flow refs'
-    'output-label refs'
-    'outputs refs';
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  align-content: start;
-  gap: var(--apple-space-4) var(--apple-space-6);
-  padding: calc(var(--apple-space-6) * 1.5);
-}
-
-.router-surface__label {
-  color: var(--apple-color-label-2);
+  padding: var(--apple-space-3) var(--apple-space-7) 0;
   font-size: var(--apple-type-caption-1-size);
-  line-height: var(--apple-type-caption-1-line);
   font-weight: var(--apple-type-headline-weight);
-  letter-spacing: 0.02em;
 }
 
-.router-surface__label:nth-child(1) {
-  grid-area: prompt-label;
-}
-
-.router-surface__prompt {
-  grid-area: prompt;
-  font-family: var(--apple-font-display);
-  font-size: clamp(var(--apple-type-title-3-size), 2.6vw, var(--apple-type-title-1-size));
-  line-height: 1.18;
-  font-weight: var(--apple-type-headline-weight);
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-}
-
-.router-surface__flow {
-  position: relative;
-  container-type: inline-size;
-  grid-area: flow;
-  display: flex;
-  align-items: center;
-  min-height: var(--apple-space-11);
-}
-
-.router-surface__track {
-  position: relative;
-  width: 100%;
-  height: var(--apple-space-1);
-  background: var(--apple-color-fill-2);
+.device-status__island {
+  inline-size: 76px;
+  block-size: 22px;
+  background: rgb(0 0 0);
   border-radius: var(--apple-radius-pill);
 }
 
-.router-surface__pulse {
-  position: absolute;
-  inset-inline-start: 0;
-  top: 50%;
-  width: var(--apple-space-7);
-  height: var(--apple-space-7);
-  background: var(--apple-color-tint);
-  border: var(--apple-space-1) solid var(--apple-color-tint-contrast);
-  border-radius: var(--apple-radius-pill);
-  transform: translateY(-50%);
-  animation: router-pulse calc(var(--apple-duration-sheet) * 5) var(--apple-ease-standard) infinite;
+.device-status__signal {
+  justify-self: end;
+  font-size: var(--apple-type-caption-2-size);
+  letter-spacing: 0.08em;
 }
 
-@keyframes router-pulse {
-  from {
-    transform: translate3d(0, -50%, 0);
-  }
-
-  to {
-    transform: translate3d(calc(100cqw - 100%), -50%, 0);
-  }
-}
-
-.router-surface__label:nth-child(4) {
-  grid-area: refs-label;
-}
-
-.router-surface__refs {
-  grid-area: refs;
-  align-self: stretch;
+.device-nav {
   display: grid;
-  align-content: start;
-  gap: var(--apple-space-1);
-  padding: var(--apple-space-4);
-  background: var(--apple-color-surface);
-  border: var(--apple-space-1) solid var(--apple-color-separator);
-  border-radius: var(--apple-radius-medium);
-}
-
-.router-surface__refs li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: var(--apple-space-9) minmax(0, 1fr) var(--apple-space-9);
   align-items: center;
-  gap: var(--apple-space-3);
-  padding: var(--apple-space-3) var(--apple-space-2);
-  border-bottom: var(--apple-space-1) solid var(--apple-color-separator);
-  font-size: var(--apple-type-footnote-size);
-  line-height: var(--apple-type-footnote-line);
+  padding: var(--apple-space-2) var(--apple-space-4) var(--apple-space-4);
+  border-bottom: var(--apple-hairline);
 }
 
-.router-surface__refs li:last-child {
-  border-bottom: 0;
+.device-nav__glyph {
+  color: var(--apple-color-tint);
+  font-size: 24px;
+  line-height: 1;
 }
 
-.router-surface__refs li span:first-child {
-  overflow-wrap: anywhere;
-  font-weight: var(--apple-type-headline-weight);
-}
-
-.router-surface__refs li span:last-child {
+.device-nav__glyph:last-child {
   color: var(--apple-color-label-2);
+  font-size: var(--apple-type-title-3-size);
   text-align: right;
 }
 
-.router-surface__label:nth-child(6) {
-  grid-area: output-label;
-}
-
-.router-surface__outputs {
-  grid-area: outputs;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--apple-space-2);
-}
-
-.router-surface__outputs li {
-  padding: var(--apple-space-2) var(--apple-space-4);
-  background: var(--apple-color-fill);
-  border-radius: var(--apple-radius-pill);
+.device-nav__title {
   font-size: var(--apple-type-footnote-size);
-  line-height: var(--apple-type-footnote-line);
+  font-weight: var(--apple-type-headline-weight);
+  text-align: center;
+}
+
+.device-content {
+  flex: 1;
+  overflow: auto;
+  padding: var(--apple-space-6) var(--apple-space-5) var(--apple-space-7);
+}
+
+.device-title {
+  margin: 0 0 var(--apple-space-1);
+  font-family: var(--apple-font-display);
+  font-size: var(--apple-type-large-title-size);
+  line-height: var(--apple-type-large-title-line);
+  letter-spacing: -0.02em;
+}
+
+.device-subtitle {
+  margin: 0 0 var(--apple-space-6);
+  color: var(--apple-color-label-2);
+  font-size: var(--apple-type-caption-1-size);
+  line-height: var(--apple-type-caption-1-line);
+}
+
+.device-group {
+  margin-bottom: var(--apple-space-5);
+  background: var(--apple-color-surface);
+  border-radius: var(--apple-radius-medium);
+  overflow: hidden;
+}
+
+.device-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--apple-space-4);
+  min-height: 60px;
+  padding: var(--apple-space-3) var(--apple-space-4);
+  border-bottom: var(--apple-hairline);
+}
+
+.device-row:last-child {
+  border-bottom: 0;
+}
+
+.device-row__label {
+  display: grid;
+  gap: var(--apple-space-1);
+}
+
+.device-row__label strong {
+  font-size: var(--apple-type-subheadline-size);
+  line-height: var(--apple-type-subheadline-line);
   font-weight: var(--apple-type-headline-weight);
 }
 
-.router-surface figcaption {
-  padding: var(--apple-space-4) var(--apple-space-6);
-  border-top: var(--apple-space-1) solid var(--apple-color-separator);
+.device-row__label span {
   color: var(--apple-color-label-2);
-  font-size: var(--apple-type-footnote-size);
-  line-height: var(--apple-type-footnote-line);
+  font-size: var(--apple-type-caption-2-size);
+  line-height: var(--apple-type-caption-2-line);
+}
+
+.device-segmented {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(56px, 1fr));
+  padding: var(--apple-space-1);
+  background: var(--apple-color-fill);
+  border-radius: var(--apple-radius-pill);
+}
+
+.device-segmented::before {
+  content: '';
+  position: absolute;
+  inset-block: var(--apple-space-1);
+  inset-inline-start: var(--apple-space-1);
+  z-index: 0;
+  width: calc(50% - var(--apple-space-1));
+  background: var(--apple-color-surface-2);
+  border-radius: var(--apple-radius-pill);
+  box-shadow: var(--apple-shadow-small);
+  transform: translateX(calc(var(--segment-index) * 100%));
+  transition: transform var(--apple-duration-control) var(--apple-ease-out);
+}
+
+.device-segmented button {
+  position: relative;
+  z-index: 1;
+  min-height: var(--apple-target-min);
+  padding-inline: var(--apple-space-3);
+  color: var(--apple-color-label-2);
+  background: transparent;
+  border: 0;
+  border-radius: var(--apple-radius-pill);
+  cursor: pointer;
+  font-size: var(--apple-type-caption-1-size);
+  font-weight: var(--apple-type-headline-weight);
+  transition: color var(--apple-duration-control) var(--apple-ease-standard),
+    transform var(--apple-duration-fast) var(--apple-ease-standard);
+}
+
+.device-segmented button[aria-pressed='true'] {
+  color: var(--apple-color-label);
+}
+
+.device-segmented button:active {
+  transform: scale(0.97);
+}
+
+.device-stepper {
+  display: flex;
+  align-items: center;
+  gap: var(--apple-space-1);
+  padding: var(--apple-space-1);
+  background: var(--apple-color-fill);
+  border-radius: var(--apple-radius-control);
+}
+
+.device-stepper button {
+  inline-size: var(--apple-target-min);
+  block-size: var(--apple-target-min);
+  color: var(--apple-color-label);
+  background: var(--apple-color-surface-2);
+  border: 0;
+  border-radius: calc(var(--apple-radius-control) - var(--apple-space-1));
+  cursor: pointer;
+  font-size: var(--apple-type-subheadline-size);
+  line-height: 1;
+  transition: transform var(--apple-duration-fast) var(--apple-ease-standard);
+}
+
+.device-stepper button:active {
+  transform: scale(0.97);
+}
+
+.device-stepper output {
+  min-inline-size: 28px;
+  font-size: var(--apple-type-caption-1-size);
+  font-weight: var(--apple-type-headline-weight);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.device-switch {
+  --device-switch-track: 31px;
+  --device-switch-knob: 27px;
+  --device-switch-inset: 2px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  inline-size: 51px;
+  block-size: var(--apple-target-min);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.device-switch::before {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  inset-block: calc((100% - var(--device-switch-track)) / 2);
+  background: var(--apple-color-fill-2);
+  border-radius: var(--apple-radius-pill);
+  transition: background-color var(--apple-duration-control) var(--apple-ease-standard);
+}
+
+.device-switch span {
+  position: relative;
+  z-index: 1;
+  inline-size: var(--device-switch-knob);
+  block-size: var(--device-switch-knob);
+  margin-inline-start: var(--device-switch-inset);
+  background: rgb(255 255 255);
+  border-radius: var(--apple-radius-pill);
+  box-shadow: var(--apple-shadow-small);
+  transform: translateX(0);
+  transition: transform var(--apple-duration-control) var(--apple-ease-out);
+}
+
+.device-switch[aria-checked='true']::before {
+  background: var(--apple-color-tint);
+}
+
+.device-switch[aria-checked='true'] span {
+  transform: translateX(20px);
+}
+
+.device-detail {
+  color: var(--apple-color-label-3);
+  font-size: var(--apple-type-title-2-size);
+  line-height: 1;
+}
+
+.device-note {
+  margin: 0;
+  color: var(--apple-color-label-2);
+  font-size: var(--apple-type-caption-2-size);
+  line-height: var(--apple-type-caption-2-line);
+  text-align: center;
+}
+
+.device-home {
+  inline-size: 120px;
+  block-size: 5px;
+  margin: 0 auto var(--apple-space-3);
+  background: var(--apple-color-label);
+  border-radius: var(--apple-radius-pill);
+  opacity: 0.25;
+}
+
+.device-caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--apple-space-2);
+  width: 100%;
+  color: var(--apple-color-label-2);
+  font-size: var(--apple-type-caption-2-size);
+  line-height: var(--apple-type-caption-1-line);
+  text-align: center;
+}
+
+.device-caption span {
+  padding: var(--apple-space-1) var(--apple-space-3);
+  background: var(--apple-color-fill);
+  border-radius: var(--apple-radius-pill);
+  overflow-wrap: anywhere;
+}
+
+.device-caption span:first-child {
+  padding-inline: 0;
+  background: transparent;
+  color: var(--apple-color-label);
+  font-weight: var(--apple-type-headline-weight);
 }
 
 .prompt-preview {
@@ -1425,16 +1562,8 @@ input {
     padding-top: calc(var(--apple-space-11) * 1.5);
   }
 
-  .router-surface__body {
-    grid-template-areas:
-      'prompt-label'
-      'prompt'
-      'flow'
-      'output-label'
-      'outputs'
-      'refs-label'
-      'refs';
-    grid-template-columns: minmax(0, 1fr);
+  .device-frame {
+    max-width: 380px;
   }
 
   .bento__item,
@@ -1496,6 +1625,18 @@ input {
   .hero__actions .button,
   .hero__actions .text-link {
     width: 100%;
+  }
+
+  .device-frame {
+    max-width: 340px;
+  }
+
+  .device-frame__screen {
+    min-height: 520px;
+  }
+
+  .device-row {
+    padding-inline: var(--apple-space-3);
   }
 
   .proof-strip {
@@ -1590,12 +1731,6 @@ input {
   .js .wipe.is-visible span {
     opacity: 1;
     transform: none;
-  }
-
-  .router-surface__pulse {
-    inset-inline-start: 50%;
-    transform: translate(-50%, -50%);
-    animation: none;
   }
 
   .button:active:not(:disabled),

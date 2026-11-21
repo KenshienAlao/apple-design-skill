@@ -319,6 +319,66 @@ function wireFieldStates() {
   });
 }
 
+function wireHeroDevice() {
+  const frame = document.querySelector('[data-device-frame]');
+  if (!frame) return;
+
+  const appearanceButtons = Array.from(frame.querySelectorAll('[data-device-appearance]'));
+  const stepButtons = Array.from(frame.querySelectorAll('[data-device-step]'));
+  const radiusValue = frame.querySelector('[data-device-radius-value]');
+  const focusSwitch = frame.querySelector('[data-device-switch]');
+  const focusLabel = frame.querySelector('[data-device-focus-label]');
+  const tokenBg = document.querySelector('[data-token-bg]');
+  const tokenRadius = document.querySelector('[data-token-radius]');
+  const tokenTint = document.querySelector('[data-token-tint]');
+  const radii = [10, 14, 20, 28];
+  let radiusIndex = 1;
+
+  const updateTokens = () => {
+    const styles = getComputedStyle(frame);
+    const read = (name, target) => {
+      if (target) target.textContent = `${name}: ${styles.getPropertyValue(name).trim()}`;
+    };
+
+    read('--apple-color-bg', tokenBg);
+    read('--apple-radius-medium', tokenRadius);
+    read('--apple-color-tint', tokenTint);
+  };
+
+  const applyAppearance = (appearance) => {
+    frame.dataset.appearance = appearance;
+    frame.style.setProperty('--segment-index', appearance === 'dark' ? '1' : '0');
+    for (const button of appearanceButtons) {
+      button.setAttribute('aria-pressed', String(button.dataset.deviceAppearance === appearance));
+    }
+    updateTokens();
+  };
+
+  for (const button of appearanceButtons) {
+    on(button, 'click', () => applyAppearance(button.dataset.deviceAppearance === 'dark' ? 'dark' : 'light'));
+  }
+
+  for (const button of stepButtons) {
+    on(button, 'click', () => {
+      const step = Number(button.dataset.deviceStep);
+      radiusIndex = Math.min(radii.length - 1, Math.max(0, radiusIndex + step));
+      frame.style.setProperty('--apple-radius-medium', `${radii[radiusIndex]}px`);
+      if (radiusValue) radiusValue.textContent = String(radii[radiusIndex]);
+      updateTokens();
+    });
+  }
+
+  if (focusSwitch) {
+    on(focusSwitch, 'click', () => {
+      const enabled = focusSwitch.getAttribute('aria-checked') !== 'true';
+      focusSwitch.setAttribute('aria-checked', String(enabled));
+      if (focusLabel) focusLabel.textContent = enabled ? 'On' : 'Off';
+    });
+  }
+
+  applyAppearance(frame.dataset.appearance === 'dark' ? 'dark' : 'light');
+}
+
 function wireRouter() {
   const chips = Array.from(document.querySelectorAll('[data-route]'));
   const panels = Array.from(document.querySelectorAll('[data-route-panel]'));
@@ -350,6 +410,7 @@ function init() {
   wireCopyButtons();
   wireNavigation();
   wireSpecimenControls();
+  wireHeroDevice();
   wireFieldStates();
   wireRouter();
   showVerificationResults();
