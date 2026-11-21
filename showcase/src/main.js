@@ -3,18 +3,18 @@ import verification from './verification.json';
 const PLATFORM_COPY = {
   web: {
     badge: 'Web controls',
-    names: 'Framework names: button · role=switch input · element',
-    note: 'Native anatomy: browser chrome · URL + app nav · 44px targets.'
+    names: 'Framework names: button, role=switch input, element',
+    note: 'Native anatomy: browser chrome, URL and app nav, 44px targets.'
   },
   ios: {
     badge: 'iOS controls',
-    names: 'Framework names: Button · Toggle · Text',
-    note: 'Native anatomy: nav/toolbar · nav stack · 44pt targets.'
+    names: 'Framework names: Button, Toggle, Text',
+    note: 'Native anatomy: nav and toolbar, nav stack, 44pt targets.'
   },
   android: {
     badge: 'Android controls',
-    names: 'Framework names: Button · Switch · Text',
-    note: 'Native anatomy: top app bar · nav rail / bottom nav / back · 48dp targets.'
+    names: 'Framework names: Button, Switch, Text',
+    note: 'Native anatomy: top app bar, nav rail or bottom nav and back, 48dp targets.'
   }
 };
 
