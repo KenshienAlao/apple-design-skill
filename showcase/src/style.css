@@ -458,6 +458,7 @@ input {
 
 .router-surface__flow {
   position: relative;
+  container-type: inline-size;
   grid-area: flow;
   display: flex;
   align-items: center;
@@ -466,7 +467,6 @@ input {
 
 .router-surface__track {
   position: relative;
-  container-type: inline-size;
   width: 100%;
   height: var(--apple-space-1);
   background: var(--apple-color-fill-2);
