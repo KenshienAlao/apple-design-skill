@@ -21,12 +21,14 @@ The house style inherits four traditions:
 
 The house position: use depth only when it explains a layer relationship. A shadow with no layering is decoration.
 
-## 3. The four HIG principles restated
+## 3. The house design vocabulary
+
+The classic HIG trio — Clarity, Deference, Depth — plus one house addition. Apple's current three principles (Purpose, Agency, Responsibility) and the full mapping live in `apple-hig-mapping-apple-style.md`.
 
 - **Clarity:** text is legible, icons are unambiguous, state is visible.
 - **Deference:** content leads; chrome recedes and appears only when needed.
 - **Depth:** layers and motion create a comprehensible spatial model.
-- **Constraint:** a small vocabulary used consistently beats a large one used loosely.
+- **Constraint:** a small vocabulary used consistently beats a large one used loosely. House addition, not an Apple principle.
 
 ## 4. Craft heuristics
 

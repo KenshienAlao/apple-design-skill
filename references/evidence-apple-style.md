@@ -75,7 +75,7 @@ Example:
 ```text
 Body text contrast 4.5:1 — Must (WCAG 2.2 AA, SC 1.4.3).
 Sheet present duration 500ms — Should (implementation default; tune to content).
-A single accent per screen — Should (house rule; one of four HIG principles is deference).
+A single accent per screen — Should (house deference default; not an Apple principle).
 ```
 
 ## 4. Verification before shipping a rule
