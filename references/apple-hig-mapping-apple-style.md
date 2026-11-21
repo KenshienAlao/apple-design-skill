@@ -6,6 +6,8 @@ This is a distillation by topic, not a reproduction of the HIG table of contents
 
 Checked against Apple's published HIG JSON endpoints on 2026-11-21. HIG change logs on those pages run through 2026-10-28. Numbers below are paraphrased contracts, not quoted text; re-verify a cited number before treating it as current.
 
+The full reachable graph was inventoried at 173 content pages; 172 page bodies were extracted. That crawl feeds the applied findings in the owning reference files. It does not turn this skill into a HIG mirror.
+
 ## 1. Scope
 
 This file owns:
@@ -15,6 +17,7 @@ This file owns:
 - a short claim-translation table for review write-ups
 - the canonical source links and the date they were checked
 - routing from HIG topic namespaces to the house file that answers them
+- applied findings from the full reachable HIG corpus, kept in their owning reference files
 
 This file does not own:
 
@@ -53,14 +56,18 @@ Rules:
 | Icons and symbols | `design-apple-style.md`, `assets/sf-symbols-map.json` | consistent icon family, semantic aliases |
 | Materials and depth | `design-apple-style.md`, `macos-windowing-apple-style.md` | layered surfaces, hairlines, restrained elevation |
 | Motion | `animations-apple-style.md`, `scroll-motion-apple-style.md` | 1:1 drag, spring release, Reduce Motion |
-| Input and gestures | `perceived-performance-and-input-apple-style.md` | pointer, touch, keyboard, scroll ownership |
+| Input and gestures | `perceived-performance-and-input-apple-style.md`, `accessibility-apple-style.md` | pointer, touch, keyboard, scroll ownership, gesture fallbacks |
 | Navigation patterns | `navigation-models-apple-style.md`, `apple-platform-playbooks-apple-style.md` | stack, tabs, sheets, split view, back |
-| Components and controls | `components-apple-style.md`, `assets/apple-component-fidelity-map.json` | states, targets, native control first |
-| Feedback and status | `state-and-feedback-apple-style.md`, `haptics-and-sound-apple-style.md` | loading, empty, error, commit haptics |
+| Component choice by intent | `components-apple-style.md`, `assets/apple-component-fidelity-map.json` | alerts vs. action sheets, fields, toggles, sliders, lists, toolbars |
+| Feedback and status | `state-and-feedback-apple-style.md`, `haptics-and-sound-apple-style.md` | loading, empty, error, progress, commit haptics |
+| Notifications | `state-and-feedback-apple-style.md`, `qol-patterns-apple-style.md` | consent, urgency, grouping, notification center |
+| Onboarding and settings | `qol-patterns-apple-style.md`, `content-apple-style.md` | interactive teaching, good defaults, minimal settings |
+| Search, undo, data entry | `qol-patterns-apple-style.md`, `state-and-feedback-apple-style.md` | one search location, explicit undo, prefill and validation |
 | Content and copy | `content-apple-style.md`, `web-marketing-language-apple-style.md` | calm verbs, benefit-led labels, localization |
 | Inclusion | `content-apple-style.md`, `accessibility-apple-style.md` | plain language, no stereotypes, gender-neutral copy |
 | Privacy | `qol-patterns-apple-style.md`, `state-and-feedback-apple-style.md` | just-in-time permission, clear purpose strings, on-device work |
 | Accessibility | `accessibility-apple-style.md` | name, role, state, focus, contrast, reflow |
+| Platform and game guides | `apple-platform-playbooks-apple-style.md` | iOS, iPadOS, macOS, watchOS, visionOS, tvOS, games |
 | App essentials and quality | `qol-patterns-apple-style.md`, `qa-apple-style.md` | autosave, undo, restoration, recovery |
 
 ## 4. Documented numbers worth routing to
@@ -98,6 +105,7 @@ Each row names the HIG topic and the house strength. These are contracts to chec
 | Inclusion | Address people as "you," not "the user." Avoid gendered, culture-specific, and colloquial phrasing. | Should |
 | Privacy | Request only the data a feature needs, at the moment it is needed; purpose strings are short, active, sentence case, with a period. | Must |
 | Privacy | Prefer on-device processing, keychain storage, and passkeys/2FA/biometrics over plain-text secrets. | Must for secret storage; Should for the rest |
+| Notifications | Use the Time Sensitive interruption level only for an event happening now or within about one hour. | Must when using the level |
 
 Numeric values above are documented platform contracts as of the checked date. If a platform number changes, update this table and the citation; do not rewrite the corpus.
 
@@ -107,17 +115,38 @@ When a finding arrives named after an HIG namespace, route it here instead of in
 
 | HIG namespace | Representative topics | Answer in |
 |---|---|---|
-| Patterns | modality, onboarding, loading, searching, settings, undo-and-redo, managing-notifications, drag-and-drop, feedback, entering-data | `state-and-feedback-apple-style.md`, `navigation-models-apple-style.md`, `qol-patterns-apple-style.md`, `content-apple-style.md` |
+| Patterns / modality and presentation | modality, sheets, alerts, action sheets | `navigation-models-apple-style.md`, `components-apple-style.md` |
+| Patterns / notifications and feedback | notifications, managing-notifications, feedback | `state-and-feedback-apple-style.md` |
+| Patterns / onboarding and settings | onboarding, offering-help, settings, launching | `qol-patterns-apple-style.md`, `navigation-models-apple-style.md` |
+| Patterns / search and history | searching, search fields, recent items | `qol-patterns-apple-style.md`, `components-apple-style.md` |
+| Patterns / undo and data entry | undo-and-redo, entering-data, drag-and-drop | `qol-patterns-apple-style.md` |
+| Patterns / loading | loading, progress indicators, status | `state-and-feedback-apple-style.md` |
 | Components / content | text, images, icons | `components-apple-style.md`, `design-apple-style.md` |
 | Components / layout-and-organization | split views, stacks, grids | `layout-apple-style.md`, `navigation-models-apple-style.md` |
-| Components / menus-and-actions | buttons, menus, context menus | `components-apple-style.md`, `assets/apple-component-fidelity-map.json` |
+| Components / menus-and-actions | buttons, menus, context menus, toolbars | `components-apple-style.md`, `assets/apple-component-fidelity-map.json` |
 | Components / navigation-and-search | tab bars, navigation bars, search fields | `navigation-models-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
 | Components / presentation | sheets, alerts, popovers, tooltips | `navigation-models-apple-style.md`, `state-and-feedback-apple-style.md` |
-| Components / selection-and-input | text fields, sliders, toggles, pickers | `components-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| Components / selection-and-input | text fields, sliders, toggles, pickers, segmented controls | `components-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
 | Components / status | progress indicators, badges, empty states | `state-and-feedback-apple-style.md` |
 | Components / system-experiences | system-provided flows | `apple-platform-playbooks-apple-style.md` |
+| Inputs | keyboards, voiceover, pointing devices, gestures | `accessibility-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| Platform design | iOS, iPadOS, macOS, watchOS, visionOS, tvOS, games | `apple-platform-playbooks-apple-style.md` |
 
 These are topic labels for routing, not a reproduction of the HIG contents list.
+
+### Applied intent routing
+
+Use the intent, not the component name alone, when translating a finding.
+
+| Intent | Answer in |
+|---|---|
+| critical acknowledgment | `components-apple-style.md` alerts |
+| in-progress choice | `components-apple-style.md` action sheets |
+| self-contained task | `navigation-models-apple-style.md` modality |
+| find anything vs. filter current view | `qol-patterns-apple-style.md` search patterns |
+| per-item command vs. persistent command | `components-apple-style.md` context menus vs. toolbars |
+| immediate on/off vs. continuous value vs. discrete choice | `components-apple-style.md` toggles, sliders, segmented controls, pickers |
+| progress over time vs. transient status | `state-and-feedback-apple-style.md` progress and inline feedback |
 
 ## 6. Claim translation
 
@@ -156,6 +185,8 @@ Public HIG entry points used for this distillation:
 - Writing: `.../writing`; Inclusion: `.../inclusion`; Privacy: `.../privacy`
 - Right to left: `.../right-to-left`; SF Symbols: `.../sf-symbols`; Gestures: `.../gestures`
 - Pointing devices: `.../pointing-devices`; Patterns: `.../patterns`; Components: `.../components`
+- Platform design: `.../designing-for-ios`, `.../designing-for-ipados`, `.../designing-for-macos`, `.../designing-for-watchos`, `.../designing-for-visionos`, `.../designing-for-tvos`, `.../designing-for-games`
+- Applied pattern topics: `.../modality`, `.../onboarding`, `.../loading`, `.../searching`, `.../settings`, `.../undo-and-redo`, `.../notifications`, `.../feedback`, `.../drag-and-drop`, `.../entering-data`, `.../voiceover`, `.../keyboards`
 - Machine-readable form: `https://developer.apple.com/tutorials/data/design/human-interface-guidelines/<slug>.json`
 
 Rules for these links:
@@ -182,6 +213,7 @@ Those exclusions are house rules from `evidence-apple-style.md` and `upstream-so
 - No observation is frozen as an evergreen law.
 - No Apple-owned asset is referenced.
 - Apple's three principles are never confused with the house working tests.
+- Applied HIG findings live in the owning reference file, not in a bulk HIG copy.
 - Documented numbers carry the check date from section 7.
 
 ## Related

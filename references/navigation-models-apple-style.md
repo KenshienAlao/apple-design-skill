@@ -171,6 +171,19 @@ Should: open external URLs through the platform's standard handler.
 - Are focus and scroll restored?
 - Is the route model serializable?
 
+## 11. Applied HIG navigation refinements
+
+Source labels name HIG topics and are routing hints, not copied text. Use the strength labels from `evidence-apple-style.md`.
+
+- Must: use modality for a self-contained commitment or critical acknowledgment, not optional browsing. Source: `modality`. Audit: each modal has one clear commit or dismiss action; no modal wraps a reading task.
+- Must: keep modal tasks short, named, and single-path. Source: `modality`. Audit: the modal title names the task; nested navigation does not create a second app inside the modal.
+- Must: preserve parent state across a modal round-trip. Source: `modality`. Audit: scroll position, selection, and in-progress input survive open and close.
+- Should: replace content inside one sheet instead of stacking modals. Source: `modality`, `sheets`. Audit: at most one modal layer; no nested dialog chains.
+- Must: persist split-view selection and detail across collapse and expand. Source: `split-views`. Audit: resizing to a collapsed column keeps selection; re-expanding restores the detail pane.
+- Must: use tabs for peer top-level destinations, never wizard steps or filters. Source: `tab-bars`. Audit: every tab maps to a section, not a stage or temporary state.
+- Should: keep context menus for commands likely needed on the selected item now. Source: `context-menus`. Audit: items are short, relevant, and duplicated in a persistent interface surface.
+- Must: restore the last task on cold launch: route, document, scroll, selection, and unsaved input. Source: `launching`. Audit: relaunch returns to the prior task without retracing steps.
+
 ## Related
 
 - `layout-apple-style.md`

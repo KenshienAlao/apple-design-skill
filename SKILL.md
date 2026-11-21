@@ -36,6 +36,7 @@ Do not load `_vendor/` during normal work. It is research material behind the pr
 | Apple platform chrome: detents, large titles, toolbars, sidebars, widgets, Crown, ornaments | `references/apple-platform-playbooks-apple-style.md` |
 | SwiftUI/UIKit recipes: geometry, springs, scroll read, focus, shortcuts, named graphics | `references/apple-native-recipes-apple-style.md` |
 | HIG topic mapping and safe claim wording | `references/apple-hig-mapping-apple-style.md` |
+| applied HIG patterns: notifications, onboarding, search, settings, undo, data entry, drag/drop, feedback, help | `references/state-and-feedback-apple-style.md`, `references/qol-patterns-apple-style.md`, `references/content-apple-style.md` |
 | scored Apple craft rubric with hard caps | `references/apple-review-rubric-apple-style.md` |
 | component and native API map by Apple platform | `assets/apple-component-fidelity-map.json` |
 | macOS windows, toolbar, sidebar, inspector, menu bar, restoration | `references/macos-windowing-apple-style.md` |
@@ -230,6 +231,7 @@ Applied rules:
 - Flagship page language lives only in `web-marketing-language-apple-style.md`.
 - Component states live only in `components-apple-style.md`.
 - Apple HIG topic mapping lives only in `apple-hig-mapping-apple-style.md`.
+- Applied HIG rules live in the owning reference file, never as a bulk HIG copy.
 - Apple platform chrome recipes live only in `apple-platform-playbooks-apple-style.md`.
 - Native SwiftUI/UIKit recipes live only in `apple-native-recipes-apple-style.md`.
 - Scored Apple craft rubric lives only in `apple-review-rubric-apple-style.md`.

@@ -22,7 +22,7 @@ No slash command is required. The skill works from normal prompts.
 
 This release turns the earlier craft starter into a full build and review system.
 
-- **Apple-depth layer.** [HIG topic mapping](references/apple-hig-mapping-apple-style.md), [platform playbooks](references/apple-platform-playbooks-apple-style.md), [native SwiftUI/UIKit recipes](references/apple-native-recipes-apple-style.md), [component/API fidelity map](assets/apple-component-fidelity-map.json), and a [scored craft rubric](references/apple-review-rubric-apple-style.md) with hard caps.
+- **Apple-depth layer.** [HIG topic mapping](references/apple-hig-mapping-apple-style.md) with applied pattern rules in the owning refs, [platform playbooks](references/apple-platform-playbooks-apple-style.md), [native SwiftUI/UIKit recipes](references/apple-native-recipes-apple-style.md), [component/API fidelity map](assets/apple-component-fidelity-map.json), and a [scored craft rubric](references/apple-review-rubric-apple-style.md) with hard caps.
 - **Flagship web craft.** [Restraint and anti-slop](references/restraint-and-antislop-apple-style.md), [scroll motion](references/scroll-motion-apple-style.md), [scrollytelling](references/scrollytelling-apple-style.md), [media delivery](references/media-assets-and-delivery-apple-style.md), [web engineering](references/web-engineering-apple-style.md), and [page language](references/web-marketing-language-apple-style.md).
 - **Interaction depth.** [Perceived performance](references/perceived-performance-and-input-apple-style.md), [state and feedback](references/state-and-feedback-apple-style.md), [navigation models](references/navigation-models-apple-style.md), haptics, QoL patterns, and platform adapters.
 - **Verification.** [11 script files](scripts/) cover links, static audit, token lint, contrast, accessibility, code hygiene, motion probing, token generation, rendered a11y, visual diff, and token helpers. CI runs `npm run verify`.
@@ -61,6 +61,7 @@ Common lanes:
 
 - native app builds: [design](references/design-apple-style.md), [animations](references/animations-apple-style.md), [tokens](references/tokens-apple-style.md), [components](references/components-apple-style.md), [state](references/state-and-feedback-apple-style.md), [accessibility](references/accessibility-apple-style.md), [content](references/content-apple-style.md)
 - Apple-platform builds: [HIG mapping](references/apple-hig-mapping-apple-style.md), [platform playbooks](references/apple-platform-playbooks-apple-style.md), [native recipes](references/apple-native-recipes-apple-style.md), [fidelity map](assets/apple-component-fidelity-map.json)
+- HIG pattern decisions: [state and feedback](references/state-and-feedback-apple-style.md), [navigation](references/navigation-models-apple-style.md), [quality patterns](references/qol-patterns-apple-style.md), [components](references/components-apple-style.md), [accessibility](references/accessibility-apple-style.md)
 - flagship web: [restraint](references/restraint-and-antislop-apple-style.md), [page language](references/web-marketing-language-apple-style.md), [web engineering](references/web-engineering-apple-style.md), [media](references/media-assets-and-delivery-apple-style.md), [scroll motion](references/scroll-motion-apple-style.md), [scrollytelling](references/scrollytelling-apple-style.md)
 - audits: [review workflow](references/review-workflow-apple-style.md), [QA checklist](references/qa-apple-style.md), [anti-patterns](references/anti-patterns-apple-style.md), [evidence strength](references/evidence-apple-style.md), [scored rubric](references/apple-review-rubric-apple-style.md)
 
@@ -93,7 +94,7 @@ A pass needs the numeric floor, complete evidence, and no unresolved material fi
 - Native target sizes: 44pt iOS, 48dp Android, 44px web, pointer-appropriate desktop.
 - Audit verdicts use Must / Should / May strength from [evidence-apple-style.md](references/evidence-apple-style.md).
 - Static file counts are packaging facts, not measured per-request context loads.
-- Full 157-topic HIG mirroring is intentionally out of scope; the HIG layer distills and maps the topics this skill actually applies.
+- Full HIG mirroring is intentionally out of scope. The reachable graph was inventoried at 173 content pages with 172 bodies extracted on 2026-11-21; the HIG layer distills and maps the topics this skill actually applies.
 
 ## Repository and packaging
 

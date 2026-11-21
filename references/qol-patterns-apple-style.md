@@ -201,6 +201,22 @@ Rules:
 - Offline state visible.
 - Recovery names restored content.
 
+## 17. Applied HIG quality patterns
+
+Source labels name HIG topics and are routing hints, not copied text. Use the strength labels from `evidence-apple-style.md`.
+
+- Must: teach through immediate, interactive value; keep first-run instruction short and make tutorials easy to find later. Source: `onboarding`, `offering-help`. Audit: first-run steps unlock visible capability; help is contextual, inclusive, and skippable.
+- Must: defer permissions, sign-in, and profile setup until a feature needs them. Source: `onboarding`, `managing-accounts`. Audit: no upfront wall that blocks browsing; account value is explained where sign-in is required.
+- Should: prefer passkeys and available biometric or keychain authentication over app-specific passwords; name the actual method in the button label. Source: `managing-accounts`. Audit: "Sign In with Face ID" is used only where Face ID exists; no app-level biometric toggle duplicates the system setting.
+- Must: prefill fields from known system, prior, or contact data and keep defaults safe, reversible, and editable before submit. Source: `entering-data`, `settings`. Audit: no field asks for data the platform already exposes; defaults do not need a support article to undo.
+- Should: validate format while input is active but assert the error only on blur or submit. Source: `entering-data`, `text-fields`. Audit: no red state on first keystroke; errors carry an inline fix hint.
+- Must: keep undo and redo history per document or context, with one-gesture reversal of the last action. Source: `undo-and-redo`. Audit: Cmd/Ctrl+Z reverses the last edit; labels name the result; history resets on context switch.
+- Must: give undo a visible result when the changed content is offscreen. Source: `undo-and-redo`. Audit: undo scrolls to or highlights the restored content.
+- Must: keep search in one primary location with recents, suggestions, a clear scope label, and result filters where sections truly differ. Source: `searching`, `search-fields`. Audit: empty field shows recents; typing suggests; scope never disappears; clear resets to recents.
+- Should: group settings by task and show each row's effective current value inline. Source: `settings`. Audit: grouping matches task goals; state is visible without opening every subpage.
+- Must: minimize settings and avoid duplicating systemwide options. Source: `settings`. Audit: no custom Dark Mode, accessibility, or authentication switch that shadows the system setting.
+- Should: ask for a rating only after meaningful engagement at a natural pause, using the system prompt where available. Source: `ratings-and-reviews`. Audit: no first-launch prompt; repeated requests are spaced and tied to new engagement.
+
 ## Related
 
 - `components-apple-style.md`

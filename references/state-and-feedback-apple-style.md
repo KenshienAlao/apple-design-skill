@@ -220,6 +220,19 @@ Rules:
 - Is optimistic UI reversible and idempotent?
 - Is validation timed to the check type?
 
+## 12. Applied HIG pattern refinements
+
+Source labels name HIG topics and are routing hints, not copied text. Use the strength labels from `evidence-apple-style.md`.
+
+- Must: request notification permission at a moment of demonstrated value, not cold launch; keep a notification-settings surface available afterward. Source: `notifications`. Audit: no first-launch permission prompt; a contextual trigger and category settings exist.
+- Should: keep each notification to one glanceable idea and route detail into the app. Source: `notifications`. Audit: title and body state who/what/why; tap opens the relevant destination; no private data in the banner.
+- Should: coalesce repeated events from one source into a counted, expandable stack. Source: `notifications`. Audit: a burst becomes one row with a count and a way to inspect individuals.
+- Must: expose per-category notification controls and time-based delivery instead of one global switch. Source: `managing-notifications`. Audit: settings show distinct categories and a quiet-hours or scheduled-delivery control.
+- Must: reserve Time Sensitive interruption for information that matters now or within about an hour. Source: `managing-notifications`. Audit: no evergreen marketing or routine update uses Time Sensitive.
+- Must: keep progress real, monotonic, and determinate as soon as a total is known. Source: `progress-indicators`, `loading`. Audit: value never decreases; no fake reverse animation; indeterminate progress switches on known total.
+- Should: keep nonblocking work in an inline or toolbar status surface. Source: `progress-indicators`. Audit: long background sync is visible without taking over the page.
+- Should: keep low-priority updates in a notification center instead of interrupting with a banner. Source: `notifications`. Audit: noncritical events persist in a list with no modal or banner.
+
 ## Related
 
 - `perceived-performance-and-input-apple-style.md`

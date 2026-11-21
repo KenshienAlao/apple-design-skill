@@ -19,6 +19,8 @@ Should: keep one primary action per screen in the toolbar or navigation item.
 
 Must: handle system back and preserve in-progress input.
 
+Must: keep the primary action reachable with one hand and clear of safe-area insets. Source: `designing-for-ios`. Audit: primary CTA is in the thumb zone; no control sits under the notch or home indicator.
+
 ### Sheets
 
 - `UISheetPresentationController` detents: `.medium` and `.large`; `.medium` only when the content genuinely fits.
@@ -58,6 +60,8 @@ Should: treat these surfaces as read-mostly; keep interaction to one obvious act
 
 Must: keep navigation valid with keyboard only.
 
+Must: use width through split views and multiple columns; hover and focus are real states alongside touch. Source: `designing-for-ipados`. Audit: wide layout is not a stretched phone view; multitasking and pointer input keep the task intact.
+
 Should: use column resizing and window size classes rather than a single breakpoint.
 
 ## 3. macOS
@@ -87,6 +91,8 @@ See `macos-windowing-apple-style.md` for window rules.
 
 Must: the primary action is reachable without scrolling when possible.
 
+Must: keep one idea per screen and assume a seconds-long session; complications and notifications are first-class surfaces. Source: `designing-for-watchos`. Audit: screen has one purpose; target size holds; a glanceable surface is considered.
+
 Should: keep text short and use Dynamic Type at the small end of the scale.
 
 ## 5. visionOS
@@ -101,7 +107,31 @@ Must: never use depth to imply hierarchy that is not functional.
 
 Should: keep one plane of content dominant and let ornaments recede.
 
-## 6. Cross-platform transfer table
+Should: keep content at a comfortable reach distance and tolerate gaze jitter with forgiving targets. Source: `designing-for-visionos`. Audit: windows fit the viewing space; targets remain selectable without precise aim; no edge-to-edge opaque chrome.
+
+## 6. tvOS
+
+- Design for a viewing distance of roughly ten feet: large type, large targets, and one visible focus.
+- Focus movement is the primary navigation path; never leave focus ambiguous or split between regions.
+- Minimize text entry; prefer choices, search, or companion-device input.
+- Titles, metadata, and status stay glanceable from the couch.
+
+Must: keep the focused item unmistakable and primary actions reachable without long typing. Source: `designing-for-tvos`. Audit: focus is visible, targets are sized for distance, and long text fields are absent.
+
+Should: keep one dominant content region and let chrome recede during playback.
+
+## 7. Games
+
+- Prioritize immediate visual and audio response to input.
+- Make pause and resume explicit and reachable without leaving the task.
+- Persist progress, inventory, and settings when the app backgrounds or loses focus.
+- Keep overlays legible at the target display size and input distance.
+
+Must: save progress on background and expose pause/resume from the main interaction path. Source: `designing-for-games`. Audit: input feedback is immediate; pause is reachable; state survives interruption.
+
+Should: defer setup detail until the first moment the game needs it.
+
+## 8. Cross-platform transfer table
 
 | Idea | iOS | iPadOS | macOS | watchOS | visionOS |
 |---|---|---|---|---|---|
@@ -111,7 +141,12 @@ Should: keep one plane of content dominant and let ornaments recede.
 | global commands | toolbar item | toolbar item | menu bar | crown + action | gaze target |
 | glanceable state | widget / Live Activity | widget | menu bar item | complication | window badge |
 
-## 7. Anti-patterns
+| Extended surface | Primary rule | Audit |
+|---|---|---|
+| tvOS | one visible focus, large targets, minimal typing | focus is unambiguous from a distance |
+| games | instant input response, explicit pause, background persistence | state survives interruption |
+
+## 9. Anti-patterns
 
 - stretched iPhone layout on iPad
 - bottom tab bar on macOS

@@ -419,6 +419,23 @@ Rules:
 - hover and focus are distinct visible states.
 - destructive actions are separated and confirmable.
 
+## 32. Applied HIG component refinements
+
+Source labels name HIG topics and are routing hints, not copied text. Use the strength labels from `evidence-apple-style.md`.
+
+- Must: give every custom button a visible press state and an action-naming label. Source: `buttons`. Audit: label is a verb phrase; press state is instant; destructive role is distinct and not the default focus.
+- Must: reserve alerts for critical, actionable information. Source: `alerts`. Audit: no alert for routine or undoable deletes; message is essential-only with a useful action.
+- Should: use an action sheet for short choices attached to an intentional action, with Cancel and a separated destructive option. Source: `action-sheets`. Audit: choices are few, current, and cancelable; the safe action is visually primary.
+- Must: give text fields a persistent visible purpose label and show format or clear affordances only when relevant. Source: `text-fields`. Audit: placeholder is not the only label; clear button appears only with content; keyboard type matches input.
+- Should: make search fields refine results as text changes, expose a clear action, and reserve scope bars for genuinely distinct scopes. Source: `search-fields`. Audit: live results, clear resets to recents, no scope bar for one scope.
+- Must: keep toggle state obvious through shape or icon as well as color, and apply the effect without a separate save. Source: `toggles`. Audit: on/off reads without color; no save button on a toggle-only setting.
+- Should: show the current slider value numerically and mark discrete stops. Source: `sliders`. Audit: value updates during drag; minimum stays leading or bottom, maximum trailing or top.
+- Must: use segmented controls for closely related views, filters, or state on the same object, not a primary navigation path or destructive action. Source: `segmented-controls`. Audit: segments stay in one logical group; control type is consistent; destructive actions do not live in the group.
+- Should: keep the selected picker value visible and default to the common, predictable choice. Source: `pickers`. Audit: long lists are searchable or ordered; hidden values can be predicted.
+- Must: keep list rows uniform, open full detail on selection, and leave a visible primary action alongside swipe or context actions. Source: `lists-and-tables`. Audit: density is stable; tap opens detail; hidden actions complement rather than replace the main path.
+- Should: keep toolbars to a few context-relevant commands with graceful overflow. Source: `toolbars`. Audit: primary actions are few; overflow holds the rest; narrow widths do not truncate labels.
+- Must: keep charts accessible and never hide critical information behind interaction. Source: `charts`, `charting-data`. Audit: values have accessible labels; keyboard and VoiceOver paths exist; changes are announced without motion.
+
 ## Universal target sizes
 
 | Platform | Minimum target |

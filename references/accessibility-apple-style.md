@@ -212,6 +212,18 @@ Reduce Motion maps across platforms:
 - Android `Settings.Global.ANIMATOR_DURATION_SCALE` / Compose `MotionDurationScale`
 - Flutter `MediaQuery.disableAnimations`
 
+## 13. Applied HIG accessibility refinements
+
+Source labels name HIG topics and are routing hints, not copied text. Use the strength labels from `evidence-apple-style.md`.
+
+- Must: give every control a meaningful label, value, and traits, and announce dynamic changes through the platform announcement or live-region API. Source: `voiceover`. Audit: controls are labeled; async results and errors are announced once.
+- Should: group related elements into one accessible unit and keep reading order aligned with visual order. Source: `voiceover`. Audit: composite controls read as one item; focus order matches the layout.
+- Must: give every custom gesture a standard-control or screen-reader-action alternative. Source: `voiceover`, `gestures`. Audit: drag, pinch, or swipe-only actions have a button, menu, or rotor equivalent.
+- Must: reach every control by keyboard in logical order with a visible focus ring and standard keys. Source: `keyboards`. Audit: Tab reaches all controls; Enter and Space activate; arrow keys work in composite widgets; Escape dismisses transient UI.
+- Must: trap focus only in a true modal and return it to the invoking control on dismiss. Source: `keyboards`, `sheets`. Audit: Tab escapes nonmodal views; modal close restores focus to the opener.
+- Must: make no feature pointer-only. Source: `keyboards`, `pointing-devices`. Audit: text entry, reordering, selection, and data manipulation all have keyboard paths.
+- Should: describe charts and infographics with a concise summary plus accessible values and interactions. Source: `charts`, `voiceover`. Audit: chart values and trends are available without sight; interactions use accessible elements.
+
 ## QA checklist
 
 - All controls reachable by keyboard / switch access / TalkBack.
