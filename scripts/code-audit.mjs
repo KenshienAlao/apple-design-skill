@@ -194,6 +194,22 @@ function lineAt(text, index) {
   return line;
 }
 
+function scanThemePairs(text) {
+  const findings = [];
+  for (const match of text.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    const body = match[2];
+    if (!/--apple-color-bg\s*:/.test(body)) continue;
+    if (/--apple-color-label\s*:/.test(body)) continue;
+    findings.push({
+      id: 'theme-label-pair',
+      severity: 'warning',
+      line: lineAt(text, match.index ?? 0),
+      message: 'Theme block sets --apple-color-bg without --apple-color-label. Pair background and label.'
+    });
+  }
+  return findings;
+}
+
 function walk(target) {
   const found = [];
   let stat;
@@ -241,6 +257,8 @@ function scanFile(file) {
       void match;
     }
   }
+
+  if (ext === '.css' || ext === '.scss') findings.push(...scanThemePairs(text));
 
   return { file, findings };
 }

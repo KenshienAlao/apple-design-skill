@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Page not found — apple-design</title>
+  <meta name="description" content="That page is not part of the apple-design showcase.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <script>
+    /* Resolve appearance before stylesheets paint so background and label switch together. */
+    (function () {
+      var dark = Boolean(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var root = document.documentElement;
+      root.dataset.appearance = dark ? 'dark' : 'light';
+      root.style.colorScheme = dark ? 'dark' : 'light';
+    })();
+  </script>
+  <link rel="stylesheet" href="/src/tokens.css">
+  <link rel="stylesheet" href="/src/appearance.css">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main">
+      <a class="brand" href="./index.html">apple-design</a>
+    </nav>
+  </header>
+  <main class="not-found" id="main">
+    <h1 class="type-display">This page is not in the showcase</h1>
+    <p>The link may be out of date. The overview is one click away.</p>
+    <a class="button button-primary" href="./index.html">Back to the overview</a>
+  </main>
+</body>
+</html>

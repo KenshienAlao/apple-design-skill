@@ -62,6 +62,13 @@ Examples:
 }
 ```
 
+Theme pairing rule:
+
+- Every theme selector defines `--apple-color-bg` and `--apple-color-label` together.
+- Never switch a background without its label token in the same selector.
+- Scoped appearance overrides belong on the root, or on a subtree whose every color reads that set.
+- Sync the `color-scheme` property with the active appearance so controls and scrollbars match.
+
 ### SwiftUI mapping
 
 ```swift

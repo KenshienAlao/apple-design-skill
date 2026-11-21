@@ -1,0 +1,301 @@
+apple-design showcase verification record
+Commands run against this source tree. No timestamps or machine-specific paths are stored.
+
+$ npm run tokens
+cwd: .
+exit: 0
+output:
+
+> apple-design-showcase@1.0.0 tokens
+> node scripts/generate-tokens.mjs
+
+Token source: /home/nathan/Documents/skill/design/references/tokens-apple-style.md
+wrote /home/nathan/Documents/skill/design/showcase/src/tokens.css
+Wrote scoped appearance tokens to /home/nathan/Documents/skill/design/showcase/src/appearance.css
+
+$ npm run build
+cwd: .
+exit: 0
+output:
+
+> apple-design-showcase@1.0.0 build
+> vite build
+
+vite v7.3.8 building client environment for production...
+transforming...
+✓ 8 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/404.html                    0.97 kB │ gzip: 0.51 kB
+dist/index.html                 31.65 kB │ gzip: 6.74 kB
+dist/assets/style-C-YipE8B.css  40.25 kB │ gzip: 5.56 kB
+dist/assets/main-0qGG9afx.js     7.68 kB │ gzip: 2.71 kB
+✓ built in 951ms
+
+$ npm run verify
+cwd: .
+exit: 0
+output:
+
+> apple-design-showcase@1.0.0 verify
+> node ../scripts/link-check.mjs . --strict && node ../scripts/audit.mjs . --strict --platform=web && node ../scripts/token-lint.mjs . --strict && node ../scripts/check-contrast.mjs --strict && node ../scripts/a11y-audit.mjs . --strict --platform=web && node ../scripts/code-audit.mjs . --strict --platform=web
+
+Apple design link check
+Target: /home/nathan/Documents/skill/design/showcase
+Markdown files: 1
+Findings: 0
+Apple design audit
+Target: /home/nathan/Documents/skill/design/showcase
+Platform: web
+Files scanned: 15
+Warnings: 0
+Infos: 0
+Apple design token lint
+Target: /home/nathan/Documents/skill/design/showcase
+Files scanned: 15
+Warnings: 0
+Apple design contrast check
+Source: /home/nathan/Documents/skill/design/references/tokens-apple-style.md
+
+PASS  light label / bg               21.00:1  target 4.5 (body)
+PASS  light label / surface          18.82:1  target 4.5 (body)
+PASS  light label / surface-2        21.00:1  target 4.5 (body)
+PASS  light label-2 / bg             3.44:1   target 3.0 (secondary)
+PASS  light label-2 / surface        3.30:1   target 3.0 (secondary)
+PASS  light label-3 / bg             1.73:1   target 1.7 (decorative metadata)
+PASS  light label-3 / surface        1.71:1   target 1.7 (decorative metadata)
+PASS  light tint-contrast / tint     4.02:1   target 3.0 (large/bold control label)
+PASS  light tint / bg                4.02:1   target 3.0 (ui)
+PASS  light tint / surface           3.60:1   target 3.0 (ui)
+PASS  light red / bg                 3.55:1   target 3.0 (ui)
+PASS  light green / bg               2.22:1   target 2.0 (status accent)
+PASS  light orange / bg              2.20:1   target 2.0 (status accent)
+PASS  dark  label / bg               21.00:1  target 4.5 (body)
+PASS  dark  label / surface          17.01:1  target 4.5 (body)
+PASS  dark  label / surface-2        13.94:1  target 4.5 (body)
+PASS  dark  label-2 / bg             6.36:1   target 3.0 (secondary)
+PASS  dark  label-2 / surface        5.95:1   target 3.0 (secondary)
+PASS  dark  label-3 / bg             2.25:1   target 1.7 (decorative metadata)
+PASS  dark  label-3 / surface        2.48:1   target 1.7 (decorative metadata)
+PASS  dark  tint-contrast / tint     3.65:1   target 3.0 (large/bold control label)
+PASS  dark  tint / bg                5.76:1   target 3.0 (ui)
+PASS  dark  tint / surface           4.66:1   target 3.0 (ui)
+PASS  dark  red / bg                 6.16:1   target 3.0 (ui)
+PASS  dark  green / bg               10.39:1  target 2.0 (status accent)
+PASS  dark  orange / bg              10.22:1  target 2.0 (status accent)
+
+Pairs: 26
+Failures: 0
+Apple design accessibility audit
+Target: /home/nathan/Documents/skill/design/showcase
+Platform: web
+Files scanned: 15
+Warnings: 0
+Apple design code audit
+Target: /home/nathan/Documents/skill/design/showcase
+Platform: web
+Files scanned: 15
+Warnings: 0
+Infos: 0
+
+$ node ../scripts/link-check.mjs . --strict
+cwd: .
+exit: 0
+output:
+Apple design link check
+Target: /home/nathan/Documents/skill/design/showcase
+Markdown files: 1
+Findings: 0
+
+$ node ../scripts/audit.mjs . --strict --platform=web
+cwd: .
+exit: 0
+output:
+Apple design audit
+Target: /home/nathan/Documents/skill/design/showcase
+Platform: web
+Files scanned: 15
+Warnings: 0
+Infos: 0
+
+$ node ../scripts/token-lint.mjs . --strict
+cwd: .
+exit: 0
+output:
+Apple design token lint
+Target: /home/nathan/Documents/skill/design/showcase
+Files scanned: 15
+Warnings: 0
+
+$ node ../scripts/check-contrast.mjs --strict
+cwd: .
+exit: 0
+output:
+Apple design contrast check
+Source: /home/nathan/Documents/skill/design/references/tokens-apple-style.md
+
+PASS  light label / bg               21.00:1  target 4.5 (body)
+PASS  light label / surface          18.82:1  target 4.5 (body)
+PASS  light label / surface-2        21.00:1  target 4.5 (body)
+PASS  light label-2 / bg             3.44:1   target 3.0 (secondary)
+PASS  light label-2 / surface        3.30:1   target 3.0 (secondary)
+PASS  light label-3 / bg             1.73:1   target 1.7 (decorative metadata)
+PASS  light label-3 / surface        1.71:1   target 1.7 (decorative metadata)
+PASS  light tint-contrast / tint     4.02:1   target 3.0 (large/bold control label)
+PASS  light tint / bg                4.02:1   target 3.0 (ui)
+PASS  light tint / surface           3.60:1   target 3.0 (ui)
+PASS  light red / bg                 3.55:1   target 3.0 (ui)
+PASS  light green / bg               2.22:1   target 2.0 (status accent)
+PASS  light orange / bg              2.20:1   target 2.0 (status accent)
+PASS  dark  label / bg               21.00:1  target 4.5 (body)
+PASS  dark  label / surface          17.01:1  target 4.5 (body)
+PASS  dark  label / surface-2        13.94:1  target 4.5 (body)
+PASS  dark  label-2 / bg             6.36:1   target 3.0 (secondary)
+PASS  dark  label-2 / surface        5.95:1   target 3.0 (secondary)
+PASS  dark  label-3 / bg             2.25:1   target 1.7 (decorative metadata)
+PASS  dark  label-3 / surface        2.48:1   target 1.7 (decorative metadata)
+PASS  dark  tint-contrast / tint     3.65:1   target 3.0 (large/bold control label)
+PASS  dark  tint / bg                5.76:1   target 3.0 (ui)
+PASS  dark  tint / surface           4.66:1   target 3.0 (ui)
+PASS  dark  red / bg                 6.16:1   target 3.0 (ui)
+PASS  dark  green / bg               10.39:1  target 2.0 (status accent)
+PASS  dark  orange / bg              10.22:1  target 2.0 (status accent)
+
+Pairs: 26
+Failures: 0
+
+$ node ../scripts/a11y-audit.mjs . --strict --platform=web
+cwd: .
+exit: 0
+output:
+Apple design accessibility audit
+Target: /home/nathan/Documents/skill/design/showcase
+Platform: web
+Files scanned: 15
+Warnings: 0
+
+$ node ../scripts/code-audit.mjs . --strict --platform=web
+cwd: .
+exit: 0
+output:
+Apple design code audit
+Target: /home/nathan/Documents/skill/design/showcase
+Platform: web
+Files scanned: 15
+Warnings: 0
+Infos: 0
+
+$ npm --prefix .. run verify
+cwd: .
+exit: 0
+output:
+
+> apple-design-skill@1.0.0 verify
+> node scripts/link-check.mjs . --strict && for f in scripts/*.mjs scripts/lib/*.mjs; do node --check "$f"; done && node scripts/audit.mjs . --strict && node scripts/token-lint.mjs . --strict && node scripts/a11y-audit.mjs . --strict && node scripts/code-audit.mjs . --strict && node scripts/check-contrast.mjs --strict && node scripts/generate-tokens.mjs --format=all --out=/tmp/opencode/design-tokens && node scripts/motion-probe.mjs --all
+
+Apple design link check
+Target: /home/nathan/Documents/skill/design
+Markdown files: 38
+Findings: 0
+Apple design audit
+Target: /home/nathan/Documents/skill/design
+Platform: any
+Files scanned: 88
+Warnings: 0
+Infos: 0
+Apple design token lint
+Target: /home/nathan/Documents/skill/design
+Files scanned: 88
+Warnings: 0
+Apple design accessibility audit
+Target: /home/nathan/Documents/skill/design
+Platform: any
+Files scanned: 88
+Warnings: 0
+Apple design code audit
+Target: /home/nathan/Documents/skill/design
+Platform: any
+Files scanned: 88
+Warnings: 0
+Infos: 0
+Apple design contrast check
+Source: /home/nathan/Documents/skill/design/references/tokens-apple-style.md
+
+PASS  light label / bg               21.00:1  target 4.5 (body)
+PASS  light label / surface          18.82:1  target 4.5 (body)
+PASS  light label / surface-2        21.00:1  target 4.5 (body)
+PASS  light label-2 / bg             3.44:1   target 3.0 (secondary)
+PASS  light label-2 / surface        3.30:1   target 3.0 (secondary)
+PASS  light label-3 / bg             1.73:1   target 1.7 (decorative metadata)
+PASS  light label-3 / surface        1.71:1   target 1.7 (decorative metadata)
+PASS  light tint-contrast / tint     4.02:1   target 3.0 (large/bold control label)
+PASS  light tint / bg                4.02:1   target 3.0 (ui)
+PASS  light tint / surface           3.60:1   target 3.0 (ui)
+PASS  light red / bg                 3.55:1   target 3.0 (ui)
+PASS  light green / bg               2.22:1   target 2.0 (status accent)
+PASS  light orange / bg              2.20:1   target 2.0 (status accent)
+PASS  dark  label / bg               21.00:1  target 4.5 (body)
+PASS  dark  label / surface          17.01:1  target 4.5 (body)
+PASS  dark  label / surface-2        13.94:1  target 4.5 (body)
+PASS  dark  label-2 / bg             6.36:1   target 3.0 (secondary)
+PASS  dark  label-2 / surface        5.95:1   target 3.0 (secondary)
+PASS  dark  label-3 / bg             2.25:1   target 1.7 (decorative metadata)
+PASS  dark  label-3 / surface        2.48:1   target 1.7 (decorative metadata)
+PASS  dark  tint-contrast / tint     3.65:1   target 3.0 (large/bold control label)
+PASS  dark  tint / bg                5.76:1   target 3.0 (ui)
+PASS  dark  tint / surface           4.66:1   target 3.0 (ui)
+PASS  dark  red / bg                 6.16:1   target 3.0 (ui)
+PASS  dark  green / bg               10.39:1  target 2.0 (status accent)
+PASS  dark  orange / bg              10.22:1  target 2.0 (status accent)
+
+Pairs: 26
+Failures: 0
+Token source: /home/nathan/Documents/skill/design/references/tokens-apple-style.md
+unchanged /tmp/opencode/design-tokens/tokens.css
+unchanged /tmp/opencode/design-tokens/tokens.json
+unchanged /tmp/opencode/design-tokens/AppleTokens.swift
+unchanged /tmp/opencode/design-tokens/tailwind.tokens.cjs
+unchanged /tmp/opencode/design-tokens/Theme.kt
+unchanged /tmp/opencode/design-tokens/colors.xml
+Preset: standard
+  use: default spatial change
+  duration: 0.35s  bounce: 0.15  damping: 0.85
+  SwiftUI: .spring(duration: 0.35, bounce: 0.15)
+  UIKit: UIViewPropertyAnimator(duration: 0.35, dampingRatio: 0.85)
+  CSS fallback: cubic-bezier(0.16, 1, 0.3, 1)
+  CSS linear(): linear(0 0%, 0.0173 4.2%, 0.0618 8.3%, 0.1244 12.5%, 0.1979 16.7%, 0.2768 20.8%, 0.3571 25%, 0.4357 29.2%, 0.5105 33.3%, 0.5802 37.5%, 0.6439 41.7%, 0.7013 45.8%, 0.7523 50%, 0.797 54.2%, 0.8358 58.3%, 0.8691 62.5%, 0.8973 66.7%, 0.921 70.8%, 0.9407 75%, 0.9568 79.2%, 0.9699 83.3%, 0.9804 87.5%, 0.9887 91.7%, 0.9951 95.8%, 1 100%)
+
+Preset: control
+  use: button/toggle/segment
+  duration: 0.25s  bounce: 0.2  damping: 0.7
+  SwiftUI: .spring(duration: 0.25, bounce: 0.20)
+  UIKit: UIViewPropertyAnimator(duration: 0.25, dampingRatio: 0.70)
+  CSS fallback: cubic-bezier(0.16, 1, 0.3, 1)
+  CSS linear(): linear(0 0%, 0.0247 4.2%, 0.088 8.3%, 0.1759 12.5%, 0.2773 16.7%, 0.3834 20.8%, 0.4879 25%, 0.5861 29.2%, 0.6752 33.3%, 0.7534 37.5%, 0.8201 41.7%, 0.8753 45.8%, 0.9197 50%, 0.9541 54.2%, 0.9799 58.3%, 0.9981 62.5%, 1.01 66.7%, 1.0169 70.8%, 1.0199 75%, 1.0198 79.2%, 1.0177 83.3%, 1.0141 87.5%, 1.0097 91.7%, 1.0049 95.8%, 1 100%)
+
+Preset: calm
+  use: navigation, Reduce Motion alternative
+  duration: 0.4s  bounce: 0  damping: 1
+  SwiftUI: .spring(duration: 0.40, bounce: 0.00)
+  UIKit: UIViewPropertyAnimator(duration: 0.40, dampingRatio: 1.00)
+  CSS fallback: cubic-bezier(0.2, 0.8, 0.2, 1)
+  CSS linear(): linear(0 0%, 0.0254 4.2%, 0.087 8.3%, 0.168 12.5%, 0.2573 16.7%, 0.3475 20.8%, 0.4342 25%, 0.5148 29.2%, 0.5877 33.3%, 0.6527 37.5%, 0.7098 41.7%, 0.7593 45.8%, 0.8019 50%, 0.8383 54.2%, 0.8691 58.3%, 0.8952 62.5%, 0.917 66.7%, 0.9353 70.8%, 0.9505 75%, 0.9632 79.2%, 0.9736 83.3%, 0.9822 87.5%, 0.9894 91.7%, 0.9952 95.8%, 1 100%)
+
+Preset: sheet
+  use: sheet present/dismiss
+  duration: 0.5s  bounce: 0.08  damping: 0.92
+  SwiftUI: .spring(duration: 0.50, bounce: 0.08)
+  UIKit: UIViewPropertyAnimator(duration: 0.50, dampingRatio: 0.92)
+  CSS fallback: cubic-bezier(0.16, 1, 0.3, 1)
+  CSS linear(): linear(0 0%, 0.0153 4.2%, 0.0548 8.3%, 0.1106 12.5%, 0.1765 16.7%, 0.2479 20.8%, 0.321 25%, 0.3936 29.2%, 0.4636 33.3%, 0.5298 37.5%, 0.5915 41.7%, 0.6483 45.8%, 0.6999 50%, 0.7464 54.2%, 0.788 58.3%, 0.8248 62.5%, 0.8572 66.7%, 0.8856 70.8%, 0.9103 75%, 0.9317 79.2%, 0.95 83.3%, 0.9657 87.5%, 0.9791 91.7%, 0.9904 95.8%, 1 100%)
+
+Preset: list
+  use: list insert/delete
+  duration: 0.4s  bounce: 0.1  damping: 0.9
+  SwiftUI: .spring(duration: 0.40, bounce: 0.10)
+  UIKit: UIViewPropertyAnimator(duration: 0.40, dampingRatio: 0.90)
+  CSS fallback: cubic-bezier(0.16, 1, 0.3, 1)
+  CSS linear(): linear(0 0%, 0.0158 4.2%, 0.0566 8.3%, 0.1141 12.5%, 0.182 16.7%, 0.2552 20.8%, 0.3303 25%, 0.4043 29.2%, 0.4756 33.3%, 0.5428 37.5%, 0.6051 41.7%, 0.6621 45.8%, 0.7136 50%, 0.7597 54.2%, 0.8006 58.3%, 0.8365 62.5%, 0.8679 66.7%, 0.8951 70.8%, 0.9185 75%, 0.9385 79.2%, 0.9554 83.3%, 0.9697 87.5%, 0.9818 91.7%, 0.9917 95.8%, 1 100%)
+
+Approximation only. Verify on device for final feel.
+

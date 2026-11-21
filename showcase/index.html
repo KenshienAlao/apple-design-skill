@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>apple-design — one craft system for native UI</title>
+  <meta name="description" content="A progressive disclosure agent skill that turns one design system into native SwiftUI, Compose, React, Flutter, and web UI. Tokens, states, accessibility, and verification included.">
+  <!-- Motion honors prefers-reduced-motion; see style.css for the static end states. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="apple-design — one craft system for native UI">
+  <meta property="og:description" content="Load only the references the task needs. Ship native UI with semantic tokens, real states, and verifiable quality.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <script>
+    /* Resolve appearance before stylesheets paint so background and label switch together. */
+    (function () {
+      var dark = Boolean(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var root = document.documentElement;
+      root.dataset.appearance = dark ? 'dark' : 'light';
+      root.style.colorScheme = dark ? 'dark' : 'light';
+    })();
+  </script>
+  <link rel="stylesheet" href="/src/tokens.css">
+  <link rel="stylesheet" href="/src/appearance.css">
+  <link rel="stylesheet" href="/src/style.css">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div id="nav-sentinel" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <nav class="site-nav" aria-label="Main">
+      <a class="brand" href="#top">
+        <svg class="brand__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <rect x="3" y="3" width="18" height="18" rx="6" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+          <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+        <span>apple-design</span>
+      </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="nav-list">
+        <span>Menu</span>
+        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <path class="menu-line menu-line--top" d="M4 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+          <path class="menu-line menu-line--bottom" d="M4 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <ul class="nav-list" id="nav-list" data-nav-list>
+        <li><a href="#overview" data-nav-link>Overview</a></li>
+        <li><a href="#capabilities" data-nav-link>Capabilities</a></li>
+        <li><a href="#showcase" data-nav-link>Showcase</a></li>
+        <li><a href="#how-it-works" data-nav-link>How it works</a></li>
+        <li><a href="#faq" data-nav-link>FAQ</a></li>
+        <li><a href="#install" data-nav-link>Install</a></li>
+      </ul>
+      <a class="nav-repo" href="https://github.com/KenshienAlao/apple-design-skill">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="overview" aria-labelledby="hero-title">
+      <div class="hero__copy" data-reveal>
+        <p class="eyebrow">Agent skill · v1.0.0</p>
+        <h1 class="hero__title" id="hero-title">One design system. Native on every platform.</h1>
+        <p class="hero__lead">apple-design loads only the references your task needs, then turns them into native SwiftUI, Compose, React, Flutter, or web UI with tokens, states, and accessibility built in.</p>
+        <div class="hero__actions">
+          <button class="button button-primary" type="button" data-copy-prompt aria-describedby="hero-copy-status">
+            <span>Copy install prompt</span>
+          </button>
+          <a class="text-link" href="https://github.com/KenshienAlao/apple-design-skill/blob/main/SKILL.md">Read SKILL.md</a>
+          <p class="sr-only" role="status" aria-live="polite" id="hero-copy-status" data-copy-status></p>
+        </div>
+        <p class="hero__proof">30 references · 11 script files · 2 maps · <code>npm run verify</code> clean</p>
+      </div>
+
+      <figure class="router-surface" data-reveal>
+        <div class="router-surface__bar">
+          <span class="router-surface__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>SKILL.md router</span>
+          <span class="router-surface__mode">minimum reference set</span>
+        </div>
+        <div class="router-surface__body">
+          <p class="router-surface__label">Prompt</p>
+          <p class="router-surface__prompt">Build a settings screen for Android</p>
+          <div class="router-surface__flow" aria-hidden="true">
+            <span class="router-surface__track"></span>
+            <span class="router-surface__pulse"></span>
+          </div>
+          <p class="router-surface__label">Loaded references</p>
+          <ul class="router-surface__refs">
+            <li><span>design-apple-style.md</span><span>visual foundation</span></li>
+            <li><span>tokens-apple-style.md</span><span>semantic values</span></li>
+            <li><span>components-apple-style.md</span><span>states</span></li>
+            <li><span>platform-adapters-apple-style.md</span><span>Android vocabulary</span></li>
+          </ul>
+          <p class="router-surface__label">Native output</p>
+          <ul class="router-surface__outputs" aria-label="Supported output frameworks">
+            <li>SwiftUI</li>
+            <li>Compose</li>
+            <li>React</li>
+            <li>Flutter</li>
+            <li>Web</li>
+          </ul>
+        </div>
+        <figcaption>The router selects the smallest useful reference set before any UI is drawn.</figcaption>
+      </figure>
+
+      <details class="prompt-preview">
+        <summary>Exact install prompt</summary>
+        <pre id="install-prompt-text">Install the apple-design skill for me from https://github.com/KenshienAlao/apple-design-skill.git
+Read SKILL.md first, then load only the references my task needs. Do not load
+the whole corpus unless I ask for a full build or full audit.</pre>
+      </details>
+    </section>
+
+    <dl class="proof-strip" aria-label="Skill inventory">
+      <div data-reveal><dt>30</dt><dd>reference documents</dd></div>
+      <div data-reveal><dt>11</dt><dd>script files</dd></div>
+      <div data-reveal><dt>15</dt><dd>examples</dd></div>
+      <div data-reveal><dt>10</dt><dd>demo files</dd></div>
+    </dl>
+
+    <section class="tagline" aria-labelledby="tagline-title">
+      <h2 class="tagline__text wipe" id="tagline-title" aria-label="Every platform keeps the same craft. Every screen keeps its own idiom.">
+        <span aria-hidden="true">Every</span>
+        <span aria-hidden="true">platform</span>
+        <span aria-hidden="true">keeps</span>
+        <span aria-hidden="true">the</span>
+        <span aria-hidden="true">same</span>
+        <span aria-hidden="true">craft.</span>
+        <span aria-hidden="true">Every</span>
+        <span aria-hidden="true">screen</span>
+        <span aria-hidden="true">keeps</span>
+        <span aria-hidden="true">its</span>
+        <span aria-hidden="true">own</span>
+        <span aria-hidden="true">idiom.</span>
+      </h2>
+    </section>
+
+    <section class="section" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">Capabilities</p>
+        <h2 class="section__title" id="capabilities-title">One skill, five jobs</h2>
+        <p class="section__intro">Each capability points to the reference that defines it. No hidden machinery.</p>
+      </div>
+      <ul class="bento">
+        <li class="bento__item bento__item--lead" data-reveal>
+          <h3>Less context, same craft</h3>
+          <p>A routing table picks the smallest useful reference set for the task at hand.</p>
+          <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/SKILL.md">Read SKILL.md</a>
+        </li>
+        <li class="bento__item" data-reveal>
+          <h3>Native, not cloned</h3>
+          <p>Platform playbooks, HIG mapping, native recipes, and a component and API map.</p>
+          <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/platform-adapters-apple-style.md">Read the platform layer</a>
+        </li>
+        <li class="bento__item" data-reveal>
+          <h3>Tokens that survive handoff</h3>
+          <p>One markdown token sheet generates CSS, JSON, Swift, Tailwind, Compose, and XML.</p>
+          <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/tokens-apple-style.md">Read the token sheet</a>
+        </li>
+        <li class="bento__item" data-reveal>
+          <h3>Review you can defend</h3>
+          <p>Five lens review, a scored rubric with hard caps, and Must / Should / May evidence labels.</p>
+          <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/review-workflow-apple-style.md">Read the review workflow</a>
+        </li>
+        <li class="bento__item" data-reveal>
+          <h3>Verification in the box</h3>
+          <p>Eleven Node scripts cover links, tokens, contrast, accessibility, code hygiene, and motion.</p>
+          <a href="https://github.com/KenshienAlao/apple-design-skill/tree/main/scripts">Browse the scripts</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="chapter chapter--dark" id="showcase" aria-labelledby="showcase-title">
+      <div class="chapter__inner">
+        <div class="section__head section__head--light" data-reveal>
+          <p class="eyebrow">Showcase</p>
+          <h2 class="section__title" id="showcase-title">Three specimens, all working</h2>
+          <p class="section__intro">Each specimen demonstrates one strength of the skill with real controls and real states.</p>
+        </div>
+
+        <article class="specimen" id="specimen-tokens" data-platform="web" aria-labelledby="tokens-title">
+          <div class="specimen__head">
+            <div>
+              <p class="eyebrow">Specimen A</p>
+              <h3 id="tokens-title">Tokens and states</h3>
+              <p>One token set, native control anatomy, and the full state set.</p>
+            </div>
+            <div class="specimen__controls">
+              <fieldset class="segmented">
+                <legend class="sr-only">Target platform</legend>
+                <input type="radio" name="platform" id="platform-web" value="web" checked>
+                <label for="platform-web">Web</label>
+                <input type="radio" name="platform" id="platform-ios" value="ios">
+                <label for="platform-ios">iOS</label>
+                <input type="radio" name="platform" id="platform-android" value="android">
+                <label for="platform-android">Android</label>
+              </fieldset>
+              <button class="button button-secondary" type="button" role="switch" aria-checked="true" data-appearance-toggle>
+                <span>Dark appearance</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="demo-panel">
+            <div class="demo-panel__bar">
+              <span class="demo-panel__title">Profile settings</span>
+              <span class="demo-panel__badge" data-platform-badge>Web controls</span>
+            </div>
+            <div class="demo-form">
+              <div class="field field--live" data-live-field>
+                <label for="display-name">Display name</label>
+                <input id="display-name" name="display-name" type="text" autocomplete="name" aria-describedby="display-hint display-message">
+                <p class="field__hint" id="display-hint">Use at least two characters.</p>
+                <p class="field__message" id="display-message" role="alert" hidden></p>
+              </div>
+              <div class="field field--error">
+                <label for="account-email">Account email</label>
+                <input id="account-email" name="account-email" type="text" value="name-at-example" aria-invalid="true" aria-describedby="email-error">
+                <p class="field__message" id="email-error" role="alert">Enter an email address with an @ sign.</p>
+              </div>
+              <div class="field field--success">
+                <p class="field__label">Last save</p>
+                <p class="field__success">
+                  <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  <span data-save-feedback>Name saved.</span>
+                </p>
+              </div>
+            </div>
+            <div class="demo-actions">
+              <button class="button button-primary" type="button" data-save-button>Save changes</button>
+              <button class="button button-secondary" type="button" data-reset-button>Reset</button>
+              <button class="button button-primary" type="button" disabled>Apply everywhere</button>
+              <p class="demo-actions__note">Apply everywhere is available after you add an account.</p>
+            </div>
+          </div>
+
+          <div class="specimen__details">
+            <p class="specimen__meta" data-native-names>Framework names: button · role=switch input · element</p>
+            <p class="specimen__meta" data-native-note>Native anatomy: browser chrome · URL + app nav · 44px targets.</p>
+            <p class="specimen__meta">Token values stay fixed. Only vocabulary and anatomy change.</p>
+          </div>
+          <ul class="swatches" aria-label="Token examples">
+            <li><span class="swatch swatch--tint" aria-hidden="true"></span><code>--apple-color-tint</code></li>
+            <li><span class="swatch swatch--fill" aria-hidden="true"></span><code>--apple-color-fill</code></li>
+            <li><span class="swatch swatch--separator" aria-hidden="true"></span><code>--apple-color-separator</code></li>
+          </ul>
+          <div class="specimen__footer">
+            <button class="button button-secondary" type="button" data-copy-tokens aria-describedby="token-copy-status">Copy token snippet</button>
+            <p class="sr-only" role="status" aria-live="polite" id="token-copy-status" data-copy-status></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--surface" id="specimen-router-section" aria-labelledby="router-title">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">Specimen B</p>
+        <h2 class="section__title" id="router-title">Reference router</h2>
+        <p class="section__intro">Four prompts, the exact references selected, and why each one is loaded.</p>
+      </div>
+      <div class="router-prompts" role="group" aria-label="Choose a task" data-reveal>
+        <button class="chip" type="button" data-route="native" aria-pressed="true">Build a settings screen for Android</button>
+        <button class="chip" type="button" data-route="audit" aria-pressed="false">Audit this page</button>
+        <button class="chip" type="button" data-route="tokens" aria-pressed="false">Generate tokens</button>
+        <button class="chip" type="button" data-route="flagship" aria-pressed="false">Build a flagship landing page</button>
+      </div>
+      <div class="router-panels" data-reveal>
+        <details class="route" data-route-panel="native" open>
+          <summary>Build a settings screen for Android · 14 references</summary>
+          <p class="route__why">A native product build needs the full craft chain plus a platform adapter. Android vocabulary comes from the platform layer.</p>
+          <ol class="reference-list">
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/design-apple-style.md">design-apple-style.md</a><span>Visual direction, type, color, spacing</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/animations-apple-style.md">animations-apple-style.md</a><span>Motion, spring timing, Reduce Motion</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/tokens-apple-style.md">tokens-apple-style.md</a><span>Semantic tokens and scales</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/components-apple-style.md">components-apple-style.md</a><span>Component anatomy and states</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/state-and-feedback-apple-style.md">state-and-feedback-apple-style.md</a><span>Loading, empty, error, validation</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/perceived-performance-and-input-apple-style.md">perceived-performance-and-input-apple-style.md</a><span>Latency, focus, pointer, keyboard</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/navigation-models-apple-style.md">navigation-models-apple-style.md</a><span>Presentation and restoration</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/layout-apple-style.md">layout-apple-style.md</a><span>Safe areas, breakpoints, responsive layout</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/accessibility-apple-style.md">accessibility-apple-style.md</a><span>Names, roles, states, contrast</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/content-apple-style.md">content-apple-style.md</a><span>Labels, errors, calm copy</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/haptics-and-sound-apple-style.md">haptics-and-sound-apple-style.md</a><span>Feedback at commit</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/qol-patterns-apple-style.md">qol-patterns-apple-style.md</a><span>Autosave, undo, focus restoration</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/platform-adapters-apple-style.md">platform-adapters-apple-style.md</a><span>Android adaptation</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/review-workflow-apple-style.md">review-workflow-apple-style.md</a><span>Final five lens review</span></li>
+          </ol>
+        </details>
+
+        <details class="route" data-route-panel="audit">
+          <summary>Audit this page · 5 fixed references plus surface docs</summary>
+          <p class="route__why">The audit workflow loads its fixed review set, then only the docs that cover the audited surface.</p>
+          <ol class="reference-list">
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/review-workflow-apple-style.md">review-workflow-apple-style.md</a><span>Five lens review and report format</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/qa-apple-style.md">qa-apple-style.md</a><span>Blocking checklist and verdict</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/anti-patterns-apple-style.md">anti-patterns-apple-style.md</a><span>Reject rules</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/restraint-and-antislop-apple-style.md">restraint-and-antislop-apple-style.md</a><span>Restraint level and absence list</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/evidence-apple-style.md">evidence-apple-style.md</a><span>Must / Should / May strength</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/web-engineering-apple-style.md">web-engineering-apple-style.md</a><span>Web surface: structure and scripting</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/web-marketing-language-apple-style.md">web-marketing-language-apple-style.md</a><span>Web surface: cadence and copy</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/tokens-apple-style.md">tokens-apple-style.md</a><span>Web surface: token values</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/accessibility-apple-style.md">accessibility-apple-style.md</a><span>Web surface: keyboard and contrast</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/state-and-feedback-apple-style.md">state-and-feedback-apple-style.md</a><span>Web surface: interactive states</span></li>
+          </ol>
+        </details>
+
+        <details class="route" data-route-panel="tokens">
+          <summary>Generate tokens · 1 reference and 1 script</summary>
+          <p class="route__why">Token work needs the markdown token sheet, which is the only raw value source. The generator turns it into platform outputs.</p>
+          <ol class="reference-list">
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/tokens-apple-style.md">tokens-apple-style.md</a><span>Semantic color pairs and scales</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/scripts/generate-tokens.mjs">generate-tokens.mjs</a><span>CSS, JSON, Swift, Tailwind, Compose, XML output</span></li>
+          </ol>
+        </details>
+
+        <details class="route" data-route-panel="flagship">
+          <summary>Build a flagship landing page · 12 references</summary>
+          <p class="route__why">A flagship web page loads the restraint and language layer first, then visual, engineering, media, and verification references.</p>
+          <ol class="reference-list">
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/restraint-and-antislop-apple-style.md">restraint-and-antislop-apple-style.md</a><span>Restraint level and anti slop decisions</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/web-marketing-language-apple-style.md">web-marketing-language-apple-style.md</a><span>Section order and CTA voice</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/web-engineering-apple-style.md">web-engineering-apple-style.md</a><span>Progressive enhancement and namespacing</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/design-apple-style.md">design-apple-style.md</a><span>Visual foundation</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/tokens-apple-style.md">tokens-apple-style.md</a><span>Semantic values</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/media-assets-and-delivery-apple-style.md">media-assets-and-delivery-apple-style.md</a><span>Generated and licensed media</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/scroll-motion-apple-style.md">scroll-motion-apple-style.md</a><span>Scroll bound motion</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/scrollytelling-apple-style.md">scrollytelling-apple-style.md</a><span>Scene choreography</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/perceived-performance-and-input-apple-style.md">perceived-performance-and-input-apple-style.md</a><span>Latency and input</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/state-and-feedback-apple-style.md">state-and-feedback-apple-style.md</a><span>Feedback and states</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/accessibility-apple-style.md">accessibility-apple-style.md</a><span>Accessibility requirements</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/qa-apple-style.md">qa-apple-style.md</a><span>Final checklist</span></li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="specimen-verify-section" aria-labelledby="verify-title">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">Specimen C</p>
+        <h2 class="section__title" id="verify-title">Verification, not promises</h2>
+        <p class="section__intro">Commands, exit codes, and finding counts captured from this build.</p>
+      </div>
+      <div class="verify-grid">
+        <pre class="terminal" data-reveal><code>npm run tokens
+npm run build
+npm run verify
+npm --prefix .. run verify</code></pre>
+        <dl class="verify-results" data-reveal>
+          <div><dt>link-check</dt><dd data-verification="link-check"></dd></div>
+          <div><dt>audit</dt><dd data-verification="audit"></dd></div>
+          <div><dt>token-lint</dt><dd data-verification="token-lint"></dd></div>
+          <div><dt>check-contrast</dt><dd data-verification="check-contrast"></dd></div>
+          <div><dt>a11y-audit</dt><dd data-verification="a11y-audit"></dd></div>
+          <div><dt>code-audit</dt><dd data-verification="code-audit"></dd></div>
+        </dl>
+      </div>
+      <p class="specimen__meta">Raw command output is recorded in <a href="./verification.log">verification.log</a>.</p>
+      <a class="text-link section-next" href="https://github.com/KenshienAlao/apple-design-skill/tree/main/demo">See the Lumen flagship demo built with the skill</a>
+    </section>
+
+    <section class="section section--surface" id="how-it-works" aria-labelledby="how-title">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">How it works</p>
+        <h2 class="section__title" id="how-title">Three steps</h2>
+      </div>
+      <ol class="steps" data-reveal>
+        <li><h3>Copy the prompt</h3><p>Paste the install prompt into your agent. No slash command is needed.</p></li>
+        <li><h3>Ask for the work</h3><p>Build, restyle, critique, or audit. Only the references that task needs are loaded.</p></li>
+        <li><h3>Verify the result</h3><p>Run <code>npm run verify</code> in the skill folder to check links, tokens, contrast, accessibility, and code.</p></li>
+      </ol>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section__title" id="faq-title">Questions before you install</h2>
+      </div>
+      <div class="faq-list" data-reveal>
+        <details><summary>Does it need a website, dashboard, or server?</summary><p>No. It works inside your agent and project. This page is a front door, not a setup step.</p></details>
+        <details><summary>Is this official Apple guidance?</summary><p>No. It is Apple inspired, not Apple branded, and it is not affiliated with or endorsed by Apple Inc.</p></details>
+        <details><summary>Which platforms are covered?</summary><p>iOS, Android, web, macOS, Windows, Linux, watchOS, visionOS, Flutter, React Native, Compose, SwiftUI, Tauri, and Electron.</p></details>
+        <details><summary>How does it keep context small?</summary><p>SKILL.md routes each task to the smallest useful reference set. It does not load the whole corpus unless you ask for a full build or full audit.</p></details>
+        <details><summary>Can it review existing work?</summary><p>Yes. Five lens review and an optional scored review use hard caps, evidence labels, and path and line findings.</p></details>
+        <details><summary>What does verification check?</summary><p>Links, static patterns, tokens, contrast, accessibility, code hygiene, and motion. Rendered axe and visual diff checks are opt in.</p></details>
+        <details><summary>Where is a finished example?</summary><p>The Lumen demo in the skill repository is a complete flagship page built with the skill alone.</p></details>
+        <details><summary>What can I reuse?</summary><p>Original material and code are MIT licensed. The vendored research snapshot is documented in THIRD_PARTY.md. No Apple owned media is bundled.</p></details>
+      </div>
+    </section>
+
+    <section class="cta" id="install" aria-labelledby="install-title">
+      <div class="cta__inner" data-reveal>
+        <p class="eyebrow">Install</p>
+        <h2 class="section__title" id="install-title">Install it in your agent</h2>
+        <p>Copy the prompt, paste it into your agent, and ask for a build or an audit.</p>
+        <button class="button button-primary" type="button" data-copy-prompt aria-describedby="install-copy-status">
+          <span>Copy install prompt</span>
+        </button>
+        <p class="sr-only" role="status" aria-live="polite" id="install-copy-status" data-copy-status></p>
+        <p class="cta__link"><a class="text-link" href="https://github.com/KenshienAlao/apple-design-skill/blob/main/SKILL.md">Read SKILL.md</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-group">
+        <h2>Documentation</h2>
+        <ul>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/SKILL.md">SKILL.md</a></li>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/README.md">README</a></li>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/tree/main/references">References</a></li>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/tree/main/examples">Examples</a></li>
+        </ul>
+      </div>
+      <div class="footer-group">
+        <h2>Repository</h2>
+        <ul>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill">GitHub</a></li>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/tree/main/demo">Lumen demo</a></li>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/tree/main/scripts">Verification scripts</a></li>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/tree/main/assets">JSON maps</a></li>
+        </ul>
+      </div>
+      <div class="footer-group">
+        <h2>Verification</h2>
+        <ul>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/qa-apple-style.md">QA checklist</a></li>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/review-workflow-apple-style.md">Review workflow</a></li>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/tokens-apple-style.md">Token source</a></li>
+          <li><a href="./verification.log">This build log</a></li>
+        </ul>
+      </div>
+      <div class="footer-group">
+        <h2>Legal</h2>
+        <ul>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/LICENSE">MIT license</a></li>
+          <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/THIRD_PARTY.md">Third party notes</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-note">apple-design is an independent project and is not affiliated with or endorsed by Apple Inc.</p>
+  </footer>
+</body>
+</html>

@@ -2,6 +2,15 @@
 /* Demo-only dark chapter token sheet. Generated token outputs may replace
    these values. Component styles read names, never these raw values. */
 
+.detail {
+  --detail-bg: #FFFFFF;
+  --detail-label: #1d1d1f;
+  --detail-label-2: rgba(60, 60, 67, 0.60);
+  --detail-separator: rgba(60, 60, 67, 0.29);
+  --detail-surface: #F2F2F7;
+  --detail-accent: #007AFF;
+}
+
 .detail[data-theme='dark'] {
   --detail-bg: #0B0B0D;
   --detail-label: #F5F5F7;
