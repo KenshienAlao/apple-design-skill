@@ -443,6 +443,38 @@ npm --prefix .. run verify</code></pre>
           <div><dt>code-audit</dt><dd data-verification="code-audit"></dd></div>
         </dl>
       </div>
+      <div class="audit-strip" aria-labelledby="audit-strip-title" data-reveal>
+        <div class="audit-strip__head">
+          <p class="eyebrow">Before / after</p>
+          <h3 id="audit-strip-title">The same page, scored twice</h3>
+        </div>
+        <ol class="audit-strip__grid">
+          <li class="audit-card audit-card--before">
+            <p class="audit-card__state">Before</p>
+            <p class="audit-card__score">6</p>
+            <p class="audit-card__unit">avoid-ai-design findings</p>
+            <ul>
+              <li>Centered hero over three cards</li>
+              <li>Gradient background and borrowed font stack</li>
+              <li>Pill labels and tracked all-caps metadata</li>
+              <li>Decorative motion with no state change</li>
+            </ul>
+          </li>
+          <li class="audit-card audit-card--after">
+            <p class="audit-card__state">After</p>
+            <p class="audit-card__score">0</p>
+            <p class="audit-card__unit">avoid-ai-design findings</p>
+            <ul>
+              <li>System font and semantic surfaces</li>
+              <li>Hairline structure and token spacing</li>
+              <li>State-first controls at 44px targets</li>
+              <li>Token-bound motion with Reduce Motion</li>
+            </ul>
+          </li>
+        </ol>
+        <p class="audit-strip__note">Current source: 0 findings, 26/26 contrast pairs pass, 0 verifier warnings.</p>
+      </div>
+
       <p class="specimen__meta">Raw command output is recorded in <a href="./verification.log">verification.log</a>.</p>
       <a class="text-link section-next" href="https://github.com/KenshienAlao/apple-design-skill/tree/main/demo">See the Lumen flagship demo built with the skill</a>
     </section>
