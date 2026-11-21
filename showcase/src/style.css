@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
+}
+
 html {
   font-size: 100%;
 }
@@ -90,7 +97,7 @@ input {
 
 .js [data-reveal] {
   opacity: 0;
-  transform: translateY(var(--apple-space-6));
+  transform: translateY(var(--apple-space-6)) scale(0.97);
 }
 
 .js [data-reveal].is-visible {
@@ -102,7 +109,7 @@ input {
 
 .js .wipe span {
   opacity: 0;
-  transform: translateY(0.3em);
+  transform: translateY(0.3em) scale(0.97);
 }
 
 .js .wipe.is-visible span {
@@ -170,7 +177,7 @@ input {
 }
 
 .button:active:not(:disabled) {
-  transform: translateY(var(--apple-space-1));
+  transform: scale(0.97);
 }
 
 .button:disabled {
@@ -279,6 +286,11 @@ input {
   border: 0;
   border-radius: var(--apple-radius-pill);
   cursor: pointer;
+  transition: transform var(--apple-duration-fast) var(--apple-ease-standard);
+}
+
+.menu-toggle:active {
+  transform: scale(0.97);
 }
 
 .menu-toggle svg {
@@ -453,6 +465,8 @@ input {
 }
 
 .router-surface__track {
+  position: relative;
+  container-type: inline-size;
   width: 100%;
   height: var(--apple-space-1);
   background: var(--apple-color-fill-2);
@@ -474,11 +488,11 @@ input {
 
 @keyframes router-pulse {
   from {
-    inset-inline-start: 0;
+    transform: translate3d(0, -50%, 0);
   }
 
   to {
-    inset-inline-start: 100%;
+    transform: translate3d(calc(100cqw - 100%), -50%, 0);
   }
 }
 
@@ -928,6 +942,33 @@ input {
   border-color: var(--apple-color-red);
 }
 
+@keyframes field-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-6px);
+  }
+
+  40% {
+    transform: translateX(6px);
+  }
+
+  60% {
+    transform: translateX(-4px);
+  }
+
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+.field input.is-shaking {
+  animation: field-shake var(--apple-duration-control) var(--apple-ease-standard);
+}
+
 .field__hint,
 .field__message,
 .field__success {
@@ -1076,7 +1117,12 @@ input {
   line-height: var(--apple-type-footnote-line);
   cursor: pointer;
   transition: background-color var(--apple-duration-control) var(--apple-ease-standard),
-    color var(--apple-duration-control) var(--apple-ease-standard);
+    color var(--apple-duration-control) var(--apple-ease-standard),
+    transform var(--apple-duration-fast) var(--apple-ease-standard);
+}
+
+.chip:active {
+  transform: scale(0.97);
 }
 
 .chip:hover {
@@ -1498,6 +1544,24 @@ input {
   }
 }
 
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  .route::details-content,
+  .faq-list details::details-content {
+    height: 0;
+    overflow: clip;
+    transition: height var(--apple-duration-standard) var(--apple-ease-standard);
+  }
+
+  .route[open]::details-content,
+  .faq-list details[open]::details-content {
+    height: auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1518,10 +1582,17 @@ input {
 
   .router-surface__pulse {
     inset-inline-start: 50%;
+    transform: translate(-50%, -50%);
     animation: none;
   }
 
-  .button:active:not(:disabled) {
+  .button:active:not(:disabled),
+  .menu-toggle:active,
+  .chip:active {
     transform: none;
+  }
+
+  .field input.is-shaking {
+    animation: none;
   }
 }

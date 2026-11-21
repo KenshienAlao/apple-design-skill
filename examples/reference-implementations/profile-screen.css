@@ -88,15 +88,17 @@
   font: inherit;
   font-size: var(--apple-type-body-size);
   cursor: pointer;
-  transition: background-color var(--apple-duration-fast) var(--apple-ease-standard);
-}
-
-.profile-button:hover {
-  background: var(--apple-color-fill);
+  transition: background-color var(--apple-duration-fast) var(--apple-ease-standard),
+    transform var(--apple-duration-fast) var(--apple-ease-standard);
 }
 
 .profile-button:active {
   background: var(--apple-color-fill-2);
+  transform: scale(0.97);
+}
+
+.profile-button:hover {
+  background: var(--apple-color-fill);
 }
 
 .profile-button:focus-visible {
@@ -187,6 +189,33 @@
   outline-offset: 2px;
 }
 
+@keyframes profile-field-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-6px);
+  }
+
+  40% {
+    transform: translateX(6px);
+  }
+
+  60% {
+    transform: translateX(-4px);
+  }
+
+  80% {
+    transform: translateX(4px);
+  }
+}
+
+.profile-form__input.is-shaking {
+  animation: profile-field-shake var(--apple-duration-control) var(--apple-ease-standard);
+}
+
 .profile-form__help {
   margin: 0;
   color: var(--apple-color-label-2);
@@ -221,5 +250,13 @@
   .profile-toggle__track,
   .profile-toggle__knob {
     transition-duration: var(--apple-duration-fast);
+  }
+
+  .profile-button:active {
+    transform: none;
+  }
+
+  .profile-form__input.is-shaking {
+    animation: none;
   }
 }

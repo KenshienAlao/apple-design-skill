@@ -26,6 +26,7 @@ function initScrolly() {
 
   const setActive = (index) => {
     if (index === activeIndex) return;
+    scrolly.dataset.direction = index >= activeIndex ? 'forward' : 'backward';
     activeIndex = index;
     scenes.forEach((scene, i) => scene.classList.toggle('is-active', i === index));
     steps.forEach((step, i) => step.classList.toggle('is-current', i === index));

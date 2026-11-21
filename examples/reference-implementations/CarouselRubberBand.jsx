@@ -51,7 +51,7 @@ export default function CarouselRubberBand({ pages, label = 'Carousel' }) {
 
   const width = useCallback(() => viewportRef.current?.clientWidth || 1, []);
 
-  const springTo = useCallback((targetPage, notify = true) => {
+  const springTo = useCallback((targetPage, notify = true, releaseVelocity = 0) => {
     const state = motionRef.current;
     if (state.frame) cancelAnimationFrame(state.frame);
 
@@ -67,7 +67,7 @@ export default function CarouselRubberBand({ pages, label = 'Carousel' }) {
     }
 
     let position = from;
-    let velocity = 0;
+    let velocity = Math.max(-4000, Math.min(4000, releaseVelocity));
     let previous = performance.now();
 
     function step(now) {
@@ -175,7 +175,7 @@ export default function CarouselRubberBand({ pages, label = 'Carousel' }) {
     if (state.velocity < -VELOCITY_COMMIT) target = state.page + 1;
     if (state.velocity > VELOCITY_COMMIT) target = state.page - 1;
 
-    springTo(Math.max(0, Math.min(pageCount - 1, target)));
+    springTo(Math.max(0, Math.min(pageCount - 1, target)), true, state.velocity * 1000);
   }
 
   const dots = useMemo(() => pages.map((_, index) => (

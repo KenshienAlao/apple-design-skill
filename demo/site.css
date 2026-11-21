@@ -161,7 +161,7 @@ a {
 }
 
 .button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
 .button-primary {
@@ -259,11 +259,18 @@ a {
   object-fit: cover;
   opacity: 0;
   border-radius: var(--apple-radius-large);
-  transition: opacity var(--apple-duration-standard) var(--apple-ease-standard);
+  transform: translateX(var(--scene-step-offset, 12%));
+  transition: opacity var(--apple-duration-standard) var(--apple-ease-standard),
+    transform var(--apple-duration-standard) var(--apple-ease-standard);
 }
 
 .scene.is-active {
   opacity: 1;
+  transform: translateX(0);
+}
+
+[data-scrolly][data-direction='backward'] .scene {
+  --scene-step-offset: -12%;
 }
 
 .progress-track {
@@ -391,7 +398,7 @@ a {
 
 html.js-enhanced [data-reveal]:not(.is-visible) {
   opacity: 0;
-  transform: translateY(var(--apple-space-5));
+  transform: translateY(var(--apple-space-5)) scale(0.97);
 }
 
 [data-reveal] {
@@ -452,6 +459,7 @@ html.js-enhanced [data-reveal]:not(.is-visible) {
   .scene,
   .scene.is-active {
     opacity: 0;
+    transform: none;
   }
 
   .scene.is-active {

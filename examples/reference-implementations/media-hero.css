@@ -77,6 +77,11 @@
   font: inherit;
   font-weight: 600;
   cursor: pointer;
+  transition: transform var(--apple-duration-fast) var(--apple-ease-standard);
+}
+
+.media-hero__cta:active {
+  transform: scale(0.97);
 }
 
 .media-hero__cta:focus-visible {

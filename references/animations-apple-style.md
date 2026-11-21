@@ -55,6 +55,19 @@ Damping guide:
 - 0.6–0.8: playful settle.
 - below 0.6: cheap bouncy junk.
 
+Ten house gates for motion audits:
+
+1. Entrances and press states scale from `0.97`; never a different factor.
+2. Interactive controls have an immediate pressed state within 80–120ms.
+3. Invalid forms shake on the X axis with decaying amplitude.
+4. Directional steppers slide by signed offset; forward and backward differ.
+5. `height: auto` transitions use `interpolate-size: allow-keywords` where available, with an instant fallback.
+6. Moving elements animate `transform` or `opacity`; never `left`, `top`, `inset-inline-start`, or `inset-block-start`.
+7. Theme switching is instant; suppress transitions for one frame with a `.theme-switching` class on the root.
+8. Tooltips use a short show delay and skip the delay when moving between adjacent targets.
+9. Springs derive stiffness and damping from velocity; no fixed bounce on every distance.
+10. Scroll Overscroll and carousels rubber-band against the drag direction, with reduced-motion fallbacks.
+
 ## 3. Component motion map
 
 ### Button

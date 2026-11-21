@@ -242,10 +242,15 @@ function wireSpecimenControls() {
     const label = appearanceToggle.querySelector('span');
     const applyAppearance = (appearance) => {
       const dark = appearance === 'dark';
-      document.documentElement.dataset.appearance = appearance;
-      document.documentElement.style.colorScheme = appearance;
+      const root = document.documentElement;
+      root.classList.add('theme-switching');
+      root.dataset.appearance = appearance;
+      root.style.colorScheme = appearance;
       appearanceToggle.setAttribute('aria-checked', String(dark));
       if (label) label.textContent = dark ? 'Dark appearance' : 'Light appearance';
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => root.classList.remove('theme-switching'));
+      });
     };
 
     applyAppearance(document.documentElement.dataset.appearance === 'dark' ? 'dark' : 'light');
@@ -267,10 +272,17 @@ function wireFieldStates() {
 
   if (!input || !hint || !message || !feedback || !save || !reset) return;
 
+  const shake = () => {
+    input.classList.remove('is-shaking');
+    void input.offsetWidth;
+    input.classList.add('is-shaking');
+  };
+
   const validate = () => {
     const valid = input.value.trim().length >= 2;
     if (valid) {
       input.removeAttribute('aria-invalid');
+      input.classList.remove('is-shaking');
       hint.hidden = false;
       message.hidden = true;
       message.textContent = '';
@@ -288,6 +300,7 @@ function wireFieldStates() {
 
   on(save, 'click', () => {
     if (!validate()) {
+      shake();
       input.focus();
       return;
     }
@@ -297,6 +310,7 @@ function wireFieldStates() {
   on(reset, 'click', () => {
     input.value = '';
     input.removeAttribute('aria-invalid');
+    input.classList.remove('is-shaking');
     hint.hidden = false;
     message.hidden = true;
     message.textContent = '';

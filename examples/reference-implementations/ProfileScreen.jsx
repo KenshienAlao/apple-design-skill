@@ -77,10 +77,19 @@ export default function ProfileScreen() {
     editButtonRef.current?.focus();
   }
 
+  function shakeInput() {
+    const el = inputRef.current;
+    if (!el) return;
+    el.classList.remove('is-shaking');
+    void el.offsetWidth;
+    el.classList.add('is-shaking');
+  }
+
   function saveName() {
     const value = draftName.trim();
     if (!value) {
       setError('Enter a display name.');
+      shakeInput();
       return;
     }
     setDisplayName(value);
