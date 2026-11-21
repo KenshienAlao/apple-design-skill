@@ -25,3 +25,6 @@ Thumbs.db
 *.swo
 .idea/
 .vscode/
+
+# Local Obsidian vault
+/.vault/
