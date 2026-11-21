@@ -379,6 +379,73 @@ function wireHeroDevice() {
   applyAppearance(frame.dataset.appearance === 'dark' ? 'dark' : 'light');
 }
 
+function wireMotionLab() {
+  const stage = document.querySelector('[data-lab]');
+  if (!stage) return;
+
+  const toggle = stage.querySelector('[data-lab-toggle]');
+  const toggleLabel = toggle?.querySelector('span');
+  const sheet = stage.querySelector('[data-lab-sheet]');
+  const readout = stage.querySelector('[data-lab-readout]');
+  const sheetValue = stage.querySelector('[data-lab-token-value]');
+  const options = Array.from(stage.querySelectorAll('[data-lab-token][data-lab-value]'));
+  const tokens = {
+    radius: {
+      control: '--apple-radius-control',
+      medium: '--apple-radius-medium',
+      sheet: '--apple-radius-sheet'
+    },
+    duration: {
+      instant: '--apple-duration-instant',
+      control: '--apple-duration-control',
+      sheet: '--apple-duration-sheet'
+    },
+    ease: {
+      standard: '--apple-ease-standard',
+      out: '--apple-ease-out',
+      in: '--apple-ease-in'
+    }
+  };
+  const state = {
+    radius: 'medium',
+    duration: 'control',
+    ease: 'standard'
+  };
+
+  const render = () => {
+    for (const [group, choices] of Object.entries(tokens)) {
+      stage.style.setProperty(`--lab-${group}`, `var(${choices[state[group]]})`);
+    }
+    if (readout) readout.textContent = `${state.radius} · ${state.duration} · ${state.ease}`;
+    if (sheetValue) sheetValue.textContent = tokens.radius[state.radius];
+    for (const option of options) {
+      option.setAttribute('aria-pressed', String(state[option.dataset.labToken] === option.dataset.labValue));
+    }
+  };
+
+  for (const option of options) {
+    on(option, 'click', () => {
+      const group = option.dataset.labToken;
+      const value = option.dataset.labValue;
+      if (!tokens[group]?.[value]) return;
+      state[group] = value;
+      render();
+    });
+  }
+
+  if (toggle && sheet) {
+    on(toggle, 'click', () => {
+      const active = stage.dataset.active !== 'true';
+      stage.dataset.active = String(active);
+      toggle.setAttribute('aria-pressed', String(active));
+      if (toggleLabel) toggleLabel.textContent = active ? 'Dismiss sheet' : 'Present sheet';
+      sheet.setAttribute('aria-hidden', String(!active));
+    });
+  }
+
+  render();
+}
+
 function wireRouter() {
   const chips = Array.from(document.querySelectorAll('[data-route]'));
   const panels = Array.from(document.querySelectorAll('[data-route-panel]'));
@@ -411,6 +478,7 @@ function init() {
   wireNavigation();
   wireSpecimenControls();
   wireHeroDevice();
+  wireMotionLab();
   wireFieldStates();
   wireRouter();
   showVerificationResults();

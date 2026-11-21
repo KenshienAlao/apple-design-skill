@@ -1168,41 +1168,141 @@ input {
   line-height: var(--apple-type-footnote-line);
 }
 
-.swatches {
-  display: flex;
-  flex-wrap: wrap;
+.lab {
+  --lab-radius: var(--apple-radius-medium);
+  --lab-duration: var(--apple-duration-control);
+  --lab-ease: var(--apple-ease-standard);
+
+  display: grid;
+  gap: var(--apple-space-5);
+  padding: var(--apple-space-5);
+  background: var(--apple-color-surface);
+  border: var(--apple-hairline);
+  border-radius: var(--apple-radius-medium);
+}
+
+.lab__controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--apple-space-5);
 }
 
-.swatches li {
-  display: inline-flex;
-  align-items: center;
+.lab__control {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.lab__control legend {
+  margin-bottom: var(--apple-space-2);
+  padding: 0;
+  color: var(--apple-color-label-2);
+  font-size: var(--apple-type-footnote-size);
+  line-height: var(--apple-type-footnote-line);
+  font-weight: var(--apple-type-headline-weight);
+}
+
+.lab__options {
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--apple-space-2);
 }
 
-.swatches code {
+.lab__option {
+  min-height: var(--apple-target-min);
+  padding: var(--apple-space-2) var(--apple-space-4);
+  background: var(--apple-color-fill);
+  color: var(--apple-color-label-2);
+  border: var(--apple-hairline);
+  border-radius: var(--apple-radius-pill);
+  cursor: pointer;
+  font-size: var(--apple-type-footnote-size);
+  line-height: var(--apple-type-footnote-line);
+  transition: background-color var(--apple-duration-fast) var(--apple-ease-standard),
+    color var(--apple-duration-fast) var(--apple-ease-standard),
+    transform var(--apple-duration-fast) var(--apple-ease-standard);
+}
+
+.lab__option[aria-pressed='true'] {
+  background: var(--apple-color-label);
+  color: var(--apple-color-bg);
+  border-color: transparent;
+}
+
+.lab__option:active {
+  transform: scale(0.97);
+}
+
+.lab__stage {
+  display: grid;
+  gap: var(--apple-space-4);
+  min-height: 260px;
+  padding: var(--apple-space-4);
+  background: var(--apple-color-bg);
+  border: var(--apple-hairline);
+  border-radius: var(--lab-radius);
+  overflow: hidden;
+}
+
+.lab__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--apple-space-3);
+}
+
+.lab__viewport {
+  position: relative;
+  min-height: 160px;
+  background: var(--apple-color-surface);
+  border-radius: var(--apple-radius-control);
+  overflow: hidden;
+}
+
+.lab__sheet {
+  position: absolute;
+  inset-inline: var(--apple-space-4);
+  inset-block-end: var(--apple-space-4);
+  display: grid;
+  gap: var(--apple-space-3);
+  padding: var(--apple-space-5);
+  background: var(--apple-color-surface-2);
+  border: var(--apple-hairline);
+  border-radius: var(--lab-radius);
+  box-shadow: var(--apple-shadow-medium);
+  transform: translateY(calc(100% + var(--apple-space-6)));
+  transition: transform var(--lab-duration) var(--lab-ease);
+}
+
+.lab[data-active='true'] .lab__sheet {
+  transform: translateY(0);
+}
+
+.lab__sheet-label {
+  font-size: var(--apple-type-subheadline-size);
+  line-height: var(--apple-type-subheadline-line);
+  font-weight: var(--apple-type-headline-weight);
+}
+
+.lab__sheet-value {
+  color: var(--apple-color-label-2);
   font-size: var(--apple-type-footnote-size);
   line-height: var(--apple-type-footnote-line);
 }
 
-.swatch {
-  display: inline-block;
-  width: var(--apple-icon-20);
-  height: var(--apple-icon-20);
-  border: var(--apple-space-1) solid var(--apple-color-separator);
-  border-radius: var(--apple-radius-small);
+.lab__sheet-rows {
+  display: grid;
+  gap: var(--apple-space-2);
 }
 
-.swatch--tint {
-  background: var(--apple-color-tint);
-}
-
-.swatch--fill {
+.lab__sheet-rows i {
+  display: block;
+  inline-size: 100%;
+  block-size: var(--apple-space-3);
+  border-radius: var(--apple-radius-pill);
   background: var(--apple-color-fill-2);
-}
-
-.swatch--separator {
-  background: var(--apple-color-separator);
 }
 
 .specimen__footer {
@@ -1571,6 +1671,10 @@ input {
   .bento__item:nth-child(2),
   .bento__item:nth-child(n + 3) {
     grid-column: span 6;
+  }
+
+  .lab__controls {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .verify-grid {

@@ -291,11 +291,49 @@ the whole corpus unless I ask for a full build or full audit.</pre>
             <p class="specimen__meta" data-native-note>Native anatomy: browser chrome, URL and app nav, 44px targets.</p>
             <p class="specimen__meta">Token values stay fixed. Only vocabulary and anatomy change.</p>
           </div>
-          <ul class="swatches" aria-label="Token examples">
-            <li><span class="swatch swatch--tint" aria-hidden="true"></span><code>--apple-color-tint</code></li>
-            <li><span class="swatch swatch--fill" aria-hidden="true"></span><code>--apple-color-fill</code></li>
-            <li><span class="swatch swatch--separator" aria-hidden="true"></span><code>--apple-color-separator</code></li>
-          </ul>
+          <div class="lab" data-lab data-active="false">
+            <div class="lab__controls">
+              <fieldset class="lab__control">
+                <legend>Shape</legend>
+                <div class="lab__options">
+                  <button class="lab__option" type="button" data-lab-token="radius" data-lab-value="control" aria-pressed="false">Control</button>
+                  <button class="lab__option" type="button" data-lab-token="radius" data-lab-value="medium" aria-pressed="true">Medium</button>
+                  <button class="lab__option" type="button" data-lab-token="radius" data-lab-value="sheet" aria-pressed="false">Sheet</button>
+                </div>
+              </fieldset>
+              <fieldset class="lab__control">
+                <legend>Duration</legend>
+                <div class="lab__options">
+                  <button class="lab__option" type="button" data-lab-token="duration" data-lab-value="instant" aria-pressed="false">Instant</button>
+                  <button class="lab__option" type="button" data-lab-token="duration" data-lab-value="control" aria-pressed="true">Control</button>
+                  <button class="lab__option" type="button" data-lab-token="duration" data-lab-value="sheet" aria-pressed="false">Sheet</button>
+                </div>
+              </fieldset>
+              <fieldset class="lab__control">
+                <legend>Easing</legend>
+                <div class="lab__options">
+                  <button class="lab__option" type="button" data-lab-token="ease" data-lab-value="standard" aria-pressed="true">Standard</button>
+                  <button class="lab__option" type="button" data-lab-token="ease" data-lab-value="out" aria-pressed="false">Out</button>
+                  <button class="lab__option" type="button" data-lab-token="ease" data-lab-value="in" aria-pressed="false">In</button>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="lab__stage">
+              <div class="lab__bar">
+                <span class="demo-panel__title">Motion target</span>
+                <span class="demo-panel__badge" data-lab-readout>Medium · control · standard</span>
+                <button class="button button-secondary" type="button" data-lab-toggle aria-pressed="false"><span>Present sheet</span></button>
+              </div>
+              <div class="lab__viewport">
+                <div class="lab__sheet" data-lab-sheet aria-hidden="true">
+                  <span class="lab__sheet-label">Sheet surface</span>
+                  <span class="lab__sheet-value" data-lab-token-value>--apple-radius-medium</span>
+                  <span class="lab__sheet-rows" aria-hidden="true"><i></i><i></i><i></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="specimen__footer">
             <button class="button button-secondary" type="button" data-copy-tokens aria-describedby="token-copy-status">Copy token snippet</button>
             <p class="sr-only" role="status" aria-live="polite" id="token-copy-status" data-copy-status></p>
