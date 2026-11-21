@@ -1,32 +1,137 @@
 # apple-design
 
-A portable, progressive-disclosure skill for building and auditing Apple-inspired UI on any platform.
+**A progressive-disclosure agent skill for Apple-inspired, platform-native UI. 30 reference docs, 11 script files, 2 machine-readable maps, and a complete flagship demo — provider-neutral and dependency-free.**
 
-Apple is the craft lens. The host platform is the execution target. iOS, Android, web, macOS, Windows, Linux, watchOS, visionOS, Flutter, React Native, Compose, SwiftUI, Tauri, and Electron all ship through the same rules with native vocabulary.
+Apple-inspired, not Apple-branded. Apple is the craft lens; the host platform is the execution target. iOS, Android, web, macOS, Windows, Linux, watchOS, visionOS, Flutter, React Native, Compose, SwiftUI, Tauri, and Electron all ship through the same rules with native vocabulary.
 
-This is design guidance. It is not official Apple material and does not use Apple branding. Core docs are provider-neutral and dependency-free.
+Release `1.0.0` · Skill snapshot `2026-11-21` · `npm run verify` clean.
 
-## What it covers
+## Copy-paste install prompt
 
-- visual foundation, type, color, spacing, radius, materials, elevation, icons
-- motion, spring timing, carousel physics, rubber band behavior, Reduce Motion
-- haptics and sound feedback
-- quality-of-life patterns: autosave, undo, focus restoration, shortcuts, recovery
-- design tokens and token generation for CSS, JSON, Swift, Tailwind, Compose, and Android XML
-- component anatomy and states across mobile, web, and desktop
-- responsive layout, safe areas, size classes, window size classes
-- universal platform adapters and framework vocabulary
-- macOS windowing, toolbar, sidebar, inspector, and menu bar rules
-- accessibility with cross-platform naming APIs and target sizes
-- Apple HIG topic mapping, Apple platform playbooks, native SwiftUI/UIKit recipes, component/API fidelity map
-- scored Apple craft rubric with hard caps and `path:line` findings
-- content rules, anti-patterns, restraint discipline, deference-as-withholding, craft critique, and evidence discipline
-- five-lens design review workflow and design-review report format
-- scroll-bound motion, scrollytelling scenes, media delivery, and flagship web page language
-- perceived performance, input handling, state/feedback logic, and navigation models
-- SSR-first web engineering, progressive enhancement, and versioned component ownership
-- vendored upstream research with provenance and strict claim labeling
-- static audits, contrast checks, token lint, motion probe, link check, code audit, optional rendered a11y probe, optional visual diff
+Copy and paste this message into your agent to install the skill.
+
+```text
+Install the apple-design skill for me from https://github.com/KenshienAlao/apple-design-skill.git
+Read SKILL.md first, then load only the references my task needs. Do not load
+the whole corpus unless I ask for a full build or full audit.
+```
+
+No slash command is required. The skill works from normal prompts.
+
+## 1.0.0 release: craft depth and flagship demo
+
+This release turns the earlier craft starter into a full build and review system.
+
+- **Apple-depth layer.** [HIG topic mapping](references/apple-hig-mapping-apple-style.md), [platform playbooks](references/apple-platform-playbooks-apple-style.md), [native SwiftUI/UIKit recipes](references/apple-native-recipes-apple-style.md), [component/API fidelity map](assets/apple-component-fidelity-map.json), and a [scored craft rubric](references/apple-review-rubric-apple-style.md) with hard caps.
+- **Flagship web craft.** [Restraint and anti-slop](references/restraint-and-antislop-apple-style.md), [scroll motion](references/scroll-motion-apple-style.md), [scrollytelling](references/scrollytelling-apple-style.md), [media delivery](references/media-assets-and-delivery-apple-style.md), [web engineering](references/web-engineering-apple-style.md), and [page language](references/web-marketing-language-apple-style.md).
+- **Interaction depth.** [Perceived performance](references/perceived-performance-and-input-apple-style.md), [state and feedback](references/state-and-feedback-apple-style.md), [navigation models](references/navigation-models-apple-style.md), haptics, QoL patterns, and platform adapters.
+- **Verification.** [11 script files](scripts/) cover links, static audit, token lint, contrast, accessibility, code hygiene, motion probing, token generation, rendered a11y, visual diff, and token helpers. CI runs `npm run verify`.
+- **Working proof.** The [Lumen demo](demo/README.md) is a complete flagship page built with the skill alone.
+
+## Manual install
+
+Extract the complete `design/` folder into your agent's skills directory, either for one project or for all local projects. Your agent's documentation names that location. Agents without skill discovery need explicit access to [SKILL.md](SKILL.md) and its sibling files.
+
+Keep `SKILL.md`, this README, `references/`, `examples/`, `assets/`, `scripts/`, `demo/`, [THIRD_PARTY.md](THIRD_PARTY.md), and [LICENSE](LICENSE) together. When upgrading, replace the old skill folder rather than merging files; check for another installed copy with the same name.
+
+There is no onboarding website, browser intake, dashboard, or setup server. The agent works in your conversation and project. Core docs need no runtime. Node 18+ runs the static scripts; generated token outputs are disposable. Optional rendered checks need Playwright and friends.
+
+## Confirm the installation
+
+```text
+Find the installed apple-design skill. Read SKILL.md and report its absolute
+location, package version, and the reference groups it routes to. Do not load
+all references or start a review for this setup check.
+```
+
+Expect version `1.0.0`, a progressive-disclosure router, and reference groups for visual foundation, motion, tokens, components, accessibility, Apple-platform depth, flagship web craft, and audit workflows. If the skill is missing, check the install location and refresh or restart the host.
+
+## Use
+
+```text
+Use apple-design to build a settings screen with Apple-style tokens for Android.
+Use apple-design to audit this page against the five-lens review workflow.
+Use apple-design in flagship web mode for this landing page.
+Use apple-design to generate CSS, Swift, Compose, and Android XML tokens.
+```
+
+The agent loads the minimum reference set. Setup and greeting questions do not load the corpus. Answers name the applied reference files and the assumptions in one line each.
+
+Common lanes:
+
+- native app builds: [design](references/design-apple-style.md), [animations](references/animations-apple-style.md), [tokens](references/tokens-apple-style.md), [components](references/components-apple-style.md), [state](references/state-and-feedback-apple-style.md), [accessibility](references/accessibility-apple-style.md), [content](references/content-apple-style.md)
+- Apple-platform builds: [HIG mapping](references/apple-hig-mapping-apple-style.md), [platform playbooks](references/apple-platform-playbooks-apple-style.md), [native recipes](references/apple-native-recipes-apple-style.md), [fidelity map](assets/apple-component-fidelity-map.json)
+- flagship web: [restraint](references/restraint-and-antislop-apple-style.md), [page language](references/web-marketing-language-apple-style.md), [web engineering](references/web-engineering-apple-style.md), [media](references/media-assets-and-delivery-apple-style.md), [scroll motion](references/scroll-motion-apple-style.md), [scrollytelling](references/scrollytelling-apple-style.md)
+- audits: [review workflow](references/review-workflow-apple-style.md), [QA checklist](references/qa-apple-style.md), [anti-patterns](references/anti-patterns-apple-style.md), [evidence strength](references/evidence-apple-style.md), [scored rubric](references/apple-review-rubric-apple-style.md)
+
+## Flagship web demo
+
+The [Lumen demo](demo/index.html) is the reference plate. It reads color, type, spacing, radius, duration, target, and hairline values from the skill's token sheet, uses native HTML controls, and ships generated SVG media only.
+
+Open `demo/index.html` directly or serve the folder with any static server. The page includes a damped scroll-progress scene, one dark chapter, real focus states, keyboard navigation, reduced-motion end states, and a complete no-script path.
+
+```bash
+node scripts/a11y-audit.mjs demo --strict --platform=web
+node scripts/code-audit.mjs demo --strict
+node scripts/audit.mjs demo --strict --platform=web
+node scripts/token-lint.mjs demo --strict
+```
+
+All four pass with zero findings.
+
+## Scored craft review
+
+Ask for it by name: “Use apple-design in scored review mode on this screen.” The agent loads [apple-review-rubric-apple-style.md](references/apple-review-rubric-apple-style.md) after the five lenses, scores each area, applies hard caps, and reports `Pass | Conditional | Fail` with `path:line` findings.
+
+A pass needs the numeric floor, complete evidence, and no unresolved material finding. Hard caps override the numeric total. The rubric does not replace the five-lens review; it sits after it.
+
+## Coverage and context
+
+- 30 reference docs, 11 script files, 2 JSON maps, 15 example files, 10 demo files.
+- 76 files total outside `_vendor/`.
+- Semantic contrast targets: body 4.5:1, secondary/large/control 3:1, decorative tertiary 1.7:1, status accents 2:1 with text labels.
+- Native target sizes: 44pt iOS, 48dp Android, 44px web, pointer-appropriate desktop.
+- Audit verdicts use Must / Should / May strength from [evidence-apple-style.md](references/evidence-apple-style.md).
+- Static file counts are packaging facts, not measured per-request context loads.
+- Full 157-topic HIG mirroring is intentionally out of scope; the HIG layer distills and maps the topics this skill actually applies.
+
+## Repository and packaging
+
+[SKILL.md](SKILL.md) is the first-load router. Its routing table maps tasks to the smallest useful reference set. This README is the human index. Detailed rules live in `references/*.md`; token generation, audits, and probes live in `scripts/`.
+
+`_vendor/apple-design-skills/` is a dated MIT research snapshot. Static scripts skip it, core docs do not load it by default, and [THIRD_PARTY.md](THIRD_PARTY.md) records provenance. Do not treat vendored `SKILL.md` files as extra skill installs.
+
+The markdown token source in [tokens-apple-style.md](references/tokens-apple-style.md) wins; generated CSS, JSON, Swift, Tailwind, Compose, and XML outputs are disposable. `.github/workflows/verify.yml` runs the full gate on push, pull request, and manual dispatch.
+
+## Verification
+
+```bash
+npm run verify
+```
+
+Full command:
+
+```bash
+node scripts/link-check.mjs . --strict
+node scripts/audit.mjs . --strict
+node scripts/token-lint.mjs . --strict
+node scripts/a11y-audit.mjs . --strict
+node scripts/code-audit.mjs . --strict
+node scripts/check-contrast.mjs --strict
+node scripts/generate-tokens.mjs --format=all --out=/tmp/opencode/design-tokens
+node scripts/motion-probe.mjs --all
+```
+
+Opt-in rendered checks:
+
+```bash
+npm i -D playwright @axe-core/playwright pixelmatch pngjs
+npx playwright install chromium
+node scripts/a11y-probe.mjs --url=http://localhost:3000 --strict
+node scripts/visual-diff.mjs --url=http://localhost:3000 --routes=/,/settings --baseline=./visual-baseline --out=./visual-diff
+```
+
+Add `apple-design-audit:ignore`, `apple-design-token-lint:ignore`, or `apple-design-code-audit:ignore` to a file to skip the relevant scan.
 
 ## Structure
 
@@ -34,6 +139,7 @@ This is design guidance. It is not official Apple material and does not use Appl
 design/
 ├── SKILL.md
 ├── README.md
+├── LICENSE
 ├── THIRD_PARTY.md
 ├── package.json
 ├── .gitignore
@@ -81,14 +187,14 @@ design/
 │       ├── profile-screen.css
 │       ├── interactive-sheet.css
 │       ├── carousel-rubber-band.css
+│       ├── media-hero.css
+│       ├── scroll-story.css
 │       ├── ProfileScreen.swift
 │       ├── ProfileScreen.jsx
 │       ├── InteractiveSheet.jsx
 │       ├── CarouselRubberBand.jsx
-│       ├── ScrollStory.jsx
-│       ├── scroll-story.css
 │       ├── MediaHero.jsx
-│       └── media-hero.css
+│       └── ScrollStory.jsx
 ├── demo/
 │   ├── README.md
 │   ├── index.html
@@ -104,190 +210,29 @@ design/
 ├── assets/
 │   ├── sf-symbols-map.json
 │   └── apple-component-fidelity-map.json
-└── scripts/
-    ├── lib/
-    │   └── tokens.mjs
-    ├── audit.mjs
-    ├── token-lint.mjs
-    ├── check-contrast.mjs
-    ├── generate-tokens.mjs
-    ├── motion-probe.mjs
-    ├── a11y-audit.mjs
-    ├── a11y-probe.mjs
-    ├── code-audit.mjs
-    ├── link-check.mjs
-    └── visual-diff.mjs
+├── scripts/
+│   ├── lib/
+│   │   └── tokens.mjs
+│   ├── audit.mjs
+│   ├── token-lint.mjs
+│   ├── check-contrast.mjs
+│   ├── generate-tokens.mjs
+│   ├── motion-probe.mjs
+│   ├── a11y-audit.mjs
+│   ├── a11y-probe.mjs
+│   ├── code-audit.mjs
+│   ├── link-check.mjs
+│   └── visual-diff.mjs
 └── _vendor/
-    └── apple-design-skills/  # optional research, skipped by scripts
+    └── apple-design-skills/  # optional MIT research, skipped by scripts
 ```
 
-75 files total.
+## Attribution
 
-## Install
+Distilled from [Apple's Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines), [s1gmamale1/apple-design-skills](https://github.com/s1gmamale1/apple-design-skills), [dickwu/apple-design-skill](https://github.com/dickwu/apple-design-skill), and [justinwetch/HIGAgentSkills](https://github.com/justinwetch/HIGAgentSkills). The latter supplies the [HIG evidence layer](references/evidence-apple-style.md) and the README structure adopted here. The [scored rubric](references/apple-review-rubric-apple-style.md) is informed by independent craft-review practice.
 
-Agent runtimes that discover skills from their skills directory can load this folder directly.
+This independent project is not affiliated with or endorsed by Apple Inc. No Apple-owned media, logos, screenshots, video, bezels, or captured frames are bundled.
 
-For other runtimes, copy or symlink this folder into the runtime's skill directory.
+## License
 
-The core skill has no build step and no dependencies. `visual-diff.mjs` and `a11y-probe.mjs` are opt-in and need dev dependencies. `package.json` exists only to document scripts and optional dependencies.
-
-## Use
-
-Ask for platform-native craft work, for example:
-
-- "Build a settings screen with Apple-style tokens for Android."
-- "Audit this page against the five-lens review workflow."
-- "Give me carousel rubber band behavior like iOS."
-- "Create a component spec for a modal bottom sheet."
-- "Generate Compose and Android XML tokens from the token source."
-- "Check the semantic colors for contrast."
-- "Adapt this iPhone layout for macOS and web."
-- "Write a design-review report for this screen."
-
-The agent loads `SKILL.md`, then only the references needed for the task.
-
-## Demo
-
-`demo/` is a complete flagship web page built with this skill alone. It uses the skill's token sheet, native HTML controls, generated SVG media, a damped scroll-progress scene, a dark chapter, reduced-motion end states, and a no-script path. See `demo/README.md` for the applied reference map and the four zero-finding audit commands.
-
-## Scripts
-
-All scripts are Node.js ESM and use built-in modules unless noted.
-
-```bash
-node scripts/link-check.mjs . --strict
-node scripts/audit.mjs /path/to/project --strict --platform=android
-node scripts/token-lint.mjs /path/to/project --strict
-node scripts/check-contrast.mjs --strict
-node scripts/code-audit.mjs /path/to/project --strict
-node scripts/a11y-audit.mjs /path/to/project --strict --platform=web
-node scripts/generate-tokens.mjs --format=all --out=generated
-node scripts/motion-probe.mjs --all
-npm run verify
-```
-
-### link-check.mjs
-
-Validates relative links in all Markdown files. Absolute paths and broken links are findings.
-
-### audit.mjs
-
-General static pattern scan. Flags raw radii, heavy shadows, gradient backgrounds, `transition: all`, small targets, emoji icons, lorem ipsum, stub markers, raw hex, and missing Reduce Motion paths. `--platform` sets the target minimum: iOS 44, Android 48, web 44, desktop 32.
-
-### token-lint.mjs
-
-Stricter token discipline. Flags raw hex, raw radius, raw duration, raw font family, and raw shadow in source files. Token source files are skipped.
-
-### check-contrast.mjs
-
-Checks semantic color pairs in light and dark against configured targets. Body text uses 4.5:1. Secondary text and large/bold control labels use 3:1. Decorative tertiary metadata uses 1.7:1. UI component colors use 3:1. Status accents use 2:1 because meaning is carried by text and icons.
-
-### generate-tokens.mjs
-
-Reads `references/tokens-apple-style.md` and writes:
-
-- `tokens.css`
-- `tokens.json`
-- `AppleTokens.swift`
-- `tailwind.tokens.cjs`
-- `Theme.kt`
-- `colors.xml`
-
-The markdown token source wins. Generated outputs are disposable.
-
-### motion-probe.mjs
-
-Prints SwiftUI, UIKit, CSS curve, and CSS `linear()` spring equivalents for presets or custom duration and bounce.
-
-### a11y-audit.mjs
-
-Static accessibility scan for language, main landmark, image alt, control names, label association, heading order, positive tabindex, clickable divs, Reduce Motion hooks, plus SwiftUI, Compose, and Android XML naming checks. `--platform` only affects reporting; the requirement is identical everywhere. It does not replace screen reader testing.
-
-### code-audit.mjs
-
-Code hygiene scan for empty catches, debugger statements, raw hex, hardcoded transition durations, stub markers, missing listener teardown, unbounded loops, `innerHTML` assignment, scroll hijacking, root smooth scroll, page-level snap, weak sticky/observer setup, lazy LCP media, missing media dimensions, unsafe bitmap decode, blanket `will-change`, and Apple-owned asset references. Focuses on correctness, not visual pattern matching.
-
-### a11y-probe.mjs
-
-Opt-in rendered accessibility scan with Playwright and axe-core against a live URL.
-
-```bash
-npm i -D playwright @axe-core/playwright
-npx playwright install chromium
-node scripts/a11y-probe.mjs --url=http://localhost:3000 --strict
-```
-
-### visual-diff.mjs
-
-Optional screenshot comparison. Requires dev dependencies:
-
-```bash
-npm i -D playwright pixelmatch pngjs
-npx playwright install chromium
-```
-
-Capture a baseline:
-
-```bash
-node scripts/visual-diff.mjs --url=http://localhost:3000 --routes=/,/settings --baseline=./visual-baseline --update
-```
-
-Compare later work:
-
-```bash
-node scripts/visual-diff.mjs --url=http://localhost:3000 --routes=/,/settings --baseline=./visual-baseline --out=./visual-diff --threshold=0.01
-```
-
-Add `apple-design-audit:ignore`, `apple-design-token-lint:ignore`, or `apple-design-code-audit:ignore` to a file to skip the relevant scan.
-
-## Review model
-
-`references/review-workflow-apple-style.md` defines five lenses: craft, interaction and motion, accessibility, platform fidelity, and code quality. Findings use `path:line — severity — lens — message`. Verdicts are Pass, Conditional, or Fail. A platform mismatch is at least High. An accessibility or contrast failure is always Blocker.
-
-`references/evidence-apple-style.md` labels rules Must, Should, or May so defaults are never sold as platform laws.
-
-`references/heritage-apple-style.md` explains the craft lineage and resolves conflicts between references.
-
-Flagship web work adds `restraint-and-antislop-apple-style.md`, `scroll-motion-apple-style.md`, `scrollytelling-apple-style.md`, `media-assets-and-delivery-apple-style.md`, `web-engineering-apple-style.md`, and `web-marketing-language-apple-style.md`. Interaction reviews add `perceived-performance-and-input-apple-style.md`, `state-and-feedback-apple-style.md`, and `navigation-models-apple-style.md`.
-
-Apple-platform work adds `apple-hig-mapping-apple-style.md` for topic naming and claim strength, `apple-platform-playbooks-apple-style.md` for native chrome, `apple-native-recipes-apple-style.md` for SwiftUI/UIKit implementations, and `assets/apple-component-fidelity-map.json` for control and state names. A scored review uses `apple-review-rubric-apple-style.md` after the five lenses; its hard caps override the numeric total.
-
-Vendored research stays behind the boundary in `references/upstream-sources-apple-style.md` and [THIRD_PARTY.md](THIRD_PARTY.md). The core docs distill rules; they do not load vendor files during normal use.
-
-## Maintenance rules
-
-- `tokens-apple-style.md` owns raw values.
-- `animations-apple-style.md` owns timing and physics.
-- `components-apple-style.md` owns component states.
-- `haptics-and-sound-apple-style.md` owns feedback timing.
-- `qol-patterns-apple-style.md` owns product-level interaction patterns.
-- `restraint-and-antislop-apple-style.md` owns restraint level and surface discipline.
-- `scroll-motion-apple-style.md` owns scroll-progress mapping and damped read values.
-- `scrollytelling-apple-style.md` owns sticky scenes and chapter choreography.
-- `media-assets-and-delivery-apple-style.md` owns media pipelines and asset sourcing.
-- `perceived-performance-and-input-apple-style.md` owns latency, focus, pointer, and scroll-input rules.
-- `state-and-feedback-apple-style.md` owns state selection and feedback timing.
-- `navigation-models-apple-style.md` owns presentation choice, back, deep links, and restoration.
-- `web-engineering-apple-style.md` owns progressive enhancement and front-end architecture.
-- `web-marketing-language-apple-style.md` owns flagship page anatomy and copy posture.
-- `content-apple-style.md` owns calm, benefit-led, one-idea-per-sentence copy.
-- `restraint-and-antislop-apple-style.md` owns deference as withholding and chrome receding.
-- `apple-hig-mapping-apple-style.md` owns HIG topic mapping and safe claim wording.
-- `apple-platform-playbooks-apple-style.md` owns Apple platform chrome recipes.
-- `apple-native-recipes-apple-style.md` owns SwiftUI/UIKit recipe code.
-- `apple-review-rubric-apple-style.md` owns scored craft review and hard caps.
-- `assets/apple-component-fidelity-map.json` owns cross-platform native control names.
-- `platform-adapters-apple-style.md` owns cross-platform mapping.
-- `macos-windowing-apple-style.md` owns desktop window behavior.
-- `qa-apple-style.md` owns the audit verdict format.
-- `review-workflow-apple-style.md` owns the five-lens review.
-- `evidence-apple-style.md` owns recommendation strength and citation discipline.
-- `upstream-sources-apple-style.md` owns vendor boundaries and source translation.
-- Keep all links relative.
-- Keep core docs provider-neutral.
-- Keep examples concrete.
-- Generated token outputs are disposable; the markdown token source wins.
-
-## Compatibility
-
-Designed for OpenCode, Claude, Codex, and similar agents that read a `SKILL.md` entrypoint and supporting files progressively.
+Code and original material are MIT licensed. The license does not claim to extend to material owned by Apple or others. See [LICENSE](LICENSE) and [THIRD_PARTY.md](THIRD_PARTY.md).
