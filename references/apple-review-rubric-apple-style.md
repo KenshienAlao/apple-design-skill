@@ -93,7 +93,7 @@ Interpretation: the total allows Pass, but two deference/restraint notes are nam
 2. Name the platform and restraint level from `restraint-and-antislop-apple-style.md`.
 3. Score each criterion from 0 to 2 against the named platform.
 4. Apply hard caps before reading the total.
-5. Write findings with `path:line` where source exists.
+5. Write findings with `path:line` where source exists; include HIG topic + strength when relevant.
 6. State the verdict and the two highest-scoring strengths in one line each.
 
 ## 6. Do / Don't

@@ -232,6 +232,8 @@ Source labels name HIG topics and are routing hints, not copied text. Use the st
 - Must: keep progress real, monotonic, and determinate as soon as a total is known. Source: `progress-indicators`, `loading`. Audit: value never decreases; no fake reverse animation; indeterminate progress switches on known total.
 - Should: keep nonblocking work in an inline or toolbar status surface. Source: `progress-indicators`. Audit: long background sync is visible without taking over the page.
 - Should: keep low-priority updates in a notification center instead of interrupting with a banner. Source: `notifications`. Audit: noncritical events persist in a list with no modal or banner.
+- Must: keep Live Activities/widgets/complications timely, glanceable, and privacy-aware; end or remove stale status promptly. Source: `live-activities`, `widgets`, `complications`. Audit: status has clear end/update rules; no sensitive data on lock screen/glance surfaces by default; tap opens relevant destination.
+- Should: make system-experience feedback respectful and optional where possible: haptics, sounds, badges, and live updates should match urgency and user settings. Source: `feedback`, `haptics`, `playing-audio`. Audit: nonessential sounds/haptics are suppressible; badges are accurate and clearable.
 
 ## Related
 

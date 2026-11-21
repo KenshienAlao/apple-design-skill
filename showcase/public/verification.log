@@ -9,9 +9,9 @@ output:
 > apple-design-showcase@1.0.0 tokens
 > node scripts/generate-tokens.mjs
 
-Token source: /home/nathan/Documents/skill/design/references/tokens-apple-style.md
-wrote /home/nathan/Documents/skill/design/showcase/src/tokens.css
-Wrote scoped appearance tokens to /home/nathan/Documents/skill/design/showcase/src/appearance.css
+Token source: /home/nathan/Documents/skill/apple-design/references/tokens-apple-style.md
+wrote /home/nathan/Documents/skill/apple-design/showcase/src/tokens.css
+Wrote scoped appearance tokens to /home/nathan/Documents/skill/apple-design/showcase/src/appearance.css
 
 $ npm run build
 cwd: .
@@ -26,11 +26,11 @@ transforming...
 ✓ 8 modules transformed.
 rendering chunks...
 computing gzip size...
-dist/404.html                    0.97 kB │ gzip: 0.51 kB
-dist/index.html                 31.65 kB │ gzip: 6.74 kB
-dist/assets/style-C-YipE8B.css  40.25 kB │ gzip: 5.56 kB
-dist/assets/main-0qGG9afx.js     7.68 kB │ gzip: 2.71 kB
-✓ built in 951ms
+dist/404.html                    1.83 kB │ gzip: 0.91 kB
+dist/index.html                 43.23 kB │ gzip: 8.03 kB
+dist/assets/style-BCIhkwdc.css  51.34 kB │ gzip: 7.16 kB
+dist/assets/main-C4L_Raox.js    11.39 kB │ gzip: 3.80 kB
+✓ built in 194ms
 
 $ npm run verify
 cwd: .
@@ -38,72 +38,82 @@ exit: 0
 output:
 
 > apple-design-showcase@1.0.0 verify
-> node ../scripts/link-check.mjs . --strict && node ../scripts/audit.mjs . --strict --platform=web && node ../scripts/token-lint.mjs . --strict && node ../scripts/check-contrast.mjs --strict && node ../scripts/a11y-audit.mjs . --strict --platform=web && node ../scripts/code-audit.mjs . --strict --platform=web
+> node ../scripts/link-check.mjs . --strict && node ../scripts/audit.mjs . --strict --platform=web && node ../scripts/token-lint.mjs . --strict && node ../scripts/check-contrast.mjs --strict && node ../scripts/a11y-audit.mjs . --strict --platform=web && node ../scripts/code-audit.mjs . --strict --platform=web && node ../scripts/motion-audit.mjs . --strict --platform=web && node ../scripts/hig-coverage-check.mjs --strict
 
 Apple design link check
-Target: /home/nathan/Documents/skill/design/showcase
+Target: /home/nathan/Documents/skill/apple-design/showcase
 Markdown files: 1
 Findings: 0
 Apple design audit
-Target: /home/nathan/Documents/skill/design/showcase
+Target: /home/nathan/Documents/skill/apple-design/showcase
 Platform: web
 Files scanned: 15
 Warnings: 0
 Infos: 0
 Apple design token lint
-Target: /home/nathan/Documents/skill/design/showcase
+Target: /home/nathan/Documents/skill/apple-design/showcase
 Files scanned: 15
 Warnings: 0
 Apple design contrast check
-Source: /home/nathan/Documents/skill/design/references/tokens-apple-style.md
+Source: /home/nathan/Documents/skill/apple-design/references/tokens-apple-style.md
 
-PASS  light label / bg               21.00:1  target 4.5 (body)
-PASS  light label / surface          18.82:1  target 4.5 (body)
-PASS  light label / surface-2        21.00:1  target 4.5 (body)
-PASS  light label-2 / bg             3.44:1   target 3.0 (secondary)
-PASS  light label-2 / surface        3.30:1   target 3.0 (secondary)
-PASS  light label-3 / bg             1.73:1   target 1.7 (decorative metadata)
-PASS  light label-3 / surface        1.71:1   target 1.7 (decorative metadata)
-PASS  light tint-contrast / tint     4.02:1   target 3.0 (large/bold control label)
-PASS  light tint / bg                4.02:1   target 3.0 (ui)
-PASS  light tint / surface           3.60:1   target 3.0 (ui)
-PASS  light red / bg                 3.55:1   target 3.0 (ui)
-PASS  light green / bg               2.22:1   target 2.0 (status accent)
-PASS  light orange / bg              2.20:1   target 2.0 (status accent)
-PASS  dark  label / bg               21.00:1  target 4.5 (body)
-PASS  dark  label / surface          17.01:1  target 4.5 (body)
-PASS  dark  label / surface-2        13.94:1  target 4.5 (body)
-PASS  dark  label-2 / bg             6.36:1   target 3.0 (secondary)
-PASS  dark  label-2 / surface        5.95:1   target 3.0 (secondary)
-PASS  dark  label-3 / bg             2.25:1   target 1.7 (decorative metadata)
-PASS  dark  label-3 / surface        2.48:1   target 1.7 (decorative metadata)
-PASS  dark  tint-contrast / tint     3.65:1   target 3.0 (large/bold control label)
-PASS  dark  tint / bg                5.76:1   target 3.0 (ui)
-PASS  dark  tint / surface           4.66:1   target 3.0 (ui)
-PASS  dark  red / bg                 6.16:1   target 3.0 (ui)
-PASS  dark  green / bg               10.39:1  target 2.0 (status accent)
-PASS  dark  orange / bg              10.22:1  target 2.0 (status accent)
+PASS  light label / bg               15.46:1  target 4.5 (body)
+PASS  light label / surface          16.83:1  target 4.5 (body)
+PASS  light label / surface-2        16.83:1  target 4.5 (body)
+PASS  light label-2 / bg             6.37:1   target 3.0 (secondary)
+PASS  light label-2 / surface        6.65:1   target 3.0 (secondary)
+PASS  light label-3 / bg             3.03:1   target 1.7 (decorative metadata)
+PASS  light label-3 / surface        3.09:1   target 1.7 (decorative metadata)
+PASS  light tint-contrast / tint     4.70:1   target 3.0 (large/bold control label)
+PASS  light tint / bg                4.31:1   target 3.0 (ui)
+PASS  light tint / surface           4.70:1   target 3.0 (ui)
+PASS  light red / bg                 4.94:1   target 3.0 (ui)
+PASS  light green / bg               4.04:1   target 2.0 (status accent)
+PASS  light orange / bg              4.77:1   target 2.0 (status accent)
+PASS  dark  label / bg               16.61:1  target 4.5 (body)
+PASS  dark  label / surface          15.46:1  target 4.5 (body)
+PASS  dark  label / surface-2        12.80:1  target 4.5 (body)
+PASS  dark  label-2 / bg             8.99:1   target 3.0 (secondary)
+PASS  dark  label-2 / surface        8.55:1   target 3.0 (secondary)
+PASS  dark  label-3 / bg             4.65:1   target 1.7 (decorative metadata)
+PASS  dark  label-3 / surface        4.55:1   target 1.7 (decorative metadata)
+PASS  dark  tint-contrast / tint     3.02:1   target 3.0 (large/bold control label)
+PASS  dark  tint / bg                6.00:1   target 3.0 (ui)
+PASS  dark  tint / surface           5.58:1   target 3.0 (ui)
+PASS  dark  red / bg                 5.31:1   target 3.0 (ui)
+PASS  dark  green / bg               8.94:1   target 2.0 (status accent)
+PASS  dark  orange / bg              8.80:1   target 2.0 (status accent)
 
 Pairs: 26
 Failures: 0
 Apple design accessibility audit
-Target: /home/nathan/Documents/skill/design/showcase
+Target: /home/nathan/Documents/skill/apple-design/showcase
 Platform: web
 Files scanned: 15
 Warnings: 0
 Apple design code audit
-Target: /home/nathan/Documents/skill/design/showcase
+Target: /home/nathan/Documents/skill/apple-design/showcase
 Platform: web
 Files scanned: 15
 Warnings: 0
 Infos: 0
+Apple design motion audit
+Target: /home/nathan/Documents/skill/apple-design/showcase
+Platform: web
+Files scanned: 7
+Warnings: 0
+Infos: 0
+Apple design HIG coverage check
+Matrix rows: 173
+Vault present: true (173)
+Coverage check: PASS
 
 $ node ../scripts/link-check.mjs . --strict
 cwd: .
 exit: 0
 output:
 Apple design link check
-Target: /home/nathan/Documents/skill/design/showcase
+Target: /home/nathan/Documents/skill/apple-design/showcase
 Markdown files: 1
 Findings: 0
 
@@ -112,7 +122,7 @@ cwd: .
 exit: 0
 output:
 Apple design audit
-Target: /home/nathan/Documents/skill/design/showcase
+Target: /home/nathan/Documents/skill/apple-design/showcase
 Platform: web
 Files scanned: 15
 Warnings: 0
@@ -123,7 +133,7 @@ cwd: .
 exit: 0
 output:
 Apple design token lint
-Target: /home/nathan/Documents/skill/design/showcase
+Target: /home/nathan/Documents/skill/apple-design/showcase
 Files scanned: 15
 Warnings: 0
 
@@ -132,34 +142,34 @@ cwd: .
 exit: 0
 output:
 Apple design contrast check
-Source: /home/nathan/Documents/skill/design/references/tokens-apple-style.md
+Source: /home/nathan/Documents/skill/apple-design/references/tokens-apple-style.md
 
-PASS  light label / bg               21.00:1  target 4.5 (body)
-PASS  light label / surface          18.82:1  target 4.5 (body)
-PASS  light label / surface-2        21.00:1  target 4.5 (body)
-PASS  light label-2 / bg             3.44:1   target 3.0 (secondary)
-PASS  light label-2 / surface        3.30:1   target 3.0 (secondary)
-PASS  light label-3 / bg             1.73:1   target 1.7 (decorative metadata)
-PASS  light label-3 / surface        1.71:1   target 1.7 (decorative metadata)
-PASS  light tint-contrast / tint     4.02:1   target 3.0 (large/bold control label)
-PASS  light tint / bg                4.02:1   target 3.0 (ui)
-PASS  light tint / surface           3.60:1   target 3.0 (ui)
-PASS  light red / bg                 3.55:1   target 3.0 (ui)
-PASS  light green / bg               2.22:1   target 2.0 (status accent)
-PASS  light orange / bg              2.20:1   target 2.0 (status accent)
-PASS  dark  label / bg               21.00:1  target 4.5 (body)
-PASS  dark  label / surface          17.01:1  target 4.5 (body)
-PASS  dark  label / surface-2        13.94:1  target 4.5 (body)
-PASS  dark  label-2 / bg             6.36:1   target 3.0 (secondary)
-PASS  dark  label-2 / surface        5.95:1   target 3.0 (secondary)
-PASS  dark  label-3 / bg             2.25:1   target 1.7 (decorative metadata)
-PASS  dark  label-3 / surface        2.48:1   target 1.7 (decorative metadata)
-PASS  dark  tint-contrast / tint     3.65:1   target 3.0 (large/bold control label)
-PASS  dark  tint / bg                5.76:1   target 3.0 (ui)
-PASS  dark  tint / surface           4.66:1   target 3.0 (ui)
-PASS  dark  red / bg                 6.16:1   target 3.0 (ui)
-PASS  dark  green / bg               10.39:1  target 2.0 (status accent)
-PASS  dark  orange / bg              10.22:1  target 2.0 (status accent)
+PASS  light label / bg               15.46:1  target 4.5 (body)
+PASS  light label / surface          16.83:1  target 4.5 (body)
+PASS  light label / surface-2        16.83:1  target 4.5 (body)
+PASS  light label-2 / bg             6.37:1   target 3.0 (secondary)
+PASS  light label-2 / surface        6.65:1   target 3.0 (secondary)
+PASS  light label-3 / bg             3.03:1   target 1.7 (decorative metadata)
+PASS  light label-3 / surface        3.09:1   target 1.7 (decorative metadata)
+PASS  light tint-contrast / tint     4.70:1   target 3.0 (large/bold control label)
+PASS  light tint / bg                4.31:1   target 3.0 (ui)
+PASS  light tint / surface           4.70:1   target 3.0 (ui)
+PASS  light red / bg                 4.94:1   target 3.0 (ui)
+PASS  light green / bg               4.04:1   target 2.0 (status accent)
+PASS  light orange / bg              4.77:1   target 2.0 (status accent)
+PASS  dark  label / bg               16.61:1  target 4.5 (body)
+PASS  dark  label / surface          15.46:1  target 4.5 (body)
+PASS  dark  label / surface-2        12.80:1  target 4.5 (body)
+PASS  dark  label-2 / bg             8.99:1   target 3.0 (secondary)
+PASS  dark  label-2 / surface        8.55:1   target 3.0 (secondary)
+PASS  dark  label-3 / bg             4.65:1   target 1.7 (decorative metadata)
+PASS  dark  label-3 / surface        4.55:1   target 1.7 (decorative metadata)
+PASS  dark  tint-contrast / tint     3.02:1   target 3.0 (large/bold control label)
+PASS  dark  tint / bg                6.00:1   target 3.0 (ui)
+PASS  dark  tint / surface           5.58:1   target 3.0 (ui)
+PASS  dark  red / bg                 5.31:1   target 3.0 (ui)
+PASS  dark  green / bg               8.94:1   target 2.0 (status accent)
+PASS  dark  orange / bg              8.80:1   target 2.0 (status accent)
 
 Pairs: 26
 Failures: 0
@@ -169,7 +179,7 @@ cwd: .
 exit: 0
 output:
 Apple design accessibility audit
-Target: /home/nathan/Documents/skill/design/showcase
+Target: /home/nathan/Documents/skill/apple-design/showcase
 Platform: web
 Files scanned: 15
 Warnings: 0
@@ -179,11 +189,31 @@ cwd: .
 exit: 0
 output:
 Apple design code audit
-Target: /home/nathan/Documents/skill/design/showcase
+Target: /home/nathan/Documents/skill/apple-design/showcase
 Platform: web
 Files scanned: 15
 Warnings: 0
 Infos: 0
+
+$ node ../scripts/motion-audit.mjs . --strict --platform=web
+cwd: .
+exit: 0
+output:
+Apple design motion audit
+Target: /home/nathan/Documents/skill/apple-design/showcase
+Platform: web
+Files scanned: 7
+Warnings: 0
+Infos: 0
+
+$ node ../scripts/hig-coverage-check.mjs --strict
+cwd: .
+exit: 0
+output:
+Apple design HIG coverage check
+Matrix rows: 173
+Vault present: true (173)
+Coverage check: PASS
 
 $ npm --prefix .. run verify
 cwd: .
@@ -191,66 +221,76 @@ exit: 0
 output:
 
 > apple-design-skill@1.0.0 verify
-> node scripts/link-check.mjs . --strict && for f in scripts/*.mjs scripts/lib/*.mjs; do node --check "$f"; done && node scripts/audit.mjs . --strict && node scripts/token-lint.mjs . --strict && node scripts/a11y-audit.mjs . --strict && node scripts/code-audit.mjs . --strict && node scripts/check-contrast.mjs --strict && node scripts/generate-tokens.mjs --format=all --out=/tmp/opencode/design-tokens && node scripts/motion-probe.mjs --all
+> node scripts/link-check.mjs . --strict && for f in scripts/*.mjs scripts/lib/*.mjs; do node --check "$f"; done && node scripts/audit.mjs . --strict && node scripts/token-lint.mjs . --strict && node scripts/a11y-audit.mjs . --strict && node scripts/code-audit.mjs . --strict && node scripts/motion-audit.mjs . --strict && node scripts/hig-coverage-check.mjs --strict && node scripts/check-contrast.mjs --strict && node scripts/generate-tokens.mjs --format=all --out=/tmp/opencode/design-tokens && node scripts/motion-probe.mjs --all
 
 Apple design link check
-Target: /home/nathan/Documents/skill/design
+Target: /home/nathan/Documents/skill/apple-design
 Markdown files: 38
 Findings: 0
 Apple design audit
-Target: /home/nathan/Documents/skill/design
+Target: /home/nathan/Documents/skill/apple-design
 Platform: any
-Files scanned: 88
+Files scanned: 90
 Warnings: 0
 Infos: 0
 Apple design token lint
-Target: /home/nathan/Documents/skill/design
-Files scanned: 88
+Target: /home/nathan/Documents/skill/apple-design
+Files scanned: 90
 Warnings: 0
 Apple design accessibility audit
-Target: /home/nathan/Documents/skill/design
+Target: /home/nathan/Documents/skill/apple-design
 Platform: any
-Files scanned: 88
+Files scanned: 90
 Warnings: 0
 Apple design code audit
-Target: /home/nathan/Documents/skill/design
+Target: /home/nathan/Documents/skill/apple-design
 Platform: any
-Files scanned: 88
+Files scanned: 90
 Warnings: 0
 Infos: 0
+Apple design motion audit
+Target: /home/nathan/Documents/skill/apple-design
+Platform: any
+Files scanned: 0
+Warnings: 0
+Infos: 0
+Apple design HIG coverage check
+Matrix rows: 173
+Vault present: true (173)
+Coverage check: PASS
 Apple design contrast check
-Source: /home/nathan/Documents/skill/design/references/tokens-apple-style.md
+Source: /home/nathan/Documents/skill/apple-design/references/tokens-apple-style.md
 
-PASS  light label / bg               21.00:1  target 4.5 (body)
-PASS  light label / surface          18.82:1  target 4.5 (body)
-PASS  light label / surface-2        21.00:1  target 4.5 (body)
-PASS  light label-2 / bg             3.44:1   target 3.0 (secondary)
-PASS  light label-2 / surface        3.30:1   target 3.0 (secondary)
-PASS  light label-3 / bg             1.73:1   target 1.7 (decorative metadata)
-PASS  light label-3 / surface        1.71:1   target 1.7 (decorative metadata)
-PASS  light tint-contrast / tint     4.02:1   target 3.0 (large/bold control label)
-PASS  light tint / bg                4.02:1   target 3.0 (ui)
-PASS  light tint / surface           3.60:1   target 3.0 (ui)
-PASS  light red / bg                 3.55:1   target 3.0 (ui)
-PASS  light green / bg               2.22:1   target 2.0 (status accent)
-PASS  light orange / bg              2.20:1   target 2.0 (status accent)
-PASS  dark  label / bg               21.00:1  target 4.5 (body)
-PASS  dark  label / surface          17.01:1  target 4.5 (body)
-PASS  dark  label / surface-2        13.94:1  target 4.5 (body)
-PASS  dark  label-2 / bg             6.36:1   target 3.0 (secondary)
-PASS  dark  label-2 / surface        5.95:1   target 3.0 (secondary)
-PASS  dark  label-3 / bg             2.25:1   target 1.7 (decorative metadata)
-PASS  dark  label-3 / surface        2.48:1   target 1.7 (decorative metadata)
-PASS  dark  tint-contrast / tint     3.65:1   target 3.0 (large/bold control label)
-PASS  dark  tint / bg                5.76:1   target 3.0 (ui)
-PASS  dark  tint / surface           4.66:1   target 3.0 (ui)
-PASS  dark  red / bg                 6.16:1   target 3.0 (ui)
-PASS  dark  green / bg               10.39:1  target 2.0 (status accent)
-PASS  dark  orange / bg              10.22:1  target 2.0 (status accent)
+PASS  light label / bg               15.46:1  target 4.5 (body)
+PASS  light label / surface          16.83:1  target 4.5 (body)
+PASS  light label / surface-2        16.83:1  target 4.5 (body)
+PASS  light label-2 / bg             6.37:1   target 3.0 (secondary)
+PASS  light label-2 / surface        6.65:1   target 3.0 (secondary)
+PASS  light label-3 / bg             3.03:1   target 1.7 (decorative metadata)
+PASS  light label-3 / surface        3.09:1   target 1.7 (decorative metadata)
+PASS  light tint-contrast / tint     4.70:1   target 3.0 (large/bold control label)
+PASS  light tint / bg                4.31:1   target 3.0 (ui)
+PASS  light tint / surface           4.70:1   target 3.0 (ui)
+PASS  light red / bg                 4.94:1   target 3.0 (ui)
+PASS  light green / bg               4.04:1   target 2.0 (status accent)
+PASS  light orange / bg              4.77:1   target 2.0 (status accent)
+PASS  dark  label / bg               16.61:1  target 4.5 (body)
+PASS  dark  label / surface          15.46:1  target 4.5 (body)
+PASS  dark  label / surface-2        12.80:1  target 4.5 (body)
+PASS  dark  label-2 / bg             8.99:1   target 3.0 (secondary)
+PASS  dark  label-2 / surface        8.55:1   target 3.0 (secondary)
+PASS  dark  label-3 / bg             4.65:1   target 1.7 (decorative metadata)
+PASS  dark  label-3 / surface        4.55:1   target 1.7 (decorative metadata)
+PASS  dark  tint-contrast / tint     3.02:1   target 3.0 (large/bold control label)
+PASS  dark  tint / bg                6.00:1   target 3.0 (ui)
+PASS  dark  tint / surface           5.58:1   target 3.0 (ui)
+PASS  dark  red / bg                 5.31:1   target 3.0 (ui)
+PASS  dark  green / bg               8.94:1   target 2.0 (status accent)
+PASS  dark  orange / bg              8.80:1   target 2.0 (status accent)
 
 Pairs: 26
 Failures: 0
-Token source: /home/nathan/Documents/skill/design/references/tokens-apple-style.md
+Token source: /home/nathan/Documents/skill/apple-design/references/tokens-apple-style.md
 unchanged /tmp/opencode/design-tokens/tokens.css
 unchanged /tmp/opencode/design-tokens/tokens.json
 unchanged /tmp/opencode/design-tokens/AppleTokens.swift

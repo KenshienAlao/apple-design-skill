@@ -2,20 +2,24 @@
 /* Generated from tokens-apple-style.md. Do not edit by hand. */
 /* Shared tokens are emitted for both appearances; only colors diverge. */
 :root {
-  --apple-color-bg: #FFFFFF;
-  --apple-color-surface: #F2F2F7;
+  --apple-color-bg: #F5F5F7;
+  --apple-color-surface: #FFFFFF;
   --apple-color-surface-2: #FFFFFF;
-  --apple-color-label: #000000;
-  --apple-color-label-2: rgba(60, 60, 67, 0.60);
-  --apple-color-label-3: rgba(60, 60, 67, 0.30);
-  --apple-color-separator: rgba(60, 60, 67, 0.29);
+  --apple-color-surface-3: #E8E8ED;
+  --apple-color-label: #1D1D1F;
+  --apple-color-label-2: rgba(29, 29, 31, 0.72);
+  --apple-color-label-3: rgba(29, 29, 31, 0.48);
+  --apple-color-label-4: rgba(29, 29, 31, 0.24);
+  --apple-color-separator: rgba(60, 60, 67, 0.16);
+  --apple-color-separator-opaque: #D2D2D7;
   --apple-color-fill: rgba(120, 120, 128, 0.12);
-  --apple-color-fill-2: rgba(120, 120, 128, 0.20);
-  --apple-color-tint: #007AFF;
+  --apple-color-fill-2: rgba(120, 120, 128, 0.08);
+  --apple-color-fill-3: rgba(118, 118, 128, 0.06);
+  --apple-color-tint: #0071E3;
   --apple-color-tint-contrast: #FFFFFF;
-  --apple-color-green: #34C759;
-  --apple-color-orange: #FF9500;
-  --apple-color-red: #FF3B30;
+  --apple-color-green: #248A3D;
+  --apple-color-orange: #B25000;
+  --apple-color-red: #D70015;
 
   --apple-font-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --apple-font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -98,16 +102,20 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --apple-color-bg: #000000;
-    --apple-color-surface: #1C1C1E;
+    --apple-color-bg: #161617;
+    --apple-color-surface: #1D1D1F;
     --apple-color-surface-2: #2C2C2E;
-    --apple-color-label: #FFFFFF;
-    --apple-color-label-2: rgba(235, 235, 245, 0.60);
-    --apple-color-label-3: rgba(235, 235, 245, 0.30);
+    --apple-color-surface-3: #3A3A3C;
+    --apple-color-label: #F5F5F7;
+    --apple-color-label-2: rgba(245, 245, 247, 0.72);
+    --apple-color-label-3: rgba(245, 245, 247, 0.48);
+    --apple-color-label-4: rgba(245, 245, 247, 0.24);
     --apple-color-separator: rgba(84, 84, 88, 0.65);
+    --apple-color-separator-opaque: #424245;
     --apple-color-fill: rgba(120, 120, 128, 0.36);
-    --apple-color-fill-2: rgba(120, 120, 128, 0.58);
-    --apple-color-tint: #0A84FF;
+    --apple-color-fill-2: rgba(120, 120, 128, 0.28);
+    --apple-color-fill-3: rgba(118, 118, 128, 0.20);
+    --apple-color-tint: #2997FF;
     --apple-color-tint-contrast: #FFFFFF;
     --apple-color-green: #30D158;
     --apple-color-orange: #FF9F0A;

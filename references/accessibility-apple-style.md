@@ -223,6 +223,9 @@ Source labels name HIG topics and are routing hints, not copied text. Use the st
 - Must: trap focus only in a true modal and return it to the invoking control on dismiss. Source: `keyboards`, `sheets`. Audit: Tab escapes nonmodal views; modal close restores focus to the opener.
 - Must: make no feature pointer-only. Source: `keyboards`, `pointing-devices`. Audit: text entry, reordering, selection, and data manipulation all have keyboard paths.
 - Should: describe charts and infographics with a concise summary plus accessible values and interactions. Source: `charts`, `voiceover`. Audit: chart values and trends are available without sight; interactions use accessible elements.
+- Must: support assistive technologies and settings as system behaviors: Dynamic Type, Bold Text, Increase Contrast, Reduce Transparency, Reduce Motion, Switch Control, Voice Control, captions/audio descriptions where relevant. Source: `accessibility`. Audit: key settings have visible effect; no essential information lost.
+- Must: keep input alternatives across modalities: touch, pointer, keyboard, remote, gaze/hand, Digital Crown/Siri Remote as platform-appropriate. Source: `inputs`, `gestures`, `pointing-devices`. Audit: core task completes with the platform's expected alternative input.
+- Should: design for cognitive accessibility: clear language, predictable flows, avoid time pressure, minimize distractions, and keep recovery paths obvious. Source: `accessibility`, `inclusion`. Audit: no timed dismissal for critical info; errors explain next step plainly.
 
 ## QA checklist
 

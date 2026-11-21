@@ -148,6 +148,15 @@ Bad: "11/20/26 2:30"
 - avoid idioms
 - keep icons culturally neutral
 
+## 11b. Inclusion and privacy in copy
+
+- Use plain, respectful, inclusive language; address people directly as "you" when appropriate, not "the user".
+- Avoid gendered assumptions, stereotypes, ableist language, and culture-specific idioms.
+- Ask only for information needed for the task; explain why sensitive data is requested at the moment of request.
+- Permission purpose strings are short, specific, active, sentence case, and end with a period.
+- Do not expose sensitive personal data in notifications, previews, logs, or share surfaces by default.
+- Branding voice must remain clear and respectful; brand expression defers to content and accessibility.
+
 ## 11a. Benefit-led and calm copy
 
 Product and flagship copy states what the user gets, not what the feature is.

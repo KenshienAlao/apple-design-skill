@@ -27,7 +27,7 @@ The output goes to `dist/`. Both `dist/` and `node_modules/` are ignored by [sho
 | `npm run dev` | Start the local Vite server. |
 | `npm run tokens` | Regenerate `src/tokens.css` and `src/appearance.css` from [tokens-apple-style.md](../references/tokens-apple-style.md). |
 | `npm run build` | Produce the production site in `dist/`. |
-| `npm run verify` | Run the showcase's link, audit, token, contrast, accessibility, and code checks. |
+| `npm run verify` | Run the showcase's link, audit, token, contrast, accessibility, code, motion, and HIG coverage checks. |
 | `npm run verify:record` | Re-run all checks and rewrite `public/verification.log` and `src/verification.json`. |
 | `npm --prefix .. run verify` | Run the repository's full verification gate from the skill root. |
 
@@ -50,8 +50,8 @@ The output goes to `dist/`. Both `dist/` and `node_modules/` are ignored by [sho
 - The install prompt is copied verbatim from the approved content.
 - Token sheets are regenerated from the skill's markdown source, not hand-maintained.
 - Specimen A uses real hover, focus, disabled, error, and success states. Platform switching changes framework names and anatomy, not token values.
-- Specimen B lists the exact reference set for four representative tasks, with the reason for each selection.
-- Specimen C reports actual exit codes and finding counts from [audit.mjs](../scripts/audit.mjs), [token-lint.mjs](../scripts/token-lint.mjs), [check-contrast.mjs](../scripts/check-contrast.mjs), [a11y-audit.mjs](../scripts/a11y-audit.mjs), and [code-audit.mjs](../scripts/code-audit.mjs).
+- Specimen B lists representative task reference sets, including the 173-page HIG mapping when platform contracts matter.
+- Specimen C reports actual exit codes and finding counts from [audit.mjs](../scripts/audit.mjs), [token-lint.mjs](../scripts/token-lint.mjs), [check-contrast.mjs](../scripts/check-contrast.mjs), [a11y-audit.mjs](../scripts/a11y-audit.mjs), [code-audit.mjs](../scripts/code-audit.mjs), [motion-audit.mjs](../scripts/motion-audit.mjs), and [hig-coverage-check.mjs](../scripts/hig-coverage-check.mjs).
 
 ## Deliberate limits
 

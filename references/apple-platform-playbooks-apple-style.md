@@ -131,7 +131,34 @@ Must: save progress on background and expose pause/resume from the main interact
 
 Should: defer setup detail until the first moment the game needs it.
 
-## 8. Cross-platform transfer table
+## 8. System surfaces and technologies
+
+Use system surfaces and integrations as native patterns, not custom reinventions. Source labels name HIG topics.
+
+| Surface / technology | Must / Should | Audit |
+|---|---|---|
+| Widgets | Must: glanceable, timely, deep-linked, and privacy-aware; remove stale content. Should: support relevant sizes/families and sensible tap targets. | Widget opens relevant destination; no sensitive lock-screen content by default; stale state cleared. |
+| Live Activities | Must: show live, time-bounded status only; end promptly; keep updates meaningful. Should: provide compact/expanded states with clear hierarchy. | Activity ends when event ends; updates are not promotional/noisy; tap deep-links correctly. |
+| Complications / watch faces | Must: glanceable, timely, and optional; respect small-screen legibility. Should: use complications/watch-face appropriate data density. | Complication has clear value at a glance; no dense text; watch-face content remains legible. |
+| Notifications / badges | Must: user control, relevance, accurate badge counts, clear actions. | Permission requested in context; badge clears when read; notification opens relevant screen. |
+| Always On / live viewing | Must: reduce motion/brightness/sensitive content appropriately; keep critical info glanceable. | Always-on state is calm and privacy-aware; updates do not distract. |
+| App icons / branding | Must: follow platform icon/grid/material guidance; no Apple trademarks or confusingly similar system icons. Should: test at small sizes and appearance variants. | Icon recognizable at small size; dark/tinted variants remain clear. |
+| Sign in with Apple / passkeys / accounts / managing accounts | Must: respect privacy, offer system auth where appropriate, explain account value before blocking. Should: prefer passkeys/biometrics/keychain over custom password flows. | Sign-in not a premature wall; account deletion/settings clear. |
+| Apple Pay / Wallet / Tap to Pay / ID Verifier / NFC | Must: use system payment/identity sheets where available; show clear total/cost/context before commit; handle sensitive data securely. | No custom card capture when system payment appropriate; identity/payment flows are explicit and consented. |
+| In-app purchase / subscriptions | Must: clear pricing, terms, renewal/cancellation paths, and restore purchases where applicable. Should: avoid dark patterns and confusing paywalls. | Price/trial/renewal understandable before purchase; manage/cancel/restore visible. |
+| HealthKit / CareKit / ResearchKit / sensitive data | Must: request minimum data, explain purpose, handle denial/revocation, protect privacy. | Permission purpose specific; sensitive data not exposed in notifications/logs. |
+| SharePlay / sharing / collaboration / activity views | Must: make shared state visible, preserve user control, handle participants joining/leaving gracefully. | Shared session state clear; user can leave/stop sharing easily. |
+| Game Center / games / game controls | Must: support system game features without blocking core play; save progress and respect platform input/accessibility. Should: support controllers and clear pause/resume. | Achievements/leaderboards optional; pause/resume/controllers work where supported. |
+| CarPlay / driving contexts | Must: glanceable, minimal interaction, no complex text entry, no required iPhone interaction while driving. | Primary tasks short; text/targets legible at distance; motion/distraction limited. |
+| AirPlay / media playback | Must: make playback/control destinations clear; preserve user control and privacy. | AirPlay route/control is obvious; playback state remains consistent. |
+| Siri / Shortcuts / App Intents | Should: expose meaningful actions with clear phrases, predictable results, and confirmation for destructive actions. | Intent names natural; result visible/audible; destructive intents confirm. |
+| iCloud / continuity / Handoff | Should: preserve state safely across devices; resolve conflicts clearly; respect privacy. | Handoff/restoration preserves task; conflicts understandable and recoverable. |
+| Generative AI / Machine Learning | Must: be transparent, give user control/review, handle uncertainty/errors safely, protect private data. Should: label generated content and provide undo/feedback. | AI output editable/reviewable; no silent sensitive-data sharing; failures recoverable. |
+| Apple Pencil / Scribble / camera control / gyro / nearby interactions | Should: support relevant device inputs when they add value; always provide alternatives. | Input-specific features degrade gracefully; core task works without specialized hardware. |
+| App Clips / iMessage apps & stickers / top shelf / lockups | Should: keep experiences focused, fast, and platform-native. | App Clip/task is scoped; iMessage/top-shelf/lockup content is glanceable and deep-links correctly. |
+| Maps / location / ShazamKit / workouts / other system tech | Must: request permissions in context, explain value, and handle unavailable data gracefully. | Permissions contextual; fallback exists when service unavailable/denied. |
+
+## 9. Cross-platform transfer table
 
 | Idea | iOS | iPadOS | macOS | watchOS | visionOS |
 |---|---|---|---|---|---|
@@ -146,7 +173,7 @@ Should: defer setup detail until the first moment the game needs it.
 | tvOS | one visible focus, large targets, minimal typing | focus is unambiguous from a distance |
 | games | instant input response, explicit pause, background persistence | state survives interruption |
 
-## 9. Anti-patterns
+## 10. Anti-patterns
 
 - stretched iPhone layout on iPad
 - bottom tab bar on macOS
@@ -154,7 +181,10 @@ Should: defer setup detail until the first moment the game needs it.
 - hover-only affordance on touch
 - decorative depth on visionOS
 - crown inertia copied to a pointer UI
-- widget used as a full reading surface
+- widget/Live Activity used as a full reading or promotional surface
+- sensitive data exposed on glanceable/lock-screen surfaces
+- custom payment/auth flows where a system pattern exists and is appropriate
+- requiring iPhone interaction or complex text entry in CarPlay/driving contexts
 
 ## QA checklist
 

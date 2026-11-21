@@ -11,12 +11,13 @@ Use this file before shipping any Apple-inspired UI work. A failed item blocks t
 - [ ] Radius values come from tokens.
 - [ ] Semantic colors used in light and dark.
 - [ ] One accent tint per screen.
-- [ ] Materials preserve contrast.
+- [ ] Materials preserve contrast and Liquid Glass stays in functional layer only.
 - [ ] No heavy decorative shadows.
 - [ ] No gradient background by default.
 - [ ] Essential body text meets 4.5:1.
 - [ ] Secondary text meets 3:1.
 - [ ] Tertiary metadata below 3:1 is non-essential and paired with full label text.
+- [ ] Branding defers to content; no decorative logos or splash-as-branding.
 
 ## 2. Layout
 
@@ -42,16 +43,15 @@ Use this file before shipping any Apple-inspired UI work. A failed item blocks t
 
 ## 4. Motion
 
-- [ ] Direct manipulation tracks input 1:1.
-- [ ] Commit uses velocity projection.
-- [ ] Springs are 0.35/0.15 default or documented exception.
-- [ ] Bounce never exceeds 0.25.
-- [ ] Carousel snaps only after release.
-- [ ] Carousel end uses bounded rubber band.
-- [ ] No phantom page.
-- [ ] Haptics fire once.
-- [ ] Reduce Motion path exists.
-- [ ] Motion is interruptible.
+- [ ] Motion posture declared (subtle/standard/flagship) and matches surface purpose.
+- [ ] Direct manipulation tracks input 1:1; no spring while captured.
+- [ ] Commit uses velocity projection and is interruptible/cancelable.
+- [ ] Springs/curves are documented defaults or justified exceptions.
+- [ ] Bounce never exceeds 0.25 unless intentionally playful and documented.
+- [ ] Carousel snaps only after release; edge uses bounded rubber band; no phantom page.
+- [ ] Durations are purposeful; no render-on-mount animation spam; no layout-property jank.
+- [ ] Haptics fire once at commit, never per frame.
+- [ ] Reduce Motion path preserves meaning (crossfade/instant final state).
 
 ## 5. Haptics and feedback
 
@@ -74,6 +74,10 @@ Use this file before shipping any Apple-inspired UI work. A failed item blocks t
 - [ ] Deep link invalid state is useful.
 - [ ] Offline state visible where relevant.
 - [ ] Recovery names restored content.
+- [ ] Permissions are requested in context with clear purpose strings; denial/revocation handled.
+- [ ] Account/sign-in flows avoid premature walls; passkeys/system auth preferred where appropriate.
+- [ ] Sharing/collaboration/printing/export/file actions are explicit, scoped, and recoverable.
+- [ ] Sharing/collaboration scope is clear; printing/export/file actions are explicit and recoverable.
 
 ## 7. Platform and desktop
 
@@ -90,6 +94,8 @@ Use this file before shipping any Apple-inspired UI work. A failed item blocks t
 - [ ] macOS toolbar holds view actions, menu bar holds global actions.
 - [ ] macOS sheets attach to the window.
 - [ ] Traffic lights unobstructed.
+- [ ] Widgets/Live Activities/complications are glanceable, timely, deep-linked, and privacy-aware.
+- [ ] System integrations (Pay/Sign in/Share/Health/Game Center/CarPlay/Siri/iCloud/AI) use standard patterns and user control.
 
 ## 8. Accessibility
 
@@ -101,6 +107,8 @@ Use this file before shipping any Apple-inspired UI work. A failed item blocks t
 - [ ] No color-only state.
 - [ ] VoiceOver or screen reader tested.
 - [ ] Increase Contrast checked.
+- [ ] Reduce Motion / Reduce Transparency / Bold Text / Dynamic Type behaviors verified.
+- [ ] Gestures have non-gesture alternatives; platform input alternatives covered.
 
 ## 9. Content
 
@@ -111,6 +119,8 @@ Use this file before shipping any Apple-inspired UI work. A failed item blocks t
 - [ ] Capitalization follows content doc.
 - [ ] Strings are localization-safe.
 - [ ] No lorem ipsum or TODO labels.
+- [ ] Copy is inclusive, plain, and respectful; no gendered/stereotyping idioms.
+- [ ] Sensitive data not exposed in notifications/previews/logs by default.
 
 ## 10. Code hygiene
 

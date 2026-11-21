@@ -97,7 +97,7 @@ input {
 
 .js [data-reveal] {
   opacity: 0;
-  transform: translateY(var(--apple-space-6)) scale(0.97);
+  transform: translateY(var(--apple-space-5));
 }
 
 .js [data-reveal].is-visible {
@@ -105,11 +105,12 @@ input {
   transform: none;
   transition: opacity var(--apple-duration-standard) var(--apple-ease-out),
     transform var(--apple-duration-standard) var(--apple-ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
 }
 
 .js .wipe span {
   opacity: 0;
-  transform: translateY(0.3em) scale(0.97);
+  transform: translateY(0.25em);
 }
 
 .js .wipe.is-visible span {
@@ -399,9 +400,9 @@ input {
   width: 100%;
   padding: var(--apple-space-3);
   /* The bezel is hardware; the screen uses scoped appearance tokens. */
-  background: rgb(11 11 13);
+  background: rgb(28 28 30); /* hardware bezel */
   border-radius: calc(var(--apple-radius-sheet) + var(--apple-space-7));
-  box-shadow: var(--apple-shadow-large), inset 0 0 0 var(--apple-space-1) rgba(255, 255, 255, 0.12);
+  box-shadow: var(--apple-shadow-large), inset 0 0 0 var(--apple-space-1) rgba(255, 255, 255, 0.08);
 }
 
 .device-frame__screen {
@@ -427,7 +428,7 @@ input {
 .device-status__island {
   inline-size: 76px;
   block-size: 22px;
-  background: rgb(0 0 0);
+  background: rgb(0 0 0); /* hardware island */
   border-radius: var(--apple-radius-pill);
 }
 
@@ -486,7 +487,7 @@ input {
 
 .device-group {
   margin-bottom: var(--apple-space-5);
-  background: var(--apple-color-surface);
+  background: color-mix(in srgb, var(--apple-color-surface) 72%, var(--apple-color-bg));
   border-radius: var(--apple-radius-medium);
   overflow: hidden;
 }
@@ -635,7 +636,7 @@ input {
   inline-size: var(--device-switch-knob);
   block-size: var(--device-switch-knob);
   margin-inline-start: var(--device-switch-inset);
-  background: rgb(255 255 255);
+  background: rgb(255 255 255); /* hardware knob */
   border-radius: var(--apple-radius-pill);
   box-shadow: var(--apple-shadow-small);
   transform: translateX(0);
@@ -727,7 +728,7 @@ input {
 
 .prompt-preview pre {
   background: var(--apple-color-surface);
-  border: var(--apple-space-1) solid var(--apple-color-separator);
+  border: var(--apple-hairline);
   color: var(--apple-color-label);
 }
 
@@ -741,7 +742,7 @@ input {
 
 .proof-strip > div {
   padding: calc(var(--apple-space-6) * 1.25) var(--apple-space-4);
-  border-inline-end: var(--apple-space-1) solid var(--apple-color-separator);
+  border-inline-end: var(--apple-hairline);
   text-align: center;
 }
 
@@ -841,16 +842,26 @@ input {
   min-height: calc(var(--apple-space-11) * 4);
   padding: calc(var(--apple-space-6) * 1.25);
   background: var(--apple-color-surface);
-  border: var(--apple-space-1) solid var(--apple-color-separator);
+  border: var(--apple-hairline);
   border-radius: var(--apple-radius-large);
   box-shadow: var(--apple-shadow-small);
+  transition: transform var(--apple-duration-control) var(--apple-ease-out),
+    box-shadow var(--apple-duration-control) var(--apple-ease-out),
+    border-color var(--apple-duration-control) var(--apple-ease-standard);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .bento__item:hover {
+    transform: translateY(calc(var(--apple-space-1) * -1));
+    box-shadow: var(--apple-shadow-medium);
+    border-color: color-mix(in srgb, var(--apple-color-tint) 16%, var(--apple-color-separator));
+  }
 }
 
 .bento__item--lead {
   grid-column: span 7;
-  background: var(--apple-color-label);
-  color: var(--apple-color-bg);
-  border-color: transparent;
+  background: color-mix(in srgb, var(--apple-color-tint) 6%, var(--apple-color-surface-2)); /* apple-design-audit:ignore subtle tint surface */
+  border-color: color-mix(in srgb, var(--apple-color-tint) 18%, var(--apple-color-separator));
 }
 
 .bento__item:nth-child(2) {
@@ -874,8 +885,7 @@ input {
 }
 
 .bento__item--lead p {
-  color: var(--apple-color-bg);
-  opacity: 0.78;
+  color: var(--apple-color-label-2);
 }
 
 .bento__item a {
@@ -885,7 +895,7 @@ input {
 }
 
 .bento__item--lead a {
-  color: var(--apple-color-bg);
+  color: var(--apple-color-tint);
 }
 
 .chapter {
@@ -897,8 +907,8 @@ input {
 .chapter--dark {
   color: var(--apple-color-label);
   background:
-    radial-gradient(120% 80% at 85% -10%, rgba(10, 132, 255, 0.22), transparent 62%),
-    var(--apple-color-bg);
+    radial-gradient(120% 80% at 85% -10%, color-mix(in srgb, var(--apple-color-tint) 18%, transparent), transparent 58%),
+    linear-gradient(180deg, var(--apple-color-bg), color-mix(in srgb, var(--apple-color-surface) 55%, var(--apple-color-bg)));
 }
 
 .chapter__inner {
@@ -916,10 +926,10 @@ input {
   display: grid;
   gap: var(--apple-space-6);
   padding: calc(var(--apple-space-6) * 1.25);
-  background: var(--apple-color-surface-2);
-  border: var(--apple-space-1) solid var(--apple-color-separator);
+  background: color-mix(in srgb, var(--apple-color-surface-2) 92%, var(--apple-color-bg));
+  border: var(--apple-hairline);
   border-radius: var(--apple-radius-sheet);
-  box-shadow: var(--apple-shadow-medium);
+  box-shadow: var(--apple-shadow-small);
 }
 
 .specimen__head {
@@ -942,7 +952,6 @@ input {
 }
 
 .specimen__head p:last-child,
-.steps p,
 .faq-list p,
 .cta p {
   color: var(--apple-color-label-2);
@@ -1072,7 +1081,7 @@ input {
   padding: var(--apple-space-3) var(--apple-space-4);
   background: var(--apple-color-surface-2);
   color: var(--apple-color-label);
-  border: var(--apple-space-1) solid var(--apple-color-separator);
+  border: var(--apple-hairline);
   border-radius: var(--apple-radius-control);
   transition: border-color var(--apple-duration-control) var(--apple-ease-standard);
 }
@@ -1374,8 +1383,10 @@ input {
 }
 
 .chip[aria-pressed='true'] {
-  background: var(--apple-color-tint);
-  color: var(--apple-color-tint-contrast);
+  background: color-mix(in srgb, var(--apple-color-tint) 14%, var(--apple-color-surface-2));
+  color: var(--apple-color-tint);
+  border-color: color-mix(in srgb, var(--apple-color-tint) 28%, var(--apple-color-separator));
+  font-weight: var(--apple-type-headline-weight);
 }
 
 .router-panels {
@@ -1386,12 +1397,13 @@ input {
 .route {
   padding: var(--apple-space-5);
   background: var(--apple-color-surface-2);
-  border: var(--apple-space-1) solid var(--apple-color-separator);
+  border: var(--apple-hairline);
   border-radius: var(--apple-radius-medium);
 }
 
 .route[open] {
-  border-color: var(--apple-color-tint);
+  border-color: color-mix(in srgb, var(--apple-color-tint) 30%, var(--apple-color-separator));
+  background: color-mix(in srgb, var(--apple-color-surface-2) 92%, var(--apple-color-bg));
 }
 
 .route summary {
@@ -1447,6 +1459,58 @@ input {
   color: var(--apple-color-label-2);
 }
 
+
+.coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--apple-space-5);
+}
+
+.coverage-card {
+  display: grid;
+  align-content: start;
+  gap: var(--apple-space-4);
+  padding: var(--apple-space-5);
+  background: var(--apple-color-surface);
+  border: var(--apple-hairline);
+  border-radius: var(--apple-radius-medium);
+}
+
+.coverage-card h3 {
+  font-size: var(--apple-type-headline-size);
+  line-height: var(--apple-type-headline-line);
+  font-weight: var(--apple-type-headline-weight);
+}
+
+.coverage-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--apple-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.coverage-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--apple-target-min);
+  padding: var(--apple-space-2) var(--apple-space-3);
+  background: var(--apple-color-fill-3);
+  border: var(--apple-hairline);
+  border-radius: var(--apple-radius-pill);
+  color: var(--apple-color-label);
+  font-size: var(--apple-type-footnote-size);
+  line-height: var(--apple-type-footnote-line);
+  text-decoration: none;
+  transition: background-color var(--apple-duration-control) var(--apple-ease-standard),
+    color var(--apple-duration-control) var(--apple-ease-standard);
+}
+
+.coverage-links a:hover {
+  background: color-mix(in srgb, var(--apple-color-tint) 10%, var(--apple-color-fill));
+  color: var(--apple-color-tint);
+}
 .verify-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
@@ -1455,8 +1519,12 @@ input {
 
 .terminal {
   margin: 0;
-  background: var(--apple-color-label);
-  color: var(--apple-color-bg);
+  padding: var(--apple-space-5);
+  background: var(--apple-color-surface);
+  color: var(--apple-color-label);
+  border: var(--apple-hairline);
+  border-radius: var(--apple-radius-medium);
+  box-shadow: var(--apple-shadow-small);
 }
 
 .verify-results {
@@ -1470,7 +1538,7 @@ input {
   gap: var(--apple-space-2);
   padding: var(--apple-space-4);
   background: var(--apple-color-surface-2);
-  border: var(--apple-space-1) solid var(--apple-color-separator);
+  border: var(--apple-hairline);
   border-radius: var(--apple-radius-small);
 }
 
@@ -1532,7 +1600,7 @@ input {
 
 .audit-card--after {
   background: var(--apple-color-surface-2);
-  border-color: var(--apple-color-tint);
+  border-color: color-mix(in srgb, var(--apple-color-green) 30%, var(--apple-color-separator));
 }
 
 .audit-card__state {
@@ -1593,27 +1661,6 @@ input {
   line-height: var(--apple-type-footnote-line);
 }
 
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--apple-space-5);
-}
-
-.steps li {
-  display: grid;
-  align-content: start;
-  gap: var(--apple-space-3);
-  padding-top: var(--apple-space-5);
-  border-top: var(--apple-space-1) solid var(--apple-color-separator);
-}
-
-.steps h3 {
-  font-family: var(--apple-font-display);
-  font-size: var(--apple-type-title-2-size);
-  line-height: var(--apple-type-title-2-line);
-  font-weight: var(--apple-type-headline-weight);
-  letter-spacing: -0.02em;
-}
 
 .faq-list {
   display: grid;
@@ -1663,9 +1710,10 @@ input {
 .cta {
   max-width: none;
   margin: 0;
-  padding: calc(var(--apple-space-11) * 1.75) var(--apple-space-5);
-  background: var(--apple-color-label);
-  color: var(--apple-color-bg);
+  padding: calc(var(--apple-space-11) * 1.5) var(--apple-space-5);
+  background: var(--apple-color-bg); /* apple-design-audit:ignore calm section transition */
+  color: var(--apple-color-label);
+  border-top: var(--apple-hairline);
 }
 
 .cta__inner {
@@ -1678,22 +1726,20 @@ input {
 }
 
 .cta .eyebrow {
-  color: var(--apple-color-bg);
-  opacity: 0.72;
+  color: var(--apple-color-tint);
 }
 
 .cta .section__title {
-  color: var(--apple-color-bg);
+  color: var(--apple-color-label);
 }
 
 .cta p {
   max-width: var(--apple-read-max);
-  color: var(--apple-color-bg);
-  opacity: 0.78;
+  color: var(--apple-color-label-2);
 }
 
 .cta .text-link {
-  color: var(--apple-color-bg);
+  color: var(--apple-color-tint);
 }
 
 .site-footer {
@@ -1773,6 +1819,10 @@ input {
   .bento__item:nth-child(2),
   .bento__item:nth-child(n + 3) {
     grid-column: span 6;
+  }
+
+  .coverage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .lab__controls,
@@ -1884,8 +1934,7 @@ input {
   }
 
   .specimen__details,
-  .steps,
-  .verify-results,
+    .verify-results,
   .footer-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1942,7 +1991,8 @@ input {
 
   .button:active:not(:disabled),
   .menu-toggle:active,
-  .chip:active {
+  .chip:active,
+  .bento__item:hover {
     transform: none;
   }
 

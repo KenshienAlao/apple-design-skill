@@ -206,7 +206,7 @@ Rules:
 Source labels name HIG topics and are routing hints, not copied text. Use the strength labels from `evidence-apple-style.md`.
 
 - Must: teach through immediate, interactive value; keep first-run instruction short and make tutorials easy to find later. Source: `onboarding`, `offering-help`. Audit: first-run steps unlock visible capability; help is contextual, inclusive, and skippable.
-- Must: defer permissions, sign-in, and profile setup until a feature needs them. Source: `onboarding`, `managing-accounts`. Audit: no upfront wall that blocks browsing; account value is explained where sign-in is required.
+- Must: defer permissions, sign-in, and profile setup until a feature needs them. Source: `onboarding`, `managing-accounts`, `privacy`. Audit: no upfront wall that blocks browsing; account value is explained where sign-in is required.
 - Should: prefer passkeys and available biometric or keychain authentication over app-specific passwords; name the actual method in the button label. Source: `managing-accounts`. Audit: "Sign In with Face ID" is used only where Face ID exists; no app-level biometric toggle duplicates the system setting.
 - Must: prefill fields from known system, prior, or contact data and keep defaults safe, reversible, and editable before submit. Source: `entering-data`, `settings`. Audit: no field asks for data the platform already exposes; defaults do not need a support article to undo.
 - Should: validate format while input is active but assert the error only on blur or submit. Source: `entering-data`, `text-fields`. Audit: no red state on first keystroke; errors carry an inline fix hint.
@@ -216,6 +216,8 @@ Source labels name HIG topics and are routing hints, not copied text. Use the st
 - Should: group settings by task and show each row's effective current value inline. Source: `settings`. Audit: grouping matches task goals; state is visible without opening every subpage.
 - Must: minimize settings and avoid duplicating systemwide options. Source: `settings`. Audit: no custom Dark Mode, accessibility, or authentication switch that shadows the system setting.
 - Should: ask for a rating only after meaningful engagement at a natural pause, using the system prompt where available. Source: `ratings-and-reviews`. Audit: no first-launch prompt; repeated requests are spaced and tied to new engagement.
+- Must: protect privacy in flows and defaults: request minimum data, use clear purpose strings, support denial/revocation, and avoid leaking sensitive data in notifications/previews/logs. Source: `privacy`, `managing-accounts`. Audit: permissions are contextual; purpose strings are specific; sensitive previews are redacted by default.
+- Should: make sharing/collaboration/file actions explicit and reversible where possible; show what is shared, with whom, and how to stop. Source: `sharing-and-export`, `collaboration-and-sharing`, `file-management`. Audit: share sheet/export states scope clearly; destructive file actions confirm or undo.
 
 ## Related
 

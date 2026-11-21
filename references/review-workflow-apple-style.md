@@ -82,8 +82,9 @@ Blocking categories: accessibility, contrast, focus restoration, state loss, pla
 1. Identify platform and framework. Name them in one line.
 2. Load the five lens references plus the docs for the surface under review.
 3. Walk each lens; record findings as `path:line — severity — lens — message`.
-4. Run static scripts when source is available.
-5. Assign a verdict.
+4. For HIG-related findings, name the HIG topic and owning house file; label strength Must/Should/May per `evidence-apple-style.md`.
+5. Run static scripts when source is available.
+6. Assign a verdict.
 
 ## 5. Report format
 

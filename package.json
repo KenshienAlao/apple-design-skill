@@ -8,7 +8,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "verify": "node scripts/link-check.mjs . --strict && for f in scripts/*.mjs scripts/lib/*.mjs; do node --check \"$f\"; done && node scripts/audit.mjs . --strict && node scripts/token-lint.mjs . --strict && node scripts/a11y-audit.mjs . --strict && node scripts/code-audit.mjs . --strict && node scripts/check-contrast.mjs --strict && node scripts/generate-tokens.mjs --format=all --out=/tmp/opencode/design-tokens && node scripts/motion-probe.mjs --all",
+    "verify": "node scripts/link-check.mjs . --strict && for f in scripts/*.mjs scripts/lib/*.mjs; do node --check \"$f\"; done && node scripts/audit.mjs . --strict && node scripts/token-lint.mjs . --strict && node scripts/a11y-audit.mjs . --strict && node scripts/code-audit.mjs . --strict && node scripts/motion-audit.mjs . --strict && node scripts/hig-coverage-check.mjs --strict && node scripts/check-contrast.mjs --strict && node scripts/generate-tokens.mjs --format=all --out=/tmp/opencode/design-tokens && node scripts/motion-probe.mjs --all",
     "check": "npm run verify",
     "link-check": "node scripts/link-check.mjs . --strict",
     "visual-diff": "node scripts/visual-diff.mjs",

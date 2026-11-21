@@ -183,6 +183,8 @@ Source labels name HIG topics and are routing hints, not copied text. Use the st
 - Must: use tabs for peer top-level destinations, never wizard steps or filters. Source: `tab-bars`. Audit: every tab maps to a section, not a stage or temporary state.
 - Should: keep context menus for commands likely needed on the selected item now. Source: `context-menus`. Audit: items are short, relevant, and duplicated in a persistent interface surface.
 - Must: restore the last task on cold launch: route, document, scroll, selection, and unsaved input. Source: `launching`. Audit: relaunch returns to the prior task without retracing steps.
+- Should: use sidebars/navigation bars/toolbars in platform-idiomatic ways: sidebars for top-level structure on wide layouts, tab bars for compact peer navigation, toolbars for contextual actions. Source: `sidebars`, `tab-bars`, `toolbars`, `navigation-bars`. Audit: navigation model matches size class and platform; controls do not migrate into the wrong chrome.
+- Must: make windows, panels, and multi-window behavior follow platform conventions; preserve window state and avoid losing unsaved work. Source: `windows`, `macos-windowing`, `multitasking`. Audit: close/reopen restores state; windowing commands behave natively on desktop/iPad.
 
 ## Related
 

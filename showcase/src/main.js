@@ -196,14 +196,27 @@ function wireReveals() {
     (entries, observer) => {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+        const target = entry.target;
+        // Stagger children slightly when a container reveals; honors HIG motion restraint.
+        const delay = Math.min(Number(target.dataset.revealDelay || 0), 240);
+        if (delay) target.style.setProperty("--reveal-delay", `${delay}ms`);
+        target.classList.add('is-visible');
+        observer.unobserve(target);
       }
     },
-    { rootMargin: '0px 0px -10% 0px' }
+    { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
   );
 
-  for (const target of reveals) revealObserver.observe(target);
+  for (const [i, target] of reveals.entries()) {
+    // Subtle stagger for adjacent grid items: cap to avoid slow-feeling lists.
+    if (!target.dataset.revealDelay) {
+      const group = target.parentElement;
+      const siblings = group ? Array.from(group.children).filter((n) => n.hasAttribute('data-reveal')) : [];
+      const idx = siblings.indexOf(target);
+      if (siblings.length > 1 && idx > 0) target.dataset.revealDelay = String(Math.min(idx * 40, 160));
+    }
+    revealObserver.observe(target);
+  }
 
   wipeObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -213,7 +226,7 @@ function wireReveals() {
         observer.unobserve(entry.target);
       }
     },
-    { threshold: 0.15 }
+    { threshold: 0.2 }
   );
 
   for (const wipe of wipes) wipeObserver.observe(wipe);

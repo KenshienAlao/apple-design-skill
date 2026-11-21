@@ -419,7 +419,20 @@ Rules:
 - hover and focus are distinct visible states.
 - destructive actions are separated and confirmable.
 
-## 32. Applied HIG component refinements
+## 32. Specialized component coverage
+
+| Component / surface | Must / Should | Audit |
+|---|---|---|
+| Combo boxes / token fields / digit entry | Must: clear label, validation, keyboard/focus behavior. Should: offer suggestions/tokens only when they reduce effort. | Entry can be completed by keyboard; invalid input explained; autofill/formatting safe. |
+| Image wells / image views / live photos | Must: meaningful alt/labels; safe drag/drop/file handling. Should: preserve aspect ratio and preview quality. | Non-decorative images announced; live/photo media has clear controls. |
+| Text views / web views | Must: readable, scalable, selectable where appropriate; safe navigation and error handling. | Embedded content doesn't trap focus; links/actions are clear. |
+| Collections / column/outline/tab/scroll/split views | Must: preserve selection/focus/scroll; keyboard and assistive navigation work. | Reflow/resize preserves context; no nested scroll traps. |
+| Disclosure controls / boxes / labels / lockups | Should: use for progressive disclosure/grouping; keep labels plain and persistent. | Disclosure state announced; lockups are glanceable and tappable. |
+| Page controls / dock/edit menus / pull-down/pop-up buttons | Should: use platform-native behavior and clear current value/selection. | Current page/item announced; menu commands are grouped and non-duplicative. |
+| Rating indicators / activity rings / gauges | Must: accessible value/meaning; not color-only. | Value announced textually; decorative rings/gauges hidden from assistive tech. |
+| Ornaments / windows / panels | Should: place controls in platform-expected regions; avoid occluding content. | visionOS ornaments/macOS panels/windows preserve focus and context. |
+
+## 33. Applied HIG component refinements
 
 Source labels name HIG topics and are routing hints, not copied text. Use the strength labels from `evidence-apple-style.md`.
 
@@ -435,6 +448,9 @@ Source labels name HIG topics and are routing hints, not copied text. Use the st
 - Must: keep list rows uniform, open full detail on selection, and leave a visible primary action alongside swipe or context actions. Source: `lists-and-tables`. Audit: density is stable; tap opens detail; hidden actions complement rather than replace the main path.
 - Should: keep toolbars to a few context-relevant commands with graceful overflow. Source: `toolbars`. Audit: primary actions are few; overflow holds the rest; narrow widths do not truncate labels.
 - Must: keep charts accessible and never hide critical information behind interaction. Source: `charts`, `charting-data`. Audit: values have accessible labels; keyboard and VoiceOver paths exist; changes are announced without motion.
+- Must: treat images, text views, and web views as content surfaces: support Dynamic Type/readability, accessible text/alt, safe embedding, and clear loading/error states. Source: `images`, `text-views`, `web-views`. Audit: meaningful images have alt text; text scales/reflows; embedded web content has navigation/failure handling and does not trap focus.
+- Should: use menus/context menus for relevant commands only, keep them short and grouped, and avoid making them the only path. Source: `menus`, `context-menus`. Audit: destructive commands separated; unavailable items hidden where appropriate; keyboard/touch alternatives exist.
+- Should: keep status components (badges, gauges, progress, ratings) accurate, calm, and non-color-only. Source: `status`, `progress-indicators`, `gauges`, `ratings`. Audit: status has text/accessible label; transient status does not interrupt; ratings/reviews follow system patterns.
 
 ## Universal target sizes
 

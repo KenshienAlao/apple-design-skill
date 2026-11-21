@@ -1,6 +1,6 @@
 ---
 name: apple-design
-description: Build and audit Apple-inspired, platform-native UI on iOS, Android, web, desktop, Flutter, React Native, Compose, SwiftUI, Tauri, and Electron. Use for design systems, tokens, motion, scroll-bound storytelling, flagship web pages, media delivery, perceived performance, state feedback, navigation models, haptics, QoL patterns, Apple platform fidelity, native SwiftUI/UIKit recipes, HIG topic mapping, scored craft review, accessibility, contrast, component specs, layout, platform adaptation, craft critique, design review, and UI audits.
+description: Build and audit Apple-inspired, animation-driven, platform-native UI on iOS, iPadOS, macOS, watchOS, visionOS, tvOS, Android, web, desktop, Flutter, React Native, Compose, SwiftUI, Tauri, and Electron. Use for design systems, tokens, motion/physics, scroll-bound storytelling, flagship web pages, media delivery, perceived performance, state feedback, navigation models, haptics, QoL patterns, Apple platform fidelity, native SwiftUI/UIKit recipes, full Apple HIG topic mapping (173 pages), scored craft review, accessibility, contrast, component specs, layout, platform adaptation, craft critique, design review, and UI audits.
 ---
 
 # Apple Design Skill
@@ -54,6 +54,10 @@ Do not load `_vendor/` during normal work. It is research material behind the pr
 | design lineage and conflict resolution | `references/heritage-apple-style.md` |
 | Must / Should / May strength and honest citation | `references/evidence-apple-style.md` |
 | vendor boundary, claim translation, source exclusions | `references/upstream-sources-apple-style.md` |
+| privacy, permissions, accounts, sensitive data, inclusion | `references/qol-patterns-apple-style.md`, `references/content-apple-style.md`, `references/state-and-feedback-apple-style.md`, `references/apple-hig-mapping-apple-style.md` |
+| widgets, Live Activities, complications, notifications, system surfaces | `references/apple-platform-playbooks-apple-style.md`, `references/state-and-feedback-apple-style.md`, `references/components-apple-style.md` |
+| branding, app icons, SF Symbols, images, charts, text/web views | `references/design-apple-style.md`, `references/components-apple-style.md`, `references/content-apple-style.md`, `references/apple-hig-mapping-apple-style.md` |
+| Apple technologies/integrations: Pay, Sign in, Health, SharePlay, Game Center, CarPlay, Siri, iCloud, AI | `references/apple-platform-playbooks-apple-style.md`, `references/qol-patterns-apple-style.md`, `references/state-and-feedback-apple-style.md` |
 | final audit checklist and verdict format | `references/qa-apple-style.md` |
 | examples of correct and failed work | `examples/good-apple-style.md`, `examples/bad-clone-patterns.md` |
 | SwiftUI, React, carousel, sheet, scroll, media reference builds | `examples/reference-implementations/` |
@@ -69,6 +73,8 @@ Do not load `_vendor/` during normal work. It is research material behind the pr
 | relative-link validation | `scripts/link-check.mjs` |
 | optional screenshot comparison | `scripts/visual-diff.mjs` |
 | generate CSS/JSON/Swift/Tailwind/Compose/XML tokens | `scripts/generate-tokens.mjs` |
+| verify full 173-page HIG coverage matrix and owning refs | `scripts/hig-coverage-check.mjs` |
+| static motion anti-pattern / Reduce Motion audit | `scripts/motion-audit.mjs` |
 
 ## 3. Build workflow
 
@@ -206,7 +212,17 @@ Applied rules:
 - reference file names
 ```
 
-## 7. Portability
+## 7. Release gate
+
+Before shipping or merging:
+
+1. Run `npm run verify` from the skill root. It covers links, syntax checks, static audit, token lint, a11y audit, code audit, motion audit, HIG coverage check, contrast, token generation, and motion presets.
+2. Run `node scripts/a11y-probe.mjs --url=...` for rendered DOM checks in a Playwright-capable environment.
+3. Run `node scripts/visual-diff.mjs ...` when a rendered baseline or screenshot exists.
+4. Confirm the task report names platform, framework, surface class, motion posture (subtle/standard/flagship with Reduce Motion fallback), and any logged fallback.
+5. For HIG-heavy reviews, cite HIG topic + owning house file, label Must/Should/May, and confirm accessibility/privacy/platform contracts before craft polish.
+
+## 8. Portability
 
 - All references use relative links.
 - No provider-specific tool APIs in the core docs.
@@ -215,7 +231,7 @@ Applied rules:
 - All scripts use Node built-ins except the opt-in `a11y-probe.mjs` and `visual-diff.mjs`.
 - Works as a progressive-disclosure skill for OpenCode, Claude, Codex, and similar agents.
 
-## 8. Maintenance
+## 9. Maintenance
 
 - Raw values live only in `tokens-apple-style.md`.
 - General motion timing lives only in `animations-apple-style.md`.

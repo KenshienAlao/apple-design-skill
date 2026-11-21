@@ -51,6 +51,7 @@
         <li><a href="#overview" data-nav-link>Overview</a></li>
         <li><a href="#capabilities" data-nav-link>Capabilities</a></li>
         <li><a href="#showcase" data-nav-link>Showcase</a></li>
+        <li><a href="#coverage" data-nav-link>Coverage</a></li>
         <li><a href="#faq" data-nav-link>FAQ</a></li>
         <li><a href="#install" data-nav-link>Install</a></li>
       </ul>
@@ -71,7 +72,7 @@
           <a class="text-link" href="https://github.com/KenshienAlao/apple-design-skill/blob/main/SKILL.md">Read SKILL.md</a>
           <p class="sr-only" role="status" aria-live="polite" id="hero-copy-status" data-copy-status></p>
         </div>
-        <p class="hero__proof">30 references, 11 scripts, clean verify</p>
+        <p class="hero__proof">30 references, 13 scripts, 173 HIG pages mapped, clean verify</p>
       </div>
 
       <figure class="device-stage" data-reveal>
@@ -163,10 +164,10 @@ the whole corpus unless I ask for a full build or full audit.</pre>
     </section>
 
     <dl class="proof-strip" aria-label="Skill inventory">
+      <div data-reveal><dt>173</dt><dd>HIG pages mapped</dd></div>
       <div data-reveal><dt>30</dt><dd>reference documents</dd></div>
-      <div data-reveal><dt>11</dt><dd>script files</dd></div>
+      <div data-reveal><dt>13</dt><dd>script files</dd></div>
       <div data-reveal><dt>15</dt><dd>examples</dd></div>
-      <div data-reveal><dt>10</dt><dd>demo files</dd></div>
     </dl>
 
     <section class="tagline" aria-labelledby="tagline-title">
@@ -195,7 +196,7 @@ the whole corpus unless I ask for a full build or full audit.</pre>
       <ul class="bento">
         <li class="bento__item bento__item--lead" data-reveal>
           <h3>Less context, same craft</h3>
-          <p>Routes the smallest useful reference set.</p>
+          <p>Routes the smallest useful reference set, with full HIG topic coverage.</p>
           <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/SKILL.md">Read SKILL.md</a>
         </li>
         <li class="bento__item" data-reveal>
@@ -204,18 +205,23 @@ the whole corpus unless I ask for a full build or full audit.</pre>
           <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/platform-adapters-apple-style.md">Read the platform layer</a>
         </li>
         <li class="bento__item" data-reveal>
+          <h3>Animation-driven, not decorative</h3>
+          <p>Motion posture, springs, Reduce Motion, and haptics are treated as product behavior.</p>
+          <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/animations-apple-style.md">Read the motion system</a>
+        </li>
+        <li class="bento__item" data-reveal>
           <h3>Tokens that survive handoff</h3>
           <p>One token sheet generates CSS, JSON, Swift, Tailwind, Compose, XML.</p>
           <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/tokens-apple-style.md">Read the token sheet</a>
         </li>
         <li class="bento__item" data-reveal>
           <h3>Review you can defend</h3>
-          <p>Five-lens review with scored evidence.</p>
+          <p>Five-lens review with scored evidence and HIG-strength labeling.</p>
           <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/review-workflow-apple-style.md">Read the review workflow</a>
         </li>
         <li class="bento__item" data-reveal>
           <h3>Verification in the box</h3>
-          <p>Eleven scripts check links, tokens, contrast, accessibility, code.</p>
+          <p>13 scripts check links, tokens, contrast, accessibility, code, motion, and 173-page HIG coverage.</p>
           <a href="https://github.com/KenshienAlao/apple-design-skill/tree/main/scripts">Browse the scripts</a>
         </li>
       </ul>
@@ -345,7 +351,7 @@ the whole corpus unless I ask for a full build or full audit.</pre>
       <div class="section__head" data-reveal>
         <p class="eyebrow">Specimen B</p>
         <h2 class="section__title" id="router-title">Reference router</h2>
-        <p class="section__intro">Four prompts, their reference sets, and why.</p>
+        <p class="section__intro">Four prompts, their reference sets, and why. Includes the 173-page HIG map when platform contracts matter.</p>
       </div>
       <div class="router-prompts" role="group" aria-label="Choose a task" data-reveal>
         <button class="chip" type="button" data-route="native" aria-pressed="true">Build a settings screen for Android</button>
@@ -355,8 +361,8 @@ the whole corpus unless I ask for a full build or full audit.</pre>
       </div>
       <div class="router-panels" data-reveal>
         <details class="route" data-route-panel="native" open>
-          <summary>Build a settings screen for Android, 14 references</summary>
-          <p class="route__why">Native build: craft chain plus Android adapter.</p>
+          <summary>Build a settings screen for Android, 15 references</summary>
+          <p class="route__why">Native build: craft chain plus Android adapter and HIG routing.</p>
           <ol class="reference-list">
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/design-apple-style.md">design-apple-style.md</a><span>Visual direction, type, color, spacing</span></li>
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/animations-apple-style.md">animations-apple-style.md</a><span>Motion, spring timing, Reduce Motion</span></li>
@@ -371,6 +377,7 @@ the whole corpus unless I ask for a full build or full audit.</pre>
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/haptics-and-sound-apple-style.md">haptics-and-sound-apple-style.md</a><span>Feedback at commit</span></li>
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/qol-patterns-apple-style.md">qol-patterns-apple-style.md</a><span>Autosave, undo, focus restoration</span></li>
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/platform-adapters-apple-style.md">platform-adapters-apple-style.md</a><span>Android adaptation</span></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/apple-hig-mapping-apple-style.md">apple-hig-mapping-apple-style.md</a><span>173-page HIG routing and safe claims</span></li>
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/review-workflow-apple-style.md">review-workflow-apple-style.md</a><span>Final five lens review</span></li>
           </ol>
         </details>
@@ -422,6 +429,77 @@ the whole corpus unless I ask for a full build or full audit.</pre>
       </div>
     </section>
 
+    <section class="section" id="coverage" aria-labelledby="coverage-title">
+      <div class="section__head" data-reveal>
+        <p class="eyebrow">Skill coverage</p>
+        <h2 class="section__title" id="coverage-title">Everything the skill ships</h2>
+        <p class="section__intro">All 30 references, the HIG map, scripts, and assets — visible, not implied.</p>
+      </div>
+      <div class="coverage-grid" data-reveal>
+        <article class="coverage-card">
+          <h3>Foundations</h3>
+          <ul class="coverage-links">
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/design-apple-style.md">design</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/tokens-apple-style.md">tokens</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/layout-apple-style.md">layout</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/accessibility-apple-style.md">accessibility</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/content-apple-style.md">content</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/evidence-apple-style.md">evidence</a></li>
+          </ul>
+        </article>
+        <article class="coverage-card">
+          <h3>Motion &amp; feel</h3>
+          <ul class="coverage-links">
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/animations-apple-style.md">animations</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/haptics-and-sound-apple-style.md">haptics &amp; sound</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/perceived-performance-and-input-apple-style.md">performance &amp; input</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/scroll-motion-apple-style.md">scroll motion</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/scrollytelling-apple-style.md">scrollytelling</a></li>
+          </ul>
+        </article>
+        <article class="coverage-card">
+          <h3>Components &amp; state</h3>
+          <ul class="coverage-links">
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/components-apple-style.md">components</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/state-and-feedback-apple-style.md">state &amp; feedback</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/navigation-models-apple-style.md">navigation models</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/qol-patterns-apple-style.md">QoL patterns</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/media-assets-and-delivery-apple-style.md">media delivery</a></li>
+          </ul>
+        </article>
+        <article class="coverage-card">
+          <h3>Platform &amp; HIG</h3>
+          <ul class="coverage-links">
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/platform-adapters-apple-style.md">platform adapters</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/apple-platform-playbooks-apple-style.md">Apple playbooks</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/apple-native-recipes-apple-style.md">native recipes</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/apple-hig-mapping-apple-style.md">173-page HIG map</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/macos-windowing-apple-style.md">macOS windowing</a></li>
+          </ul>
+        </article>
+        <article class="coverage-card">
+          <h3>Review &amp; quality</h3>
+          <ul class="coverage-links">
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/review-workflow-apple-style.md">review workflow</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/apple-review-rubric-apple-style.md">review rubric</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/qa-apple-style.md">QA checklist</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/anti-patterns-apple-style.md">anti-patterns</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/restraint-and-antislop-apple-style.md">restraint / anti-slop</a></li>
+          </ul>
+        </article>
+        <article class="coverage-card">
+          <h3>Web, lineage, provenance</h3>
+          <ul class="coverage-links">
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/web-engineering-apple-style.md">web engineering</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/web-marketing-language-apple-style.md">web marketing</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/heritage-apple-style.md">heritage</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/upstream-sources-apple-style.md">upstream sources</a></li>
+            <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/SKILL.md">SKILL.md</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="specimen-verify-section" aria-labelledby="verify-title">
       <div class="section__head" data-reveal>
         <p class="eyebrow">Specimen C</p>
@@ -440,6 +518,8 @@ npm --prefix .. run verify</code></pre>
           <div><dt>check-contrast</dt><dd data-verification="check-contrast"></dd></div>
           <div><dt>a11y-audit</dt><dd data-verification="a11y-audit"></dd></div>
           <div><dt>code-audit</dt><dd data-verification="code-audit"></dd></div>
+          <div><dt>motion-audit</dt><dd data-verification="motion-audit"></dd></div>
+          <div><dt>hig-coverage</dt><dd data-verification="hig-coverage"></dd></div>
         </dl>
       </div>
       <div class="audit-strip" aria-labelledby="audit-strip-title" data-reveal>
@@ -485,7 +565,8 @@ npm --prefix .. run verify</code></pre>
       </div>
       <div class="faq-list" data-reveal>
         <details><summary>Needs a website?</summary><p>No. It runs inside your agent and project.</p></details>
-        <details><summary>Official Apple guidance?</summary><p>No. Apple-inspired, not Apple-branded or affiliated.</p></details>
+        <details><summary>Official Apple guidance?</summary><p>No. Apple-inspired, not Apple-branded or affiliated. It maps all 173 public HIG pages to owning skill rules without copying Apple content.</p></details>
+        <details><summary>Animation-driven?</summary><p>Yes. Motion is treated as product behavior: posture, springs, velocity, interruptibility, haptics, and Reduce Motion are all first-class checks.</p></details>
         <details><summary>Which platforms are covered?</summary><p>iOS, Android, web, desktop, watchOS, visionOS, and cross-platform stacks.</p></details>
         <details><summary>Keeps context small?</summary><p>SKILL.md loads only what the task needs.</p></details>
         <details><summary>Reviews existing work?</summary><p>Yes. Five-lens and scored review return path and line findings.</p></details>

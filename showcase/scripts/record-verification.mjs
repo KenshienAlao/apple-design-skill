@@ -57,6 +57,20 @@ const commands = [
     id: 'code-audit'
   },
   {
+    label: 'node ../scripts/motion-audit.mjs . --strict --platform=web',
+    argv: ['node', ['../scripts/motion-audit.mjs', '.', '--strict', '--platform=web']],
+    cwd: showcaseRoot,
+    cwdLabel: '.',
+    id: 'motion-audit'
+  },
+  {
+    label: 'node ../scripts/hig-coverage-check.mjs --strict',
+    argv: ['node', ['../scripts/hig-coverage-check.mjs', '--strict']],
+    cwd: showcaseRoot,
+    cwdLabel: '.',
+    id: 'hig-coverage'
+  },
+  {
     label: 'npm --prefix .. run verify',
     argv: ['npm', ['--prefix', '..', 'run', 'verify']],
     cwd: showcaseRoot,

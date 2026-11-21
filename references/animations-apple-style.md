@@ -5,10 +5,11 @@ HIG-inspired motion system. Numbers marked as implementation defaults reproduce 
 ## 1. Motion doctrine
 
 1. During direct manipulation, track the finger 1:1. No spring while the finger is down.
-2. On release, spring to the committed state.
-3. Motion explains state change, hierarchy, or continuity.
-4. Every animation is interruptible.
-5. Reduce Motion replaces geometry with opacity. Crossfade only, 150ms maximum.
+2. On release, spring to the committed state with velocity-aware projection.
+3. Motion explains state change, hierarchy, or continuity; it never decorates by default.
+4. Every animation is interruptible, composable, and cancelable.
+5. Reduce Motion replaces geometry with opacity or instant final state. Crossfade only, 150ms maximum.
+6. Animation is a product feature: define posture (subtle/standard/flagship) before choosing primitives.
 
 ## 2. Spring vs curve
 

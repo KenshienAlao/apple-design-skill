@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "tokens": "node scripts/generate-tokens.mjs",
-    "verify": "node ../scripts/link-check.mjs . --strict && node ../scripts/audit.mjs . --strict --platform=web && node ../scripts/token-lint.mjs . --strict && node ../scripts/check-contrast.mjs --strict && node ../scripts/a11y-audit.mjs . --strict --platform=web && node ../scripts/code-audit.mjs . --strict --platform=web",
+    "verify": "node ../scripts/link-check.mjs . --strict && node ../scripts/audit.mjs . --strict --platform=web && node ../scripts/token-lint.mjs . --strict && node ../scripts/check-contrast.mjs --strict && node ../scripts/a11y-audit.mjs . --strict --platform=web && node ../scripts/code-audit.mjs . --strict --platform=web && node ../scripts/motion-audit.mjs . --strict --platform=web && node ../scripts/hig-coverage-check.mjs --strict",
     "verify:record": "node scripts/record-verification.mjs"
   },
   "devDependencies": {

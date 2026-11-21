@@ -218,10 +218,21 @@ Rules:
 
 - Match optical weight to adjacent text weight.
 - Align icons to text baseline, not bounding box center.
-- Use 1 stroke language only.
+- Keep symbols/icons consistent in rendering mode, weight, and optical alignment.
 - Icon-only controls require accessible names.
 - Avoid emoji as UI icons.
 - Use 16, 20, 24, 28pt sizes.
+- Prefer vector/custom symbol formats that scale cleanly; provide text alternatives for meaningful icons.
+
+## 9a. App icons, branding, and images
+
+Rules:
+
+- Branding defers to content. Do not add decorative logos or splash screens as branding opportunities.
+- App icons follow platform-specific icon guidance; test at small sizes and in light/dark/tinted appearances where relevant.
+- Use images/media to clarify or enrich content, not to decorate or replace clear UI. Provide alt text for meaningful images.
+- Avoid embedding essential text in images; if unavoidable, provide the same text accessibly.
+- Support high-quality/resolution-appropriate assets and test on real devices/displays.
 
 ## 10. Decision table
 

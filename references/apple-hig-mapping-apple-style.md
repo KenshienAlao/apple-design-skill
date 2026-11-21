@@ -49,26 +49,30 @@ Rules:
 
 | HIG topic area | House rule file | What travels across platforms |
 |---|---|---|
-| Layout and spacing | `layout-apple-style.md` | grids, safe areas, adaptive columns, rhythm |
-| Typography | `design-apple-style.md`, `tokens-apple-style.md` | type roles, Dynamic Type, line length |
-| Color | `design-apple-style.md`, `tokens-apple-style.md` | semantic pairs, one tint, contrast targets |
-| Dark Mode | `tokens-apple-style.md`, `qa-apple-style.md` | light/dark pairs, appearance testing, contrast in both modes |
-| Icons and symbols | `design-apple-style.md`, `assets/sf-symbols-map.json` | consistent icon family, semantic aliases |
-| Materials and depth | `design-apple-style.md`, `macos-windowing-apple-style.md` | layered surfaces, hairlines, restrained elevation |
-| Motion | `animations-apple-style.md`, `scroll-motion-apple-style.md` | 1:1 drag, spring release, Reduce Motion |
+| Layout and spacing | `layout-apple-style.md` | grids, safe areas, adaptive columns, rhythm, RTL mirroring |
+| Typography | `design-apple-style.md`, `tokens-apple-style.md` | type roles, Dynamic Type, line length, text styles |
+| Color | `design-apple-style.md`, `tokens-apple-style.md` | semantic pairs, one tint, contrast targets, appearance variants |
+| Dark Mode | `tokens-apple-style.md`, `qa-apple-style.md`, `design-apple-style.md` | light/dark pairs, appearance testing, contrast in both modes |
+| Icons and symbols | `design-apple-style.md`, `assets/sf-symbols-map.json` | consistent icon family, semantic aliases, SF Symbols rendering/weight |
+| App icons / branding | `design-apple-style.md`, `content-apple-style.md`, `apple-platform-playbooks-apple-style.md` | brand expression defers to content; app icons follow platform icon specs |
+| Images / charts / text / web views | `components-apple-style.md`, `content-apple-style.md`, `accessibility-apple-style.md` | legible content, alt text, chart accessibility, safe web embedding |
+| Materials and depth | `design-apple-style.md`, `macos-windowing-apple-style.md` | layered surfaces, hairlines, restrained elevation, Liquid Glass in functional layer |
+| Motion | `animations-apple-style.md`, `scroll-motion-apple-style.md` | 1:1 drag, spring release, Reduce Motion, interruptible/cancelable |
 | Input and gestures | `perceived-performance-and-input-apple-style.md`, `accessibility-apple-style.md` | pointer, touch, keyboard, scroll ownership, gesture fallbacks |
-| Navigation patterns | `navigation-models-apple-style.md`, `apple-platform-playbooks-apple-style.md` | stack, tabs, sheets, split view, back |
+| Navigation patterns | `navigation-models-apple-style.md`, `apple-platform-playbooks-apple-style.md` | stack, tabs, sidebars, split view, back, path/selection restoration |
 | Component choice by intent | `components-apple-style.md`, `assets/apple-component-fidelity-map.json` | alerts vs. action sheets, fields, toggles, sliders, lists, toolbars |
-| Feedback and status | `state-and-feedback-apple-style.md`, `haptics-and-sound-apple-style.md` | loading, empty, error, progress, commit haptics |
-| Notifications | `state-and-feedback-apple-style.md`, `qol-patterns-apple-style.md` | consent, urgency, grouping, notification center |
-| Onboarding and settings | `qol-patterns-apple-style.md`, `content-apple-style.md` | interactive teaching, good defaults, minimal settings |
+| Feedback and status | `state-and-feedback-apple-style.md`, `haptics-and-sound-apple-style.md` | loading, empty, error, progress, commit haptics, live status |
+| Notifications | `state-and-feedback-apple-style.md`, `qol-patterns-apple-style.md` | consent, urgency, grouping, notification center, Focus awareness |
+| Onboarding and settings | `qol-patterns-apple-style.md`, `content-apple-style.md` | interactive teaching, good defaults, minimal settings, deferred setup |
 | Search, undo, data entry | `qol-patterns-apple-style.md`, `state-and-feedback-apple-style.md` | one search location, explicit undo, prefill and validation |
-| Content and copy | `content-apple-style.md`, `web-marketing-language-apple-style.md` | calm verbs, benefit-led labels, localization |
-| Inclusion | `content-apple-style.md`, `accessibility-apple-style.md` | plain language, no stereotypes, gender-neutral copy |
-| Privacy | `qol-patterns-apple-style.md`, `state-and-feedback-apple-style.md` | just-in-time permission, clear purpose strings, on-device work |
-| Accessibility | `accessibility-apple-style.md` | name, role, state, focus, contrast, reflow |
+| Content and copy | `content-apple-style.md`, `web-marketing-language-apple-style.md` | calm verbs, benefit-led labels, localization, plain language |
+| Inclusion | `content-apple-style.md`, `accessibility-apple-style.md` | plain language, no stereotypes, gender-neutral copy, diverse representation |
+| Privacy | `qol-patterns-apple-style.md`, `state-and-feedback-apple-style.md`, `content-apple-style.md` | just-in-time permission, clear purpose strings, on-device work, data minimization |
+| Accessibility | `accessibility-apple-style.md` | name, role, state, focus, contrast, reflow, alternative input |
 | Platform and game guides | `apple-platform-playbooks-apple-style.md` | iOS, iPadOS, macOS, watchOS, visionOS, tvOS, games |
-| App essentials and quality | `qol-patterns-apple-style.md`, `qa-apple-style.md` | autosave, undo, restoration, recovery |
+| Widgets, Live Activities, complications | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` | glanceable, timely, deep-linked, privacy-aware surfaces |
+| System experiences / technologies | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md`, `state-and-feedback-apple-style.md` | system integrations use standard patterns, consent, and user control |
+| App essentials and quality | `qol-patterns-apple-style.md`, `qa-apple-style.md` | autosave, undo, restoration, recovery, launch, accounts |
 
 ## 4. Documented numbers worth routing to
 
@@ -106,6 +110,10 @@ Each row names the HIG topic and the house strength. These are contracts to chec
 | Privacy | Request only the data a feature needs, at the moment it is needed; purpose strings are short, active, sentence case, with a period. | Must |
 | Privacy | Prefer on-device processing, keychain storage, and passkeys/2FA/biometrics over plain-text secrets. | Must for secret storage; Should for the rest |
 | Notifications | Use the Time Sensitive interruption level only for an event happening now or within about one hour. | Must when using the level |
+| Branding | Branding defers to content; avoid decorative logos, splash-as-branding, and custom appearance toggles that shadow system settings. | Should; Must for Apple trademark rules |
+| Images / media | Provide alt text for meaningful images; avoid text baked into images; supply device-appropriate resolutions and test real devices. | Must for meaningful alt text; Should for asset quality |
+| Charts | Keep critical data readable without interaction; provide accessible labels, summaries, and announced changes. | Must |
+| Widgets / Live Activities / complications | Keep glanceable, timely, deep-linked, and privacy-aware; remove stale content promptly. | Must for privacy/timeliness; Should for glanceability |
 
 Numeric values above are documented platform contracts as of the checked date. If a platform number changes, update this table and the citation; do not rewrite the corpus.
 
@@ -115,22 +123,26 @@ When a finding arrives named after an HIG namespace, route it here instead of in
 
 | HIG namespace | Representative topics | Answer in |
 |---|---|---|
-| Patterns / modality and presentation | modality, sheets, alerts, action sheets | `navigation-models-apple-style.md`, `components-apple-style.md` |
-| Patterns / notifications and feedback | notifications, managing-notifications, feedback | `state-and-feedback-apple-style.md` |
-| Patterns / onboarding and settings | onboarding, offering-help, settings, launching | `qol-patterns-apple-style.md`, `navigation-models-apple-style.md` |
+| Getting started / design principles | getting started, design principles, designing for iOS/iPadOS/macOS/tvOS/visionOS/watchOS/games, Mac Catalyst | `apple-hig-mapping-apple-style.md`, `apple-platform-playbooks-apple-style.md`, `review-workflow-apple-style.md` |
+| Foundations | color, dark mode, typography, layout, materials, motion, icons, images, SF Symbols, branding, inclusion, privacy, accessibility, writing, RTL, spatial layout, immersive experiences | `design-apple-style.md`, `tokens-apple-style.md`, `layout-apple-style.md`, `accessibility-apple-style.md`, `content-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| Patterns / modality and presentation | modality, sheets, alerts, action sheets, full-screen, popovers, going full screen | `navigation-models-apple-style.md`, `components-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| Patterns / notifications and feedback | notifications, managing-notifications, feedback, live activities, playing audio/haptics/video | `state-and-feedback-apple-style.md`, `apple-platform-playbooks-apple-style.md`, `haptics-and-sound-apple-style.md` |
+| Patterns / onboarding, accounts, help | onboarding, offering-help, settings, launching, accounts, managing accounts, ratings and reviews | `qol-patterns-apple-style.md`, `navigation-models-apple-style.md`, `content-apple-style.md` |
 | Patterns / search and history | searching, search fields, recent items | `qol-patterns-apple-style.md`, `components-apple-style.md` |
-| Patterns / undo and data entry | undo-and-redo, entering-data, drag-and-drop | `qol-patterns-apple-style.md` |
-| Patterns / loading | loading, progress indicators, status | `state-and-feedback-apple-style.md` |
-| Components / content | text, images, icons | `components-apple-style.md`, `design-apple-style.md` |
-| Components / layout-and-organization | split views, stacks, grids | `layout-apple-style.md`, `navigation-models-apple-style.md` |
-| Components / menus-and-actions | buttons, menus, context menus, toolbars | `components-apple-style.md`, `assets/apple-component-fidelity-map.json` |
-| Components / navigation-and-search | tab bars, navigation bars, search fields | `navigation-models-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
-| Components / presentation | sheets, alerts, popovers, tooltips | `navigation-models-apple-style.md`, `state-and-feedback-apple-style.md` |
-| Components / selection-and-input | text fields, sliders, toggles, pickers, segmented controls | `components-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
-| Components / status | progress indicators, badges, empty states | `state-and-feedback-apple-style.md` |
-| Components / system-experiences | system-provided flows | `apple-platform-playbooks-apple-style.md` |
-| Inputs | keyboards, voiceover, pointing devices, gestures | `accessibility-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
-| Platform design | iOS, iPadOS, macOS, watchOS, visionOS, tvOS, games | `apple-platform-playbooks-apple-style.md` |
+| Patterns / undo, data, files, collaboration | undo-and-redo, entering-data, drag-and-drop, file management, collaboration and sharing, printing | `qol-patterns-apple-style.md`, `components-apple-style.md` |
+| Patterns / loading, status, live viewing | loading, progress indicators, status, sharing, live viewing apps, always on | `state-and-feedback-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| Patterns / charts and content | charting-data, charts, data visualization, images/image views, live photos, photo editing | `components-apple-style.md`, `accessibility-apple-style.md`, `content-apple-style.md` |
+| Components / content | text, text views, images, image views, image wells, icons, web views, charts, charting data | `components-apple-style.md`, `design-apple-style.md`, `content-apple-style.md`, `accessibility-apple-style.md` |
+| Components / layout-and-organization | split views, stacks, grids, lists, tables, boxes, outlines, outline/column views, collections, scroll views, tab views, disclosure controls, labels, lockups | `layout-apple-style.md`, `navigation-models-apple-style.md`, `components-apple-style.md` |
+| Components / menus-and-actions | buttons, menus, context menus, edit menus, dock menus, toolbars, pull-down/pop-up buttons, home screen quick actions, activity views, ornaments | `components-apple-style.md`, `assets/apple-component-fidelity-map.json`, `apple-platform-playbooks-apple-style.md` |
+| Components / navigation-and-search | tab bars, navigation bars, search fields, sidebars, path controls, page controls, token fields | `navigation-models-apple-style.md`, `apple-platform-playbooks-apple-style.md`, `components-apple-style.md` |
+| Components / presentation | sheets, alerts, popovers, tooltips, panels, windows, action sheets, scroll views | `navigation-models-apple-style.md`, `state-and-feedback-apple-style.md`, `macos-windowing-apple-style.md` |
+| Components / selection-and-input | text fields, combo boxes, sliders, toggles, pickers, segmented controls, steppers, color wells, digit entry views, image wells, virtual keyboards, selection and input, rating indicators | `components-apple-style.md`, `perceived-performance-and-input-apple-style.md`, `qol-patterns-apple-style.md` |
+| Components / status | progress indicators, badges, gauges, activity rings, ratings, rating indicators | `state-and-feedback-apple-style.md`, `components-apple-style.md` |
+| Components / system-experiences | widgets, live activities, complications, app shortcuts, controls, notifications, watch faces, top shelf, lockups | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| Inputs | keyboards, VoiceOver, pointing devices, gestures, Digital Crown, Siri Remote, eye/hand input | `accessibility-apple-style.md`, `perceived-performance-and-input-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| Technologies | Apple Pay, in-app purchase/subscriptions, Sign in with Apple, HealthKit, HomeKit, CarPlay, AirPlay, Game Center, SharePlay, iCloud/Handoff/Continuity, generative AI/Machine Learning, Maps, Siri, Wallet/Tap to Pay/ID Verifier/NFC, ShazamKit, ResearchKit, CareKit | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md`, `state-and-feedback-apple-style.md`, `components-apple-style.md` |
+| Platform design | designing for iOS/iPadOS/macOS/tvOS/visionOS/watchOS/games; Mac Catalyst; getting started | `apple-platform-playbooks-apple-style.md`, `apple-hig-mapping-apple-style.md` |
 
 These are topic labels for routing, not a reproduction of the HIG contents list.
 
@@ -198,10 +210,11 @@ Rules for these links:
 
 ## 8. What this mapping deliberately omits
 
-- the full HIG topic list as canonical content
-- verbatim HIG sentences or section numbering
+- verbatim HIG sentences or section numbering as canonical content
 - Apple-owned screenshots, device frames, logos, or product media
 - exact pixel values presented as canonical platform constants outside the documented-number table
+
+It **does** include a full 173-page routing matrix (section 9) so every HIG page has an explicit owning house ref. The matrix is routing metadata, not copied Apple content.
 
 Those exclusions are house rules from `evidence-apple-style.md` and `upstream-sources-apple-style.md`. Keep them out of core refs.
 
@@ -224,3 +237,185 @@ Those exclusions are house rules from `evidence-apple-style.md` and `upstream-so
 - `apple-native-recipes-apple-style.md`
 - `apple-review-rubric-apple-style.md`
 - `review-workflow-apple-style.md`
+
+## 9. Full 173-page HIG coverage matrix
+
+Canonical coverage map for every Apple HIG page in the local `.vault/HIG` corpus (173 pages, checked 2026-11-21). Each page has at least one owning skill ref. Use this for routing; load the owning ref(s) and apply Must/Should/May per `evidence-apple-style.md`.
+
+| HIG page | Owning skill refs |
+|---|---|
+| `accessibility` | `accessibility-apple-style.md`, `design-apple-style.md`, `content-apple-style.md`, `qa-apple-style.md` |
+| `action-button` | `apple-platform-playbooks-apple-style.md`, `components-apple-style.md` |
+| `action-sheets` | `components-apple-style.md`, `navigation-models-apple-style.md` |
+| `activity-rings` | `components-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `activity-views` | `qol-patterns-apple-style.md`, `components-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| `airplay` | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `alerts` | `components-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `always-on` | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `app-clips` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `app-icons` | `design-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| `app-shortcuts` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `apple-in-app-purchase` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md`, `content-apple-style.md` |
+| `apple-pay` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `apple-pencil-and-scribble` | `apple-platform-playbooks-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| `augmented-reality` | `apple-platform-playbooks-apple-style.md`, `accessibility-apple-style.md` |
+| `boxes` | `components-apple-style.md`, `layout-apple-style.md` |
+| `branding` | `design-apple-style.md`, `content-apple-style.md` |
+| `buttons` | `components-apple-style.md` |
+| `camera-control` | `apple-platform-playbooks-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| `carekit` | `apple-platform-playbooks-apple-style.md`, `accessibility-apple-style.md`, `qol-patterns-apple-style.md` |
+| `carplay` | `apple-platform-playbooks-apple-style.md`, `accessibility-apple-style.md` |
+| `charting-data` | `components-apple-style.md`, `accessibility-apple-style.md`, `content-apple-style.md` |
+| `charts` | `components-apple-style.md`, `accessibility-apple-style.md` |
+| `collaboration-and-sharing` | `qol-patterns-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `collections` | `components-apple-style.md`, `layout-apple-style.md` |
+| `color` | `design-apple-style.md`, `tokens-apple-style.md`, `accessibility-apple-style.md` |
+| `color-wells` | `components-apple-style.md` |
+| `column-views` | `components-apple-style.md`, `navigation-models-apple-style.md` |
+| `combo-boxes` | `components-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| `complications` | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `components` | `components-apple-style.md`, `apple-hig-mapping-apple-style.md` |
+| `content` | `content-apple-style.md`, `design-apple-style.md` |
+| `context-menus` | `components-apple-style.md`, `navigation-models-apple-style.md` |
+| `controls` | `components-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| `dark-mode` | `design-apple-style.md`, `tokens-apple-style.md`, `qa-apple-style.md` |
+| `design-principles` | `apple-hig-mapping-apple-style.md`, `review-workflow-apple-style.md`, `heritage-apple-style.md` |
+| `designing-for-games` | `apple-platform-playbooks-apple-style.md` |
+| `designing-for-ios` | `apple-platform-playbooks-apple-style.md` |
+| `designing-for-ipados` | `apple-platform-playbooks-apple-style.md` |
+| `designing-for-iphone-duo` | `apple-platform-playbooks-apple-style.md` |
+| `designing-for-macos` | `apple-platform-playbooks-apple-style.md`, `macos-windowing-apple-style.md` |
+| `designing-for-tvos` | `apple-platform-playbooks-apple-style.md` |
+| `designing-for-visionos` | `apple-platform-playbooks-apple-style.md` |
+| `designing-for-watchos` | `apple-platform-playbooks-apple-style.md` |
+| `digit-entry-views` | `components-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| `digital-crown` | `apple-platform-playbooks-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| `disclosure-controls` | `components-apple-style.md`, `layout-apple-style.md` |
+| `dock-menus` | `components-apple-style.md`, `macos-windowing-apple-style.md` |
+| `drag-and-drop` | `qol-patterns-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| `edit-menus` | `components-apple-style.md`, `content-apple-style.md` |
+| `entering-data` | `qol-patterns-apple-style.md`, `components-apple-style.md`, `accessibility-apple-style.md` |
+| `eyes` | `apple-platform-playbooks-apple-style.md`, `accessibility-apple-style.md` |
+| `feedback` | `state-and-feedback-apple-style.md`, `haptics-and-sound-apple-style.md` |
+| `file-management` | `qol-patterns-apple-style.md`, `navigation-models-apple-style.md` |
+| `focus-and-selection` | `accessibility-apple-style.md`, `perceived-performance-and-input-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| `foundations` | `design-apple-style.md`, `apple-hig-mapping-apple-style.md` |
+| `game-center` | `apple-platform-playbooks-apple-style.md` |
+| `game-controls` | `apple-platform-playbooks-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| `gauges` | `components-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `generative-ai` | `apple-platform-playbooks-apple-style.md`, `content-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `gestures` | `perceived-performance-and-input-apple-style.md`, `accessibility-apple-style.md` |
+| `getting-started` | `apple-hig-mapping-apple-style.md`, `SKILL.md` |
+| `going-full-screen` | `navigation-models-apple-style.md`, `apple-platform-playbooks-apple-style.md`, `macos-windowing-apple-style.md` |
+| `gyro-and-accelerometer` | `apple-platform-playbooks-apple-style.md`, `accessibility-apple-style.md` |
+| `healthkit` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `home-screen-quick-actions` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `homekit` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `human-interface-guidelines` | `apple-hig-mapping-apple-style.md`, `SKILL.md` |
+| `icloud` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `icons` | `design-apple-style.md`, `assets/sf-symbols-map.json` |
+| `id-verifier` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `image-views` | `components-apple-style.md`, `accessibility-apple-style.md` |
+| `image-wells` | `components-apple-style.md` |
+| `images` | `design-apple-style.md`, `content-apple-style.md`, `accessibility-apple-style.md` |
+| `imessage-apps-and-stickers` | `apple-platform-playbooks-apple-style.md`, `components-apple-style.md` |
+| `immersive-experiences` | `apple-platform-playbooks-apple-style.md`, `animations-apple-style.md` |
+| `inclusion` | `content-apple-style.md`, `accessibility-apple-style.md` |
+| `inputs` | `perceived-performance-and-input-apple-style.md`, `accessibility-apple-style.md` |
+| `keyboards` | `accessibility-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| `labels` | `components-apple-style.md`, `content-apple-style.md` |
+| `launching` | `navigation-models-apple-style.md`, `qol-patterns-apple-style.md` |
+| `layout` | `layout-apple-style.md`, `design-apple-style.md` |
+| `layout-and-organization` | `layout-apple-style.md`, `components-apple-style.md` |
+| `lists-and-tables` | `components-apple-style.md`, `layout-apple-style.md` |
+| `live-activities` | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `live-photos` | `components-apple-style.md`, `media-assets-and-delivery-apple-style.md` |
+| `live-viewing-apps` | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `loading` | `state-and-feedback-apple-style.md` |
+| `lockups` | `components-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| `mac-catalyst` | `apple-platform-playbooks-apple-style.md`, `macos-windowing-apple-style.md` |
+| `machine-learning` | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `managing-accounts` | `qol-patterns-apple-style.md`, `content-apple-style.md` |
+| `managing-notifications` | `state-and-feedback-apple-style.md`, `qol-patterns-apple-style.md` |
+| `maps` | `apple-platform-playbooks-apple-style.md` |
+| `materials` | `design-apple-style.md`, `tokens-apple-style.md` |
+| `menus` | `components-apple-style.md`, `navigation-models-apple-style.md` |
+| `menus-and-actions` | `components-apple-style.md`, `navigation-models-apple-style.md` |
+| `modality` | `navigation-models-apple-style.md` |
+| `motion` | `animations-apple-style.md`, `scroll-motion-apple-style.md` |
+| `multitasking` | `apple-platform-playbooks-apple-style.md`, `navigation-models-apple-style.md` |
+| `navigation-and-search` | `navigation-models-apple-style.md`, `qol-patterns-apple-style.md` |
+| `nearby-interactions` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `nfc` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `notifications` | `state-and-feedback-apple-style.md`, `qol-patterns-apple-style.md` |
+| `offering-help` | `qol-patterns-apple-style.md`, `content-apple-style.md` |
+| `onboarding` | `qol-patterns-apple-style.md`, `content-apple-style.md` |
+| `ornaments` | `components-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| `outline-views` | `components-apple-style.md`, `navigation-models-apple-style.md` |
+| `page-controls` | `components-apple-style.md` |
+| `panels` | `macos-windowing-apple-style.md`, `navigation-models-apple-style.md` |
+| `path-controls` | `components-apple-style.md`, `navigation-models-apple-style.md` |
+| `patterns` | `apple-hig-mapping-apple-style.md`, `qol-patterns-apple-style.md` |
+| `photo-editing` | `components-apple-style.md`, `media-assets-and-delivery-apple-style.md` |
+| `pickers` | `components-apple-style.md` |
+| `playing-audio` | `haptics-and-sound-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `playing-haptics` | `haptics-and-sound-apple-style.md` |
+| `playing-video` | `media-assets-and-delivery-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `pointing-devices` | `perceived-performance-and-input-apple-style.md`, `accessibility-apple-style.md` |
+| `pop-up-buttons` | `components-apple-style.md` |
+| `popovers` | `components-apple-style.md`, `navigation-models-apple-style.md` |
+| `presentation` | `navigation-models-apple-style.md`, `components-apple-style.md` |
+| `printing` | `qol-patterns-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| `privacy` | `qol-patterns-apple-style.md`, `content-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `progress-indicators` | `state-and-feedback-apple-style.md`, `components-apple-style.md` |
+| `pull-down-buttons` | `components-apple-style.md` |
+| `rating-indicators` | `components-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `ratings-and-reviews` | `qol-patterns-apple-style.md`, `content-apple-style.md` |
+| `remotes` | `apple-platform-playbooks-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| `researchkit` | `apple-platform-playbooks-apple-style.md`, `accessibility-apple-style.md` |
+| `right-to-left` | `layout-apple-style.md`, `content-apple-style.md` |
+| `scroll-views` | `components-apple-style.md`, `scroll-motion-apple-style.md` |
+| `search-fields` | `components-apple-style.md`, `qol-patterns-apple-style.md` |
+| `searching` | `qol-patterns-apple-style.md`, `navigation-models-apple-style.md` |
+| `segmented-controls` | `components-apple-style.md` |
+| `selection-and-input` | `components-apple-style.md`, `perceived-performance-and-input-apple-style.md` |
+| `settings` | `qol-patterns-apple-style.md`, `navigation-models-apple-style.md` |
+| `sf-symbols` | `design-apple-style.md`, `assets/sf-symbols-map.json` |
+| `shareplay` | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `shazamkit` | `apple-platform-playbooks-apple-style.md` |
+| `sheets` | `components-apple-style.md`, `navigation-models-apple-style.md` |
+| `sidebars` | `navigation-models-apple-style.md`, `components-apple-style.md` |
+| `sign-in-with-apple` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `siri` | `apple-platform-playbooks-apple-style.md`, `content-apple-style.md` |
+| `sliders` | `components-apple-style.md` |
+| `snippets` | `apple-platform-playbooks-apple-style.md` |
+| `spatial-layout` | `layout-apple-style.md`, `apple-platform-playbooks-apple-style.md` |
+| `split-views` | `navigation-models-apple-style.md`, `components-apple-style.md` |
+| `status` | `state-and-feedback-apple-style.md`, `components-apple-style.md` |
+| `status-bars` | `apple-platform-playbooks-apple-style.md`, `layout-apple-style.md` |
+| `steppers` | `components-apple-style.md` |
+| `system-experiences` | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `tab-bars` | `navigation-models-apple-style.md`, `components-apple-style.md` |
+| `tab-views` | `components-apple-style.md`, `navigation-models-apple-style.md` |
+| `tap-to-pay-on-iphone` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `technologies` | `apple-platform-playbooks-apple-style.md`, `apple-hig-mapping-apple-style.md` |
+| `text-fields` | `components-apple-style.md`, `qol-patterns-apple-style.md` |
+| `text-views` | `components-apple-style.md`, `content-apple-style.md` |
+| `the-menu-bar` | `macos-windowing-apple-style.md`, `components-apple-style.md` |
+| `toggles` | `components-apple-style.md` |
+| `token-fields` | `components-apple-style.md` |
+| `toolbars` | `components-apple-style.md`, `navigation-models-apple-style.md` |
+| `top-shelf` | `apple-platform-playbooks-apple-style.md`, `components-apple-style.md` |
+| `typography` | `design-apple-style.md`, `tokens-apple-style.md` |
+| `undo-and-redo` | `qol-patterns-apple-style.md` |
+| `virtual-keyboards` | `components-apple-style.md`, `accessibility-apple-style.md` |
+| `voiceover` | `accessibility-apple-style.md` |
+| `wallet` | `apple-platform-playbooks-apple-style.md`, `qol-patterns-apple-style.md` |
+| `watch-faces` | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `web-views` | `components-apple-style.md`, `web-engineering-apple-style.md` |
+| `widgets` | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `windows` | `macos-windowing-apple-style.md`, `navigation-models-apple-style.md` |
+| `workouts` | `apple-platform-playbooks-apple-style.md`, `state-and-feedback-apple-style.md` |
+| `writing` | `content-apple-style.md` |
+
+This matrix is the coverage contract. If Apple adds/removes HIG pages, update `.vault/HIG-*`, this matrix, and the owning refs in the same change.
