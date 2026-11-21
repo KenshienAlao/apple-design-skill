@@ -1,0 +1,81 @@
+{
+  "schema": "apple-design-component-fidelity/1",
+  "note": "Distilled API-name map for the Apple craft lens. Names are platform API families, not brand assets. Verify against current platform docs before treating a name as a contract.",
+  "strength": "documented-api-family; behavior defaults are Should",
+  "states": [
+    "default",
+    "hover",
+    "pressed",
+    "focused",
+    "disabled",
+    "loading",
+    "error",
+    "selected"
+  ],
+  "components": {
+    "button": {
+      "ios": { "swiftui": "Button + buttonStyle", "uikit": "UIButton", "states": ["default", "pressed", "focused", "disabled", "loading"] },
+      "ipados": { "swiftui": "Button + buttonStyle", "uikit": "UIButton", "states": ["default", "hover", "pressed", "focused", "disabled"] },
+      "macos": { "swiftui": "Button", "appkit": "NSButton", "states": ["default", "hover", "pressed", "focused", "disabled"] },
+      "watchos": { "swiftui": "Button", "states": ["default", "pressed", "disabled"] },
+      "visionos": { "swiftui": "Button", "states": ["default", "hover", "pressed", "focused", "disabled"] }
+    },
+    "list": {
+      "ios": { "swiftui": "List", "uikit": "UITableView / UICollectionView", "states": ["default", "selected", "disabled"] },
+      "ipados": { "swiftui": "List", "uikit": "UITableView / UICollectionView", "states": ["default", "hover", "selected", "disabled"] },
+      "macos": { "swiftui": "List", "appkit": "NSTableView / NSOutlineView", "states": ["default", "hover", "selected", "disabled"] },
+      "watchos": { "swiftui": "List", "states": ["default", "selected"] },
+      "visionos": { "swiftui": "List", "states": ["default", "hover", "selected"] }
+    },
+    "form": {
+      "ios": { "swiftui": "Form + TextField", "uikit": "UITableViewCell with UITextField", "states": ["default", "focused", "error", "disabled"] },
+      "ipados": { "swiftui": "Form + TextField", "states": ["default", "focused", "error", "disabled"] },
+      "macos": { "swiftui": "Form + TextField", "appkit": "NSForm / NSTextField", "states": ["default", "focused", "error", "disabled"] },
+      "watchos": { "swiftui": "Form + TextField", "states": ["default", "focused", "error"] },
+      "visionos": { "swiftui": "Form + TextField", "states": ["default", "focused", "error"] }
+    },
+    "sheet": {
+      "ios": { "swiftui": "sheet(item:onDismiss:)", "uikit": "UISheetPresentationController", "detents": ["medium", "large"], "states": ["default", "dragging", "dismissed"] },
+      "ipados": { "swiftui": "sheet + formSheet presentation", "uikit": "UISheetPresentationController / UIModalPresentationFormSheet", "states": ["default", "dragging", "dismissed"] },
+      "macos": { "swiftui": ".sheet", "appkit": "NSWindow sheet / NSPanel", "states": ["default", "dismissed"] },
+      "watchos": { "swiftui": "NavigationStack push", "states": ["default", "dismissed"] },
+      "visionos": { "swiftui": ".sheet with ornament attachment", "states": ["default", "hover", "dismissed"] }
+    },
+    "alert": {
+      "ios": { "swiftui": ".alert", "uikit": "UIAlertController", "states": ["default", "confirmed", "dismissed"] },
+      "ipados": { "swiftui": ".alert", "uikit": "UIAlertController", "states": ["default", "confirmed", "dismissed"] },
+      "macos": { "swiftui": ".alert", "appkit": "NSAlert", "states": ["default", "confirmed", "dismissed"] },
+      "watchos": { "swiftui": ".alert", "states": ["default", "dismissed"] },
+      "visionos": { "swiftui": ".alert", "states": ["default", "dismissed"] }
+    },
+    "popover": {
+      "ios": { "swiftui": ".popover", "uikit": "UIPopoverPresentationController", "fallback": "sheet on compact width", "states": ["default", "dismissed"] },
+      "ipados": { "swiftui": ".popover", "uikit": "UIPopoverPresentationController", "states": ["default", "hover", "dismissed"] },
+      "macos": { "swiftui": ".popover", "appkit": "NSPopover", "states": ["default", "hover", "dismissed"] },
+      "watchos": { "swiftui": "unsupported; use a pushed detail view", "states": [] },
+      "visionos": { "swiftui": "ornament attachment", "states": ["default", "hover", "dismissed"] }
+    },
+    "menu": {
+      "ios": { "swiftui": ".menu", "uikit": "UIMenu", "states": ["default", "pressed", "selected"] },
+      "ipados": { "swiftui": ".menu", "uikit": "UIMenu", "states": ["default", "hover", "pressed", "selected"] },
+      "macos": { "swiftui": ".menu", "appkit": "NSMenu", "states": ["default", "hover", "selected", "disabled"] },
+      "watchos": { "swiftui": "unsupported; use a list of actions", "states": [] },
+      "visionos": { "swiftui": ".menu", "states": ["default", "hover", "selected"] }
+    },
+    "toolbar": {
+      "ios": { "swiftui": ".toolbar", "uikit": "UINavigationItem", "states": ["default", "pressed", "disabled"] },
+      "ipados": { "swiftui": ".toolbar", "uikit": "UINavigationItem", "states": ["default", "hover", "pressed", "disabled"] },
+      "macos": { "swiftui": ".toolbar", "appkit": "NSToolbar", "states": ["default", "hover", "pressed", "disabled"] },
+      "watchos": { "swiftui": "unsupported", "states": [] },
+      "visionos": { "swiftui": ".toolbar with ornaments", "states": ["default", "hover", "disabled"] }
+    }
+  },
+  "guardrails": [
+    "Native control first; custom control only when the platform has none.",
+    "Every state must be visible or announced; no color-only state.",
+    "Target sizes are native: 44pt iOS and iPadOS, compact pointer sizes on macOS.",
+    "Popovers need a non-popover fallback on compact width.",
+    "Graphics need an accessibility label or an explicit hidden trait.",
+    "No Apple-owned logo, bezel, screenshot, or product frame in an implementation."
+  ]
+}

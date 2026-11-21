@@ -1,0 +1,87 @@
+.interactive-sheet-root {
+  position: fixed;
+  inset: 0;
+  z-index: var(--apple-z-modal, 1100);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.interactive-sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--apple-color-label-3);
+  opacity: 1;
+  transition: opacity var(--apple-duration-standard) var(--apple-ease-standard);
+}
+
+.interactive-sheet {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 92vh;
+  overflow: hidden;
+  background: var(--apple-color-surface);
+  color: var(--apple-color-label);
+  border-radius: var(--apple-radius-sheet) var(--apple-radius-sheet) 0 0;
+  box-shadow: var(--apple-shadow-large);
+  transform: translateY(var(--sheet-offset, 0));
+  transition: transform var(--apple-duration-sheet) var(--apple-ease-out);
+  padding-bottom: max(var(--apple-space-5), env(safe-area-inset-bottom));
+}
+
+.interactive-sheet.is-dragging {
+  transition: none;
+}
+
+.interactive-sheet-root.is-closing .interactive-sheet-backdrop {
+  opacity: 0;
+}
+
+.interactive-sheet__header {
+  min-height: var(--apple-target-min);
+  padding: var(--apple-space-3) var(--apple-space-5) var(--apple-space-2);
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.interactive-sheet__grabber {
+  display: block;
+  width: calc(var(--apple-space-10) + var(--apple-space-4));
+  height: var(--apple-space-2);
+  margin: 0 auto var(--apple-space-3);
+  border-radius: var(--apple-radius-pill);
+  background: var(--apple-color-label-3);
+}
+
+.interactive-sheet__title {
+  margin: 0;
+  font-size: var(--apple-type-title-3-size);
+  line-height: var(--apple-type-title-3-line);
+  font-weight: 600;
+  text-align: center;
+}
+
+.interactive-sheet__content {
+  max-height: calc(92vh - var(--apple-space-11, 64px));
+  overflow-y: auto;
+  padding: 0 var(--apple-space-5) var(--apple-space-5);
+}
+
+@media (min-width: 768px) {
+  .interactive-sheet-root {
+    align-items: center;
+  }
+
+  .interactive-sheet {
+    border-radius: var(--apple-radius-sheet);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-sheet,
+  .interactive-sheet-backdrop {
+    transition: none;
+  }
+}

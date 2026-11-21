@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Evening review</title>
+  <desc id="desc">A dark abstract review surface with one bright blue accent line and restrained text bars.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141416"/>
+      <stop offset="1" stop-color="#0B0B0D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="640" rx="32" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1040" height="480" rx="28" fill="#1C1C1E"/>
+  <rect x="140" y="140" width="260" height="18" rx="9" fill="#3A3A3C"/>
+  <rect x="140" y="210" width="520" height="14" rx="7" fill="#2C2C2E"/>
+  <rect x="140" y="246" width="430" height="14" rx="7" fill="#2C2C2E"/>
+  <rect x="140" y="330" width="920" height="2" fill="#3A3A3C"/>
+  <rect x="140" y="390" width="320" height="16" rx="8" fill="#0A84FF"/>
+  <rect x="140" y="430" width="480" height="12" rx="6" fill="#3A3A3C"/>
+  <circle cx="980" cy="398" r="18" fill="#0A84FF"/>
+</svg>

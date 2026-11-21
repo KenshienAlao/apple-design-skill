@@ -1,0 +1,27 @@
+# Generated token outputs
+/generated/
+/tokens.css
+/tokens.json
+/AppleTokens.swift
+/tailwind.tokens.cjs
+/Theme.kt
+/colors.xml
+
+# Optional rendered-test artifacts
+/visual-diff/
+/visual-baseline/
+/playwright-report/
+/test-results/
+
+# Dependencies and caches
+node_modules/
+.npm/
+.cache/
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/

@@ -1,0 +1,132 @@
+/* apple-design-audit:ignore apple-design-token-lint:ignore */
+/* Scroll story example. Use tokens.css first. No third-party media or fonts. */
+
+.story {
+  --story-bg: var(--apple-color-bg);
+  --story-fg: var(--apple-color-label);
+  --story-surface: var(--apple-color-surface);
+  background: var(--story-bg);
+  color: var(--story-fg);
+  font-family: var(--apple-font-text);
+  transition: background-color var(--apple-duration-standard) var(--apple-ease-standard),
+    color var(--apple-duration-standard) var(--apple-ease-standard);
+}
+
+.story[data-theme='dark'] {
+  --story-bg: #101014;
+  --story-fg: var(--apple-color-label);
+  --story-surface: var(--apple-color-surface-2);
+}
+
+.story__intro,
+.story__footer {
+  min-height: 70vh;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  padding: var(--apple-space-10) var(--apple-space-6);
+  text-align: center;
+}
+
+.story__title,
+.story__heading {
+  font-family: var(--apple-font-display);
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  max-width: 16ch;
+}
+
+.story__title {
+  font-size: clamp(2.6rem, 8vw, 6rem);
+}
+
+.story__heading {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.story__eyebrow {
+  color: var(--apple-color-label-2);
+  font-size: var(--apple-type-footnote-size);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.story__body {
+  color: var(--apple-color-label-2);
+  font-size: var(--apple-type-body-size);
+  line-height: var(--apple-type-body-line);
+  max-width: 52ch;
+}
+
+.story__chapter {
+  position: relative;
+  height: 360vh;
+}
+
+.story__scene {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: clip;
+}
+
+.story__layer {
+  display: grid;
+  justify-items: center;
+  gap: var(--apple-space-5);
+  width: min(100%, 68rem);
+  padding: var(--apple-space-7);
+  text-align: center;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.story__shape {
+  position: relative;
+  width: min(52vw, 22rem);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+
+.story__shape-core,
+.story__shape-ring {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.story__shape-core {
+  width: 46%;
+  aspect-ratio: 1;
+  background: var(--apple-color-tint);
+  box-shadow: var(--apple-shadow-medium);
+}
+
+.story__shape-ring {
+  inset: 6%;
+  border: 1px solid var(--apple-color-separator);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story {
+    transition: none;
+  }
+
+  .story__chapter {
+    height: auto;
+  }
+
+  .story__scene {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .story__layer {
+    transform: none !important;
+    opacity: 1 !important;
+    will-change: auto;
+  }
+}

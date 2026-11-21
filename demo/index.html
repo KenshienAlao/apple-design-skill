@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Lumen — A quieter place for your day</title>
+  <meta name="description" content="Lumen keeps notes, plans, and decisions in one calm workspace. Built with the apple-design skill: semantic tokens, native semantics, reduced motion, and generated media.">
+  <!-- Motion honors prefers-reduced-motion; see site.css and site.js. -->
+  <link rel="stylesheet" href="../examples/reference-implementations/tokens.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="site-nav" aria-label="Main">
+      <a class="brand" href="#top" aria-label="Lumen, back to top">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <rect x="4" y="4" width="24" height="24" rx="8" fill="currentColor" opacity="0.12"></rect>
+          <circle cx="16" cy="16" r="5" fill="currentColor"></circle>
+        </svg>
+        <span>Lumen</span>
+      </a>
+      <ul class="nav-links" data-nav>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#details">Details</a></li>
+      </ul>
+      <a class="button button-primary nav-cta" href="#get-started">Get started</a>
+      <button class="menu-toggle button" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav-list">Menu</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">A quieter place for your day.</h1>
+        <p class="hero-subtitle">Lumen keeps your notes, plans, and decisions together. One workspace, one accent, nothing competing for your attention.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#get-started">Get started</a>
+          <a class="button button-secondary" href="#how-it-works">Learn more</a>
+        </div>
+        <p class="hero-footnote">Works on your phone, tablet, and desktop. Your place stays in sync.</p>
+      </div>
+      <figure class="hero-media">
+        <img src="media/hero-still.svg" alt="Abstract layered panels with a single blue accent, representing a calm workspace" width="1200" height="800" fetchpriority="high">
+        <figcaption>One surface. Everything in its place.</figcaption>
+      </figure>
+    </section>
+
+    <section class="story" id="how-it-works" aria-labelledby="story-title" data-scrolly>
+      <div class="section-head">
+        <h2 id="story-title">Built around what matters.</h2>
+        <p>Three steps, each with a single job. Scroll to follow the sequence.</p>
+      </div>
+      <div class="scrolly-layout">
+        <div class="scrolly-graphic" aria-hidden="true">
+          <div class="scene-frame">
+            <img class="scene is-active" data-scene src="media/scene-capture.svg" alt="" width="900" height="900">
+            <img class="scene" data-scene src="media/scene-connect.svg" alt="" width="900" height="900">
+            <img class="scene" data-scene src="media/scene-review.svg" alt="" width="900" height="900">
+          </div>
+          <div class="progress-track">
+            <span class="progress-fill" data-progress-fill></span>
+          </div>
+          <p class="progress-label" data-progress-label>Step 1 of 3</p>
+        </div>
+        <div class="scrolly-steps">
+          <article class="step is-current" data-step>
+            <h3>Capture</h3>
+            <p>Write the thought while it is fresh. A single field opens, takes the note, and gets out of the way.</p>
+            <p class="step-meta">Quick entry · keyboard shortcut · no setup</p>
+          </article>
+          <article class="step" data-step>
+            <h3>Connect</h3>
+            <p>Link a note to the project it belongs to. Relationships stay visible without turning into a web of labels.</p>
+            <p class="step-meta">Linked notes · one accent · clear state</p>
+          </article>
+          <article class="step" data-step>
+            <h3>Carry forward</h3>
+            <p>Start the next day from what is still open. Finished work moves out of view, never out of reach.</p>
+            <p class="step-meta">Daily review · restored focus · undo always available</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features" aria-labelledby="features-title">
+      <div class="section-head">
+        <h2 id="features-title">Small things, done well.</h2>
+        <p>Details that remove friction instead of adding features.</p>
+      </div>
+      <ul class="feature-list">
+        <li>
+          <h3>Focus that returns</h3>
+          <p>Leave a note halfway and come back to the same cursor position. Undo covers the last change, not just the last action.</p>
+        </li>
+        <li>
+          <h3>Type that grows</h3>
+          <p>Text reflows at larger accessibility sizes. Rows get taller before they get denser.</p>
+        </li>
+        <li>
+          <h3>Motion that settles</h3>
+          <p>Transitions follow the gesture and finish at a resolved state. Reduce Motion removes the travel, not the information.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="detail" id="details" data-theme="dark" aria-labelledby="detail-title">
+      <div class="detail-inner">
+        <h2 id="detail-title">Made for the moment you're in.</h2>
+        <p>One bright chapter in a calm system. The dark surface carries the review view, then hands you back to the light.</p>
+        <figure>
+          <img src="media/detail-still.svg" alt="Abstract dark composition with a single bright accent line" width="1200" height="640" loading="lazy">
+          <figcaption>Evening review, reduced to what is still open.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cta" id="get-started" aria-labelledby="cta-title">
+      <h2 id="cta-title">Start with a blank page.</h2>
+      <p>Open Lumen, write one line, and let the rest wait for you.</p>
+      <a class="button button-primary" href="#top">Back to the top</a>
+      <noscript><p class="noscript-note">This page works without scripts. All sections and controls remain available.</p></noscript>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Lumen is a fictional product used to demonstrate the apple-design skill. All illustrations are generated locally.</p>
+  </footer>
+</body>
+</html>

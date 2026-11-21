@@ -1,0 +1,78 @@
+.carousel-root {
+  width: 100%;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  border-radius: var(--apple-radius-large);
+  background: var(--apple-color-surface);
+  touch-action: pan-y;
+}
+
+.carousel-viewport:focus-visible {
+  outline: 2px solid var(--apple-color-tint);
+  outline-offset: 2px;
+}
+
+.carousel-track {
+  display: flex;
+  will-change: transform;
+}
+
+.carousel-page {
+  flex: 0 0 100%;
+  min-height: var(--apple-space-10);
+  padding: var(--apple-space-8) var(--apple-space-6);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: var(--apple-font-text);
+  background: var(--apple-color-surface);
+  border-right: var(--apple-hairline);
+}
+
+.carousel-page:last-child {
+  border-right: 0;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--apple-space-2);
+  margin-top: var(--apple-space-5);
+}
+
+.carousel-dot {
+  display: grid;
+  place-items: center;
+  min-width: var(--apple-target-min);
+  min-height: var(--apple-target-min);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.carousel-dot span {
+  width: var(--apple-space-3);
+  height: var(--apple-space-3);
+  border-radius: var(--apple-radius-pill);
+  background: var(--apple-color-fill-2);
+  transition: background-color var(--apple-duration-fast) var(--apple-ease-standard);
+}
+
+.carousel-dot.is-active span {
+  background: var(--apple-color-tint);
+}
+
+.carousel-dot:focus-visible {
+  outline: 2px solid var(--apple-color-tint);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-dot span {
+    transition: none;
+  }
+}

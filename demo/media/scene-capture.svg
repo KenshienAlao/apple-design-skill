@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Capture</title>
+  <desc id="desc">A single note field opens on a soft surface with one blue insertion point.</desc>
+  <rect width="900" height="900" rx="48" fill="#F5F5F7"/>
+  <rect x="120" y="180" width="660" height="540" rx="36" fill="#FFFFFF"/>
+  <rect x="180" y="250" width="280" height="20" rx="10" fill="#D8D8DE"/>
+  <rect x="180" y="320" width="540" height="120" rx="24" fill="#F2F2F7"/>
+  <rect x="212" y="366" width="3" height="30" rx="1.5" fill="#007AFF"/>
+  <rect x="180" y="500" width="380" height="16" rx="8" fill="#E6E6EB"/>
+  <rect x="180" y="536" width="300" height="16" rx="8" fill="#E6E6EB"/>
+  <rect x="180" y="624" width="170" height="48" rx="12" fill="#007AFF"/>
+</svg>

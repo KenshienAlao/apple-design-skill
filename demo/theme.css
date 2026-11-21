@@ -1,0 +1,12 @@
+/* apple-design-audit:ignore apple-design-token-lint:ignore */
+/* Demo-only dark chapter token sheet. Generated token outputs may replace
+   these values. Component styles read names, never these raw values. */
+
+.detail[data-theme='dark'] {
+  --detail-bg: #0B0B0D;
+  --detail-label: #F5F5F7;
+  --detail-label-2: rgba(235, 235, 245, 0.62);
+  --detail-separator: rgba(235, 235, 245, 0.18);
+  --detail-surface: #1C1C1E;
+  --detail-accent: #0A84FF;
+}

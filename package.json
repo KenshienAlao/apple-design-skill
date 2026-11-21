@@ -1,0 +1,32 @@
+{
+  "name": "apple-design-skill",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable, provider-neutral, Apple-inspired UI/UX craft skill. Core is dependency-free; visual and rendered-a11y tools are optional.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "verify": "node scripts/link-check.mjs . --strict && for f in scripts/*.mjs scripts/lib/*.mjs; do node --check \"$f\"; done && node scripts/audit.mjs . --strict && node scripts/token-lint.mjs . --strict && node scripts/a11y-audit.mjs . --strict && node scripts/code-audit.mjs . --strict && node scripts/check-contrast.mjs --strict && node scripts/generate-tokens.mjs --format=all --out=/tmp/opencode/design-tokens && node scripts/motion-probe.mjs --all",
+    "check": "npm run verify",
+    "link-check": "node scripts/link-check.mjs . --strict",
+    "visual-diff": "node scripts/visual-diff.mjs",
+    "a11y-probe": "node scripts/a11y-probe.mjs"
+  },
+  "optionalDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "pixelmatch": "^5.3.0",
+    "playwright": "^1.48.0",
+    "pngjs": "^7.0.0"
+  },
+  "keywords": [
+    "design",
+    "ui",
+    "ux",
+    "apple-inspired",
+    "design-tokens",
+    "accessibility",
+    "cross-platform"
+  ]
+}
