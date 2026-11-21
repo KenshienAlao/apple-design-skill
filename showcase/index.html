@@ -51,7 +51,6 @@
         <li><a href="#overview" data-nav-link>Overview</a></li>
         <li><a href="#capabilities" data-nav-link>Capabilities</a></li>
         <li><a href="#showcase" data-nav-link>Showcase</a></li>
-        <li><a href="#how-it-works" data-nav-link>How it works</a></li>
         <li><a href="#faq" data-nav-link>FAQ</a></li>
         <li><a href="#install" data-nav-link>Install</a></li>
       </ul>
@@ -64,7 +63,7 @@
       <div class="hero__copy" data-reveal>
         <p class="eyebrow">Agent skill v1.0.0</p>
         <h1 class="hero__title" id="hero-title">One design system. Native on every platform.</h1>
-        <p class="hero__lead">apple-design loads only the references your task needs, then turns them into native SwiftUI, Compose, React, Flutter, or web UI with tokens, states, and accessibility built in.</p>
+        <p class="hero__lead">Routes each task to the smallest useful reference set, then emits native UI with tokens and accessibility.</p>
         <div class="hero__actions">
           <button class="button button-primary" type="button" data-copy-prompt aria-describedby="hero-copy-status">
             <span>Copy install prompt</span>
@@ -72,7 +71,7 @@
           <a class="text-link" href="https://github.com/KenshienAlao/apple-design-skill/blob/main/SKILL.md">Read SKILL.md</a>
           <p class="sr-only" role="status" aria-live="polite" id="hero-copy-status" data-copy-status></p>
         </div>
-        <p class="hero__proof">30 references, 11 scripts, <code>npm run verify</code> clean</p>
+        <p class="hero__proof">30 references, 11 scripts, clean verify</p>
       </div>
 
       <figure class="device-stage" data-reveal>
@@ -191,32 +190,32 @@ the whole corpus unless I ask for a full build or full audit.</pre>
       <div class="section__head" data-reveal>
         <p class="eyebrow">Capabilities</p>
         <h2 class="section__title" id="capabilities-title">One skill, five jobs</h2>
-        <p class="section__intro">Each capability points to the reference that defines it. No hidden machinery.</p>
+        <p class="section__intro">Each card names its source.</p>
       </div>
       <ul class="bento">
         <li class="bento__item bento__item--lead" data-reveal>
           <h3>Less context, same craft</h3>
-          <p>A routing table picks the smallest useful reference set for the task at hand.</p>
+          <p>Routes the smallest useful reference set.</p>
           <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/SKILL.md">Read SKILL.md</a>
         </li>
         <li class="bento__item" data-reveal>
           <h3>Native, not cloned</h3>
-          <p>Platform playbooks, HIG mapping, native recipes, and a component and API map.</p>
+          <p>Playbooks and HIG mapping keep screens native.</p>
           <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/platform-adapters-apple-style.md">Read the platform layer</a>
         </li>
         <li class="bento__item" data-reveal>
           <h3>Tokens that survive handoff</h3>
-          <p>One markdown token sheet generates CSS, JSON, Swift, Tailwind, Compose, and XML.</p>
+          <p>One token sheet generates CSS, JSON, Swift, Tailwind, Compose, XML.</p>
           <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/tokens-apple-style.md">Read the token sheet</a>
         </li>
         <li class="bento__item" data-reveal>
           <h3>Review you can defend</h3>
-          <p>Five lens review, a scored rubric with hard caps, and Must / Should / May evidence labels.</p>
+          <p>Five-lens review with scored evidence.</p>
           <a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/review-workflow-apple-style.md">Read the review workflow</a>
         </li>
         <li class="bento__item" data-reveal>
           <h3>Verification in the box</h3>
-          <p>Eleven Node scripts cover links, tokens, contrast, accessibility, code hygiene, and motion.</p>
+          <p>Eleven scripts check links, tokens, contrast, accessibility, code.</p>
           <a href="https://github.com/KenshienAlao/apple-design-skill/tree/main/scripts">Browse the scripts</a>
         </li>
       </ul>
@@ -227,7 +226,7 @@ the whole corpus unless I ask for a full build or full audit.</pre>
         <div class="section__head section__head--light" data-reveal>
           <p class="eyebrow">Showcase</p>
           <h2 class="section__title" id="showcase-title">Three specimens, all working</h2>
-          <p class="section__intro">Each specimen demonstrates one strength of the skill with real controls and real states.</p>
+          <p class="section__intro">Each specimen exposes a real state.</p>
         </div>
 
         <article class="specimen" id="specimen-tokens" data-platform="web" aria-labelledby="tokens-title">
@@ -235,7 +234,7 @@ the whole corpus unless I ask for a full build or full audit.</pre>
             <div>
               <p class="eyebrow">Specimen A</p>
               <h3 id="tokens-title">Tokens and states</h3>
-              <p>One token set, native control anatomy, and the full state set.</p>
+              <p>One token set, native control anatomy, full state set.</p>
             </div>
             <div class="specimen__controls">
               <fieldset class="segmented">
@@ -282,14 +281,14 @@ the whole corpus unless I ask for a full build or full audit.</pre>
               <button class="button button-primary" type="button" data-save-button>Save changes</button>
               <button class="button button-secondary" type="button" data-reset-button>Reset</button>
               <button class="button button-primary" type="button" disabled>Apply everywhere</button>
-              <p class="demo-actions__note">Apply everywhere is available after you add an account.</p>
+              <p class="demo-actions__note">Available after an account is added.</p>
             </div>
           </div>
 
           <div class="specimen__details">
             <p class="specimen__meta" data-native-names>Framework names: button, role=switch input, element</p>
             <p class="specimen__meta" data-native-note>Native anatomy: browser chrome, URL and app nav, 44px targets.</p>
-            <p class="specimen__meta">Token values stay fixed. Only vocabulary and anatomy change.</p>
+            <p class="specimen__meta">Token values stay fixed. Vocabulary changes with the platform.</p>
           </div>
           <div class="lab" data-lab data-active="false">
             <div class="lab__controls">
@@ -346,7 +345,7 @@ the whole corpus unless I ask for a full build or full audit.</pre>
       <div class="section__head" data-reveal>
         <p class="eyebrow">Specimen B</p>
         <h2 class="section__title" id="router-title">Reference router</h2>
-        <p class="section__intro">Four prompts, the exact references selected, and why each one is loaded.</p>
+        <p class="section__intro">Four prompts, their reference sets, and why.</p>
       </div>
       <div class="router-prompts" role="group" aria-label="Choose a task" data-reveal>
         <button class="chip" type="button" data-route="native" aria-pressed="true">Build a settings screen for Android</button>
@@ -357,7 +356,7 @@ the whole corpus unless I ask for a full build or full audit.</pre>
       <div class="router-panels" data-reveal>
         <details class="route" data-route-panel="native" open>
           <summary>Build a settings screen for Android, 14 references</summary>
-          <p class="route__why">A native product build needs the full craft chain plus a platform adapter. Android vocabulary comes from the platform layer.</p>
+          <p class="route__why">Native build: craft chain plus Android adapter.</p>
           <ol class="reference-list">
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/design-apple-style.md">design-apple-style.md</a><span>Visual direction, type, color, spacing</span></li>
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/animations-apple-style.md">animations-apple-style.md</a><span>Motion, spring timing, Reduce Motion</span></li>
@@ -378,7 +377,7 @@ the whole corpus unless I ask for a full build or full audit.</pre>
 
         <details class="route" data-route-panel="audit">
           <summary>Audit this page, 5 fixed references plus surface docs</summary>
-          <p class="route__why">The audit workflow loads its fixed review set, then only the docs that cover the audited surface.</p>
+          <p class="route__why">Fixed review set plus surface docs.</p>
           <ol class="reference-list">
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/review-workflow-apple-style.md">review-workflow-apple-style.md</a><span>Five lens review and report format</span></li>
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/qa-apple-style.md">qa-apple-style.md</a><span>Blocking checklist and verdict</span></li>
@@ -395,7 +394,7 @@ the whole corpus unless I ask for a full build or full audit.</pre>
 
         <details class="route" data-route-panel="tokens">
           <summary>Generate tokens, 1 reference and 1 script</summary>
-          <p class="route__why">Token work needs the markdown token sheet, which is the only raw value source. The generator turns it into platform outputs.</p>
+          <p class="route__why">Raw value sheet plus generator.</p>
           <ol class="reference-list">
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/tokens-apple-style.md">tokens-apple-style.md</a><span>Semantic color pairs and scales</span></li>
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/scripts/generate-tokens.mjs">generate-tokens.mjs</a><span>CSS, JSON, Swift, Tailwind, Compose, XML output</span></li>
@@ -404,7 +403,7 @@ the whole corpus unless I ask for a full build or full audit.</pre>
 
         <details class="route" data-route-panel="flagship">
           <summary>Build a flagship landing page, 12 references</summary>
-          <p class="route__why">A flagship web page loads the restraint and language layer first, then visual, engineering, media, and verification references.</p>
+          <p class="route__why">Restraint and language first, then visual, media, verification.</p>
           <ol class="reference-list">
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/restraint-and-antislop-apple-style.md">restraint-and-antislop-apple-style.md</a><span>Restraint level and anti slop decisions</span></li>
             <li><a href="https://github.com/KenshienAlao/apple-design-skill/blob/main/references/web-marketing-language-apple-style.md">web-marketing-language-apple-style.md</a><span>Section order and CTA voice</span></li>
@@ -427,7 +426,7 @@ the whole corpus unless I ask for a full build or full audit.</pre>
       <div class="section__head" data-reveal>
         <p class="eyebrow">Specimen C</p>
         <h2 class="section__title" id="verify-title">Verification, not promises</h2>
-        <p class="section__intro">Commands, exit codes, and finding counts captured from this build.</p>
+        <p class="section__intro">Commands, exit codes, finding counts.</p>
       </div>
       <div class="verify-grid">
         <pre class="terminal" data-reveal><code>npm run tokens
@@ -455,9 +454,9 @@ npm --prefix .. run verify</code></pre>
             <p class="audit-card__unit">avoid-ai-design findings</p>
             <ul>
               <li>Centered hero over three cards</li>
-              <li>Gradient background and borrowed font stack</li>
-              <li>Pill labels and tracked all-caps metadata</li>
-              <li>Decorative motion with no state change</li>
+              <li>Gradient background, borrowed font</li>
+              <li>Pill labels, tracked caps</li>
+              <li>Decorative motion without state</li>
             </ul>
           </li>
           <li class="audit-card audit-card--after">
@@ -465,30 +464,18 @@ npm --prefix .. run verify</code></pre>
             <p class="audit-card__score">0</p>
             <p class="audit-card__unit">avoid-ai-design findings</p>
             <ul>
-              <li>System font and semantic surfaces</li>
-              <li>Hairline structure and token spacing</li>
-              <li>State-first controls at 44px targets</li>
-              <li>Token-bound motion with Reduce Motion</li>
+              <li>System font, semantic surfaces</li>
+              <li>Hairlines, token spacing</li>
+              <li>State-first 44px controls</li>
+              <li>Token-bound motion, Reduce Motion</li>
             </ul>
           </li>
         </ol>
-        <p class="audit-strip__note">Current source: 0 findings, 26/26 contrast pairs pass, 0 verifier warnings.</p>
+        <p class="audit-strip__note">Current source: 0 findings, 26/26 contrast pass, 0 warnings.</p>
       </div>
 
-      <p class="specimen__meta">Raw command output is recorded in <a href="./verification.log">verification.log</a>.</p>
-      <a class="text-link section-next" href="https://github.com/KenshienAlao/apple-design-skill/tree/main/demo">See the Lumen flagship demo built with the skill</a>
-    </section>
-
-    <section class="section section--surface" id="how-it-works" aria-labelledby="how-title">
-      <div class="section__head" data-reveal>
-        <p class="eyebrow">How it works</p>
-        <h2 class="section__title" id="how-title">Three steps</h2>
-      </div>
-      <ol class="steps" data-reveal>
-        <li><h3>Copy the prompt</h3><p>Paste the install prompt into your agent. No slash command is needed.</p></li>
-        <li><h3>Ask for the work</h3><p>Build, restyle, critique, or audit. Only the references that task needs are loaded.</p></li>
-        <li><h3>Verify the result</h3><p>Run <code>npm run verify</code> in the skill folder to check links, tokens, contrast, accessibility, and code.</p></li>
-      </ol>
+      <p class="specimen__meta">Full output: <a href="./verification.log">verification.log</a>.</p>
+      <a class="text-link section-next" href="https://github.com/KenshienAlao/apple-design-skill/tree/main/demo">See the Lumen demo</a>
     </section>
 
     <section class="section" id="faq" aria-labelledby="faq-title">
@@ -497,14 +484,14 @@ npm --prefix .. run verify</code></pre>
         <h2 class="section__title" id="faq-title">Questions before you install</h2>
       </div>
       <div class="faq-list" data-reveal>
-        <details><summary>Does it need a website, dashboard, or server?</summary><p>No. It works inside your agent and project. This page is a front door, not a setup step.</p></details>
-        <details><summary>Is this official Apple guidance?</summary><p>No. It is Apple inspired, not Apple branded, and it is not affiliated with or endorsed by Apple Inc.</p></details>
-        <details><summary>Which platforms are covered?</summary><p>iOS, Android, web, macOS, Windows, Linux, watchOS, visionOS, Flutter, React Native, Compose, SwiftUI, Tauri, and Electron.</p></details>
-        <details><summary>How does it keep context small?</summary><p>SKILL.md routes each task to the smallest useful reference set. It does not load the whole corpus unless you ask for a full build or full audit.</p></details>
-        <details><summary>Can it review existing work?</summary><p>Yes. Five lens review and an optional scored review use hard caps, evidence labels, and path and line findings.</p></details>
-        <details><summary>What does verification check?</summary><p>Links, static patterns, tokens, contrast, accessibility, code hygiene, and motion. Rendered axe and visual diff checks are opt in.</p></details>
-        <details><summary>Where is a finished example?</summary><p>The Lumen demo in the skill repository is a complete flagship page built with the skill alone.</p></details>
-        <details><summary>What can I reuse?</summary><p>Original material and code are MIT licensed. The vendored research snapshot is documented in THIRD_PARTY.md. No Apple owned media is bundled.</p></details>
+        <details><summary>Needs a website?</summary><p>No. It runs inside your agent and project.</p></details>
+        <details><summary>Official Apple guidance?</summary><p>No. Apple-inspired, not Apple-branded or affiliated.</p></details>
+        <details><summary>Which platforms are covered?</summary><p>iOS, Android, web, desktop, watchOS, visionOS, and cross-platform stacks.</p></details>
+        <details><summary>Keeps context small?</summary><p>SKILL.md loads only what the task needs.</p></details>
+        <details><summary>Reviews existing work?</summary><p>Yes. Five-lens and scored review return path and line findings.</p></details>
+        <details><summary>Verification checks?</summary><p>Links, tokens, contrast, accessibility, and code. Rendered checks are opt in.</p></details>
+        <details><summary>Finished example?</summary><p>The Lumen demo in the repo is built with the skill.</p></details>
+        <details><summary>What can I reuse?</summary><p>MIT. Vendor notes are in THIRD_PARTY.md. No Apple media.</p></details>
       </div>
     </section>
 
@@ -512,7 +499,7 @@ npm --prefix .. run verify</code></pre>
       <div class="cta__inner" data-reveal>
         <p class="eyebrow">Install</p>
         <h2 class="section__title" id="install-title">Install it in your agent</h2>
-        <p>Copy the prompt, paste it into your agent, and ask for a build or an audit.</p>
+        <p>Copy the prompt, then ask for a build or audit.</p>
         <button class="button button-primary" type="button" data-copy-prompt aria-describedby="install-copy-status">
           <span>Copy install prompt</span>
         </button>
